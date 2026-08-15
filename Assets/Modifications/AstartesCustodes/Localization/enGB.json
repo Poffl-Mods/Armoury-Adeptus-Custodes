@@ -1,0 +1,36 @@
+{
+  "strings": {
+    "gs-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear Prototype"
+    },
+    "gs-desc": {
+      "Offset": 0,
+      "Text": "A proof-of-concept polearm with a separate integrated bolt weapon profile. Provides a melee strike and Bolt Shot."
+    },
+    "gs-flavor": {
+      "Offset": 0,
+      "Text": "Prototype wargear for hybrid-weapon testing."
+    },
+    "gs-hidden-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear Hidden Bolter"
+    },
+    "gs-hidden-desc": {
+      "Offset": 0,
+      "Text": "Internal ranged profile used by Guardian Spear Bolt Shot."
+    },
+    "gs-hidden-flavor": {
+      "Offset": 0,
+      "Text": "Not intended for inventory or loot."
+    },
+    "gs-shot-name": {
+      "Offset": 0,
+      "Text": "Bolt Shot"
+    },
+    "gs-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire the Guardian Spear's integrated bolter using its hidden ranged weapon profile."
+    }
+  }
+}

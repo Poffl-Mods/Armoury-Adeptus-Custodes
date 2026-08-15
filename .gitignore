@@ -1,0 +1,33 @@
+# Local builds and Unity diagnostics
+/Build/
+/unity-*.log
+
+# Reference images and Blender/source working files
+/Pictures/
+/Models/
+
+# Obsolete generated prototype geometry retained locally for comparison
+/Assets/Modifications/AstartesCustodes/Art/AuricConstruction.asset*
+/Assets/Modifications/AstartesCustodes/Art/DarkGrip.asset*
+/Assets/Modifications/AstartesCustodes/Art/GunmetalMechanism.asset*
+/Assets/Modifications/AstartesCustodes/Art/RedDetails.asset*
+/Assets/Modifications/AstartesCustodes/Art/SilverBlade.asset*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_GLB_Mesh*.asset*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_MetallicRoughness_Source.asset*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_Normal_Source.asset*
+/Assets/Modifications/AstartesCustodes/Editor/GuardianSpearGlbImporter.cs*
+
+# Obsolete procedural prototype materials
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_Auric.mat*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_Blade.mat*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_Grip.mat*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_Gunmetal.mat*
+/Assets/Modifications/AstartesCustodes/Art/GuardianSpear_Red.mat*
+
+# Common editor files
+.DS_Store
+Thumbs.db
+*.user
+*.suo
+*.csproj
+*.sln

@@ -1,0 +1,7 @@
+*.fbx binary
+*.asset binary
+*.prefab text eol=lf
+*.cs text eol=lf
+*.jbp text eol=lf
+*.json text eol=lf
+*.md text eol=lf
