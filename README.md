@@ -16,7 +16,7 @@ enable **Guardian Spear Prototype**.
 
 ## Current version
 
-`0.1.14`
+`0.1.15`
 
 This remains a work in progress. Melee, Bolt Shot, the hidden bolter profile,
 custom model, materials, and projectile logic are functional.

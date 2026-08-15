@@ -14,7 +14,9 @@ namespace AstartesCustodes.Runtime
     {
         private const string BoltShotGuid = "747e419a3f9c43579f51b27f41e88b35";
         private static readonly Quaternion IdleRotation = Quaternion.Euler(0f, 0f, 45f);
-        private static readonly Quaternion ShotRotation = Quaternion.Euler(0f, 0f, -45f);
+        // Z lowers the upright staff into the rifle pose. The additional X quarter-turn aligns
+        // the spear's longitudinal axis with the rifle animation's forward/target axis.
+        private static readonly Quaternion ShotRotation = Quaternion.Euler(90f, 0f, -45f);
 
         private Transform m_PoseRoot;
         private bool m_ShotActive;
@@ -59,6 +61,9 @@ namespace AstartesCustodes.Runtime
             if (!IsOurBoltShot(context)) return;
             m_ShotActive = true;
             m_ReturnDelay = 0f;
+            // Execution start is already close to the actual delivery frame. Snap here so the
+            // model and its child muzzle locator are aligned before projectile/VFX emission.
+            if (m_PoseRoot != null) m_PoseRoot.localRotation = ShotRotation;
         }
 
         public void HandleExecutionProcessEnd(AbilityExecutionContext context)

@@ -1,5 +1,13 @@
 # First custom Guardian Spear asset
 
+## Version 0.1.15: target-axis correction and immediate firing pose
+
+The firing pose now adds the missing 90-degree local-axis correction so the spear tip follows the
+rifle animation's target direction instead of lying across it. At execution start the visual root
+and its muzzle locator snap directly into the firing rotation; this removes the previous delay where
+the projectile could be emitted before the transition from vertical to horizontal had completed.
+The existing eased return to the upright melee pose remains unchanged.
+
 ## Version 0.1.14: global execution event and visible hold
 
 The 0.1.13 live test showed no pose change. Reflection confirms that
