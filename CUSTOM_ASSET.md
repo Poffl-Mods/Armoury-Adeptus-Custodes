@@ -1,5 +1,12 @@
 # First custom Guardian Spear asset
 
+## Version 0.1.16: rifle-forward axis correction
+
+The previous correction rotated around local X, which tilted the spear but left its longitudinal
+axis mostly sideways. The firing pose now applies the quarter-turn around local Y instead, mapping
+the horizontal spear onto the rifle animation's forward Z axis. The successful pre-shot timing from
+version 0.1.15 remains unchanged.
+
 ## Version 0.1.15: target-axis correction and immediate firing pose
 
 The firing pose now adds the missing 90-degree local-axis correction so the spear tip follows the

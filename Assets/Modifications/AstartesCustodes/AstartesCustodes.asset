@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   Manifest:
     UniqueName: AstartesCustodes
-    Version: 0.1.15
+    Version: 0.1.16
     DisplayName: Guardian Spear Prototype
     Description: Minimal hybrid melee and bolter weapon proof of concept.
     Author: Poffl
