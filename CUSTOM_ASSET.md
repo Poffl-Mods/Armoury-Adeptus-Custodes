@@ -1,5 +1,12 @@
 # First custom Guardian Spear asset
 
+## Version 0.1.18: weapon FX locator mapping
+
+The prefab root now carries Owlcat's native `FxLocatorMapper`. This allows `CasterWeapon` effects
+from the reused bolter FX settings to resolve the child `FxLocator` registered for the vanilla
+bolter muzzle group instead of falling back to the weapon root at the character's hip. The locator
+remains parented to the rotating visual root at the integrated bolter barrel.
+
 ## Version 0.1.17: HeavyOnHip shot and forward-tip reversal
 
 The hidden bolter profile now uses the vanilla `HeavyOnHip` weapon animation style instead of

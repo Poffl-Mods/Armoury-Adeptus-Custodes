@@ -126,6 +126,11 @@ namespace AstartesCustodes.Editor
                 // without materially enlarging this already superhuman-scale custom weapon.
                 new EquipmentOffsets.RaceScale { race = Kingmaker.Blueprints.Race.Spacemarine, WeaponScale = 1.01f }
             };
+            Type locatorMapperType = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(a => { try { return a.GetTypes(); } catch { return Type.EmptyTypes; } })
+                .FirstOrDefault(t => t.FullName == "FxLocatorMapper");
+            if (locatorMapperType == null) throw new InvalidOperationException("FxLocatorMapper type was not found.");
+            root.AddComponent(locatorMapperType);
             Type binderType = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(a => { try { return a.GetTypes(); } catch { return Type.EmptyTypes; } })
                 .FirstOrDefault(t => t.FullName == "AstartesCustodes.Runtime.GuardianSpearMaterialBinder");
