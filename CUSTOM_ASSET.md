@@ -1,5 +1,12 @@
 # First custom Guardian Spear asset
 
+## Version 0.1.17: HeavyOnHip shot and forward-tip reversal
+
+The hidden bolter profile now uses the vanilla `HeavyOnHip` weapon animation style instead of
+`Rifle`, giving Bolt Shot a heavy-weapon hip firing pose without changing its single-shot delivery.
+The visual firing rotation is also reversed from local Y +90 degrees to -90 degrees so the blade
+and integrated muzzle, rather than the butt end, point along the target axis.
+
 ## Version 0.1.16: rifle-forward axis correction
 
 The previous correction rotated around local X, which tilted the spear but left its longitudinal

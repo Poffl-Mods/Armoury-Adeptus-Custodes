@@ -79,7 +79,7 @@
     "m_EquipmentEntityAlternatives": [],
     "m_ForcedRampColorPresetIndex": -1,
     "m_VisualParameters": {
-      "m_WeaponAnimationStyle": "Rifle",
+      "m_WeaponAnimationStyle": "HeavyOnHip",
       "m_SpecialAnimation": "None",
       "m_BurstAnimationDelay": -0.1,
       "m_WeaponModel": null,

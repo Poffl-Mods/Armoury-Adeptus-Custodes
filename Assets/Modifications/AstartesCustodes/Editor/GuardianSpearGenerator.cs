@@ -284,8 +284,9 @@ namespace AstartesCustodes.Editor
             hidden["Data"]["m_VisualParameters"]["m_WeaponModel"] = null;
             AddOverride(hidden, "m_VisualParameters.m_WeaponModel");
             // The hidden profile supplies the Bolt Shot damage and its ability-specific animation
-            // style. The visible weapon remains Staff, preserving the proven melee swing.
-            hidden["Data"]["m_VisualParameters"]["m_WeaponAnimationStyle"] = "Rifle";
+            // style. HeavyOnHip gives the ranged shot a heavy-weapon hip pose while the visible
+            // weapon remains Staff, preserving the proven melee swing.
+            hidden["Data"]["m_VisualParameters"]["m_WeaponAnimationStyle"] = "HeavyOnHip";
             AddOverride(hidden, "m_VisualParameters.m_WeaponAnimationStyle");
             Override(hidden, "m_HoldingType", "TwoHanded");
             Override(hidden, "IsTwoHanded", true);
