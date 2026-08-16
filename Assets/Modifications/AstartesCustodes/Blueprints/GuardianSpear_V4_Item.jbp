@@ -157,7 +157,7 @@
       "Ability1": {
         "Type": "SingleShot",
         "Mode": "Default",
-        "m_Ability": "!bp_9dec1bdade284190b0977f5f70d26d3e",
+        "m_Ability": "!bp_e48c72cc16194cc986f3041cd3bc01aa",
         "m_FXSettings": "!bp_046cf83ca27244998b0603750d4a833e",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
@@ -200,7 +200,7 @@
         "AP": 2
       }
     },
-    "m_AttackOfOpportunityAbility": "!bp_9dec1bdade284190b0977f5f70d26d3e",
+    "m_AttackOfOpportunityAbility": "!bp_e48c72cc16194cc986f3041cd3bc01aa",
     "m_AttackOfOpportunityAbilityFXSettings": "!bp_0ebd832aea364e23a9aa6abc76228e2d",
     "Category": "Melee",
     "Family": "Primitive",

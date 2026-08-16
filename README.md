@@ -1,11 +1,11 @@
 # Armoury: Adeptus Custodes
 
-A Custodes armoury mod for *Warhammer 40,000: Rogue Trader*, currently featuring the Guardian Spear.
+Version 1 of a Custodes armoury mod for *Warhammer 40,000: Rogue Trader*.
 
-The weapon combines a staff-based melee profile with an integrated single-shot
-bolter profile. It includes a custom FBX model, Owlcat-compatible materials,
-melee and ranged abilities (Strike, Guardian Cleave, Bolt Shot and Bolt Burst), projectile/VFX integration, and a visual firing-pose
-controller.
+The current release features the Guardian Spear as a complete hybrid melee and
+ranged weapon. It includes Strike, Guardian Cleave, Bolt Shot and Bolt Burst,
+a custom model and inventory icon, and six variants that automatically upgrade
+with the character from level 1 through level 55.
 
 No Deathwatch, MicroPatches, Harmony, or other mod dependency is required.
 
@@ -18,6 +18,26 @@ enable **Armoury: Adeptus Custodes**.
 
 `1.0.0`
 
-The Guardian Spear has six automatically upgraded variants for levels 1–55.
-Upgrades happen outside combat at levels 10, 20, 30, 40, and 50; the weapon
-remains freely removable and swappable.
+## Obtaining the Guardian Spear
+
+Version 1 does not yet add the weapon through a quest, vendor, or starting
+equipment. ToyBox is currently required to obtain it.
+
+Search for the following item in ToyBox and add it to the inventory:
+
+- **ToyBox name:** `Guardian Spear V1`
+- **Blueprint ID:** `69a10b7bc7a94c5cb59cd91a6d88d160`
+
+Only V1 needs to be added. It automatically becomes V2, V3, V4, V5, and V6
+outside combat when the character reaches levels 10, 20, 30, 40, and 50.
+
+## Planned additions
+
+The following Custodes equipment is currently work in progress:
+
+- Sentinel Sword
+- Castellan Axe
+- Praesidium Shield
+
+Each item is planned to use the same progression concept as the Guardian Spear:
+six variants that automatically upgrade with the character's level.

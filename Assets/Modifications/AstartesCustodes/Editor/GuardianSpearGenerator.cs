@@ -24,6 +24,7 @@ namespace AstartesCustodes.Editor
         internal const string GuardianCleave = "b3d51e80873c49f49422eab82db9f720";
         internal const string BoltBurst = "c4e65f9139c74d54bc08a87caf2bb381";
         internal const string HiddenGreatsword = "d5f76a024ca14d6096e30c499cef65bd";
+        internal const string GuardianStrike = "e48c72cc16194cc986f3041cd3bc01aa";
 
         internal static readonly string[] VisibleWeapons =
         {
@@ -104,6 +105,7 @@ namespace AstartesCustodes.Editor
         private const string TwoHandedSwordCleave = "163013a18e9c46419b2311454ad2b2c8";
         private const string StaffStrike = "638cd0973175462b9faaeb1242761d32";
         private const string TwoHandedSwordStrike = "9dec1bdade284190b0977f5f70d26d3e";
+        private const string SwordStrikeIconGuid = "a6cba97367839af4e8869281de029095";
         private const string GreatSword = "88863b6b0c61404b96b01c2bc648ba5e";
         private const string Vindictor = "0a5e8b407f9940589d44675f42783581";
         private const string VindictorHiddenMelee = "91ab9da13b8848aab46bd885a0199db3";
@@ -468,6 +470,8 @@ namespace AstartesCustodes.Editor
             JObject addFactTemplate = (JObject)Load(EvisceratorCh5)["Data"]["Components"]
                 .Children<JObject>().First(c => c["$type"]?.ToString().Contains("AddFactToEquipmentWielder") == true).DeepClone();
 
+            CreateGuardianStrikeAbility();
+
             for (int i = 0; i < 6; i++)
             {
                 int tier = i + 1;
@@ -500,12 +504,12 @@ namespace AstartesCustodes.Editor
                 addFact["m_Fact"] = "!bp_" + ModifierFeatures[i];
                 ((JArray)visible["Data"]["Components"]).Add(addFact);
                 AddOverride(visible, addFact["name"].ToString());
-                SetAbilitySlot(visible, "Ability1", "SingleShot", TwoHandedSwordStrike, "046cf83ca27244998b0603750d4a833e", 1);
+                SetAbilitySlot(visible, "Ability1", "SingleShot", GuardianStrike, "046cf83ca27244998b0603750d4a833e", 1);
                 SetAbilitySlot(visible, "Ability2", "SingleShot", ShotAbilities[i], BolterFx, 1);
                 SetAbilitySlot(visible, "Ability3", "AOE", CleaveAbilities[i], "046cf83ca27244998b0603750d4a833e", 2);
                 SetAbilitySlot(visible, "Ability4", "Burst", BurstAbilities[i], BolterFx, 2);
                 SetAbilitySlot(visible, "Ability5", "Reload", StandardReload, BolterFx, 2, "Any");
-                visible["Data"]["m_AttackOfOpportunityAbility"] = "!bp_" + TwoHandedSwordStrike;
+                visible["Data"]["m_AttackOfOpportunityAbility"] = "!bp_" + GuardianStrike;
                 AddOverride(visible, "m_AttackOfOpportunityAbility");
                 Save(tier == 1 ? "GuardianSpear_Prototype_Item" : $"GuardianSpear_V{tier}_Item", visible);
             }
@@ -513,6 +517,13 @@ namespace AstartesCustodes.Editor
             WriteLocalization();
             AssetDatabase.Refresh();
             UnityEngine.Debug.Log("[AstartesCustodes] Guardian Spear V1-V6 progression generated.");
+        }
+
+        private static void CreateGuardianStrikeAbility()
+        {
+            JObject ability = PrepareClone(Load(TwoHandedSwordStrike), GuardianStrike, TwoHandedSwordStrike);
+            SetUnityReference(ability, "m_Icon", SwordStrikeIconGuid, 21300000);
+            Save("GuardianSpear_Strike_Ability", ability);
         }
 
         private static UnityEngine.Object PrepareInventoryIcon()
