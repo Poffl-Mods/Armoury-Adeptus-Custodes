@@ -486,6 +486,8 @@ namespace AstartesCustodes.Editor
                 JObject visible = PrepareClone(Load(ImperialStaff), VisibleWeapons[i], ImperialStaff);
                 visible["Data"]["Components"] = new JArray();
                 SetText(visible, $"gs-v{tier}-name", $"gs-v{tier}-desc", "gs-flavor");
+                visible["Data"]["m_TypeNameText"] = Localized("gs-type-name");
+                AddOverride(visible, "m_TypeNameText");
                 SetUnityReference(visible, "m_Icon", iconGuid, iconFileId);
                 visible["Data"]["m_VisualParameters"]["m_WeaponModel"] = UnityReference(prefabGuid, prefabFileId);
                 AddOverride(visible, "m_VisualParameters.m_WeaponModel");
@@ -494,7 +496,9 @@ namespace AstartesCustodes.Editor
                 Override(visible, "WarhammerPenetration", MeleePen[i]);
                 Override(visible, "WarhammerMaxAmmo", Ammo[i]);
                 Override(visible, "ItemLevel", tier == 6 ? 55 : i * 10 + 9);
-                Override(visible, "m_Rarity", tier <= 2 ? "Rare" : tier <= 4 ? "VeryRare" : "Unique");
+                Override(visible, "m_Rarity", tier <= 2 ? "Pattern" : "Unique");
+                Override(visible, "Family", "Power");
+                Override(visible, "Classification", "Sword");
                 Override(visible, "m_IsNotable", true);
                 Override(visible, "IsNonRemovable", false);
                 Override(visible, "CanBeUsedInGame", true);
@@ -691,6 +695,7 @@ namespace AstartesCustodes.Editor
         public static void Build()
         {
             Generate();
+            SentinelSwordGenerator.Generate();
             var mod = AssetDatabase.LoadAssetAtPath<Modification>(Root + "/AstartesCustodes.asset");
             if (mod == null) throw new InvalidOperationException("AstartesCustodes Modification asset was not found.");
             var result = Builder.Build(mod);
@@ -1048,9 +1053,15 @@ namespace AstartesCustodes.Editor
 
         private static void WriteLocalization()
         {
+            string[] guardianSpearNames =
+            {
+                "Custodian's Vigil", "Auric Watch", "Praetorian's Oath",
+                "Wrath of the Ten Thousand", "Voice of the Golden Throne", "The Emperor's Vengeance"
+            };
             JObject strings = new JObject
             {
                 ["gs-flavor"] = Entry("The Guardian Spear is both symbol of office and peerless instrument of the Emperor's judgement."),
+                ["gs-type-name"] = Entry("Guardian Spear"),
                 ["gs-hidden-name"] = Entry("Guardian Spear Hidden Bolter"),
                 ["gs-hidden-desc"] = Entry("Internal ranged profile used by the Guardian Spear."),
                 ["gs-hidden-flavor"] = Entry("Not intended for inventory or loot."),
@@ -1059,13 +1070,21 @@ namespace AstartesCustodes.Editor
                 ["gs-hidden-cleave-flavor"] = Entry("Not intended for inventory or loot."),
                 ["gs-shot-name"] = Entry("Bolt Shot"),
                 ["gs-cleave-name"] = Entry("Guardian Cleave"),
-                ["gs-burst-name"] = Entry("Bolt Burst")
+                ["gs-burst-name"] = Entry("Bolt Burst"),
+                ["sentinel-sword-name"] = Entry("Sentinel Sword"),
+                ["sentinel-sword-desc"] = Entry("A master-crafted power sword of the Adeptus Custodes."),
+                ["sentinel-sword-flavor"] = Entry("A gleaming blade fashioned for the unwavering guardians of the Golden Throne."),
+                ["sentinel-power-field-name"] = Entry("Activate Power Field"),
+                ["sentinel-power-field-desc"] = Entry("Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +6 additional damage. Cooldown: 5 rounds."),
+                ["sentinel-power-field-buff-desc"] = Entry("The Sentinel Sword is energised. Its attacks deal +6 additional damage."),
+                ["sentinel-wave-name"] = Entry("Sentinel Wave"),
+                ["sentinel-wave-desc"] = Entry("Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP.")
             };
             for (int i = 0; i < 6; i++)
             {
                 int tier = i + 1;
                 string levelRange = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
-                strings[$"gs-v{tier}-name"] = Entry($"Guardian Spear V{tier}");
+                strings[$"gs-v{tier}-name"] = Entry(guardianSpearNames[i]);
                 strings[$"gs-v{tier}-desc"] = Entry(
                     $"A master-crafted Custodes hybrid weapon.\n\n" +
                     $"• Levels: {levelRange}\n" +
@@ -1088,6 +1107,7 @@ namespace AstartesCustodes.Editor
                 strings[$"gs-v{tier}-cleave-desc"] = Entry(
                     $"Sweep the Guardian Spear through a wide area for {CleaveMin[i]}-{CleaveMax[i]} damage and {CleavePen[i]}% armour penetration.");
             }
+            SentinelSwordGenerator.AddLocalizationEntries(strings);
             File.WriteAllText(Path.Combine(Root, "Localization", "enGB.json"),
                 new JObject { ["strings"] = strings }.ToString(Formatting.Indented));
         }

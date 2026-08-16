@@ -21,11 +21,18 @@ namespace AstartesCustodes.Runtime
     public sealed class GuardianSpearProgressionController : MonoBehaviour,
         ILevelUpCompleteUIHandler, IItemsCollectionHandler, IPartyCombatHandler
     {
-        private static readonly string[] VisibleWeaponGuids =
+        private static readonly string[] GuardianSpearGuids =
         {
             "69a10b7bc7a94c5cb59cd91a6d88d160", "57fe8f5911961a2f7520902d00a08ade",
             "daa6cb6d22409135822d23800e71f1ea", "db7158b0a3ab06fef59f60cb255d3b20",
             "6e3e198f6446b1a9de3fea683517ff69", "bdb166b828685110dff677d0791a0bda"
+        };
+
+        private static readonly string[] SentinelSwordGuids =
+        {
+            "94d7497e0b1941c1910a6b29ed8911c2", "2a4f993df4414fc58b0a98dca5867182",
+            "716bd961aa6e4b69bf29305ed5898c32", "82ea713354744f8f879d55f53d21e78d",
+            "ca4598d179194496ab44584b22c98761", "ed577626cb164bdebb29849e01bd2ec7"
         };
 
         private static readonly MethodInfo SubscribeGlobalMethod = typeof(EventBus).GetMethod(
@@ -152,26 +159,33 @@ namespace AstartesCustodes.Runtime
         private void TryUpgradeItem(ItemEntity item, int targetTier)
         {
             if (item?.Blueprint == null) return;
-            int currentTier = Array.IndexOf(VisibleWeaponGuids, item.Blueprint.AssetGuid.ToString());
-            if (currentTier < 0 || currentTier >= targetTier) return;
+            if (TryUpgradeItemInSeries(item, targetTier, GuardianSpearGuids, "Guardian Spear")) return;
+            TryUpgradeItemInSeries(item, targetTier, SentinelSwordGuids, "Sentinel Sword");
+        }
+
+        private bool TryUpgradeItemInSeries(ItemEntity item, int targetTier, string[] weaponGuids, string weaponName)
+        {
+            int currentTier = Array.IndexOf(weaponGuids, item.Blueprint.AssetGuid.ToString());
+            if (currentTier < 0 || currentTier >= targetTier) return false;
 
             BlueprintItemWeapon target = ResourcesLibrary.TryGetBlueprint(
-                VisibleWeaponGuids[targetTier]) as BlueprintItemWeapon;
+                weaponGuids[targetTier]) as BlueprintItemWeapon;
             if (target == null)
             {
-                Debug.LogError("[AstartesCustodes] Guardian Spear tier blueprint was not found: " + VisibleWeaponGuids[targetTier]);
-                return;
+                Debug.LogError($"[AstartesCustodes] {weaponName} tier blueprint was not found: " + weaponGuids[targetTier]);
+                return false;
             }
 
             var slot = item.HoldingSlot;
             ItemsCollection collection = item.Collection ?? slot?.MaybeOwnerInventory?.Collection;
-            if (collection == null) return;
+            if (collection == null) return false;
 
-            if (slot != null && !slot.RemoveItem(false, false)) return;
+            if (slot != null && !slot.RemoveItem(false, false)) return false;
             if (item.Collection != null) item.Collection.Remove(item);
             ItemEntity replacement = collection.Add(target);
             if (slot != null) slot.InsertItem(replacement, false);
-            Debug.Log($"[AstartesCustodes] Guardian Spear upgraded from V{currentTier + 1} to V{targetTier + 1} at party level {Game.Instance.Player.PartyLevel}.");
+            Debug.Log($"[AstartesCustodes] {weaponName} upgraded from V{currentTier + 1} to V{targetTier + 1} at party level {Game.Instance.Player.PartyLevel}.");
+            return true;
         }
 
         private static int TierForLevel(int level)

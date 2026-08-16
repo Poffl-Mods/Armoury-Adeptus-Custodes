@@ -4,6 +4,10 @@
       "Offset": 0,
       "Text": "The Guardian Spear is both symbol of office and peerless instrument of the Emperor's judgement."
     },
+    "gs-type-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear"
+    },
     "gs-hidden-name": {
       "Offset": 0,
       "Text": "Guardian Spear Hidden Bolter"
@@ -40,9 +44,41 @@
       "Offset": 0,
       "Text": "Bolt Burst"
     },
+    "sentinel-sword-name": {
+      "Offset": 0,
+      "Text": "Sentinel Sword"
+    },
+    "sentinel-sword-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted power sword of the Adeptus Custodes."
+    },
+    "sentinel-sword-flavor": {
+      "Offset": 0,
+      "Text": "A gleaming blade fashioned for the unwavering guardians of the Golden Throne."
+    },
+    "sentinel-power-field-name": {
+      "Offset": 0,
+      "Text": "Activate Power Field"
+    },
+    "sentinel-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +6 additional damage. Cooldown: 5 rounds."
+    },
+    "sentinel-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +6 additional damage."
+    },
+    "sentinel-wave-name": {
+      "Offset": 0,
+      "Text": "Sentinel Wave"
+    },
+    "sentinel-wave-desc": {
+      "Offset": 0,
+      "Text": "Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP. Cooldown: 2 rounds."
+    },
     "gs-v1-name": {
       "Offset": 0,
-      "Text": "Guardian Spear V1"
+      "Text": "Custodian's Vigil"
     },
     "gs-v1-desc": {
       "Offset": 0,
@@ -70,7 +106,7 @@
     },
     "gs-v2-name": {
       "Offset": 0,
-      "Text": "Guardian Spear V2"
+      "Text": "Auric Watch"
     },
     "gs-v2-desc": {
       "Offset": 0,
@@ -98,7 +134,7 @@
     },
     "gs-v3-name": {
       "Offset": 0,
-      "Text": "Guardian Spear V3"
+      "Text": "Praetorian's Oath"
     },
     "gs-v3-desc": {
       "Offset": 0,
@@ -126,7 +162,7 @@
     },
     "gs-v4-name": {
       "Offset": 0,
-      "Text": "Guardian Spear V4"
+      "Text": "Wrath of the Ten Thousand"
     },
     "gs-v4-desc": {
       "Offset": 0,
@@ -154,7 +190,7 @@
     },
     "gs-v5-name": {
       "Offset": 0,
-      "Text": "Guardian Spear V5"
+      "Text": "Voice of the Golden Throne"
     },
     "gs-v5-desc": {
       "Offset": 0,
@@ -182,7 +218,7 @@
     },
     "gs-v6-name": {
       "Offset": 0,
-      "Text": "Guardian Spear V6"
+      "Text": "The Emperor's Vengeance"
     },
     "gs-v6-desc": {
       "Offset": 0,
@@ -207,6 +243,166 @@
     "gs-v6-cleave-desc": {
       "Offset": 0,
       "Text": "Sweep the Guardian Spear through a wide area for 35-48 damage and 35% armour penetration."
+    },
+    "sentinel-cleave-name": {
+      "Offset": 0,
+      "Text": "Cleave"
+    },
+    "sentinel-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Sentinel Sword through several enemies. Deals 90% of the weapon's Strike damage."
+    },
+    "sentinel-onslaught-name": {
+      "Offset": 0,
+      "Text": "Onslaught"
+    },
+    "sentinel-onslaught-desc": {
+      "Offset": 0,
+      "Text": "Unleash a wide, powerful sweep. Deals 80% of the weapon's Strike damage."
+    },
+    "sentinel-v1-name": {
+      "Offset": 0,
+      "Text": "Custodian's Edge"
+    },
+    "sentinel-v1-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 1-9\n• Power Field: +12 damage for 2 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +2 Weapon Skill\n• +3% parry chance"
+    },
+    "sentinel-v1-modifier-name": {
+      "Offset": 0,
+      "Text": "Custodian's Edge Mastery"
+    },
+    "sentinel-v1-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped:\n• +2 Weapon Skill\n• +3% parry chance"
+    },
+    "sentinel-v1-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field for 2 rounds. Attacks made with this weapon deal +12 additional damage. Cooldown: 7 rounds."
+    },
+    "sentinel-v1-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +12 additional damage."
+    },
+    "sentinel-v2-name": {
+      "Offset": 0,
+      "Text": "Auric Talon"
+    },
+    "sentinel-v2-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 10-19\n• Power Field: +14 damage for 3 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +4 Weapon Skill\n• +5% parry chance\n• +2% dodge chance"
+    },
+    "sentinel-v2-modifier-name": {
+      "Offset": 0,
+      "Text": "Auric Talon Mastery"
+    },
+    "sentinel-v2-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped:\n• +4 Weapon Skill\n• +5% parry chance\n• +2% dodge chance"
+    },
+    "sentinel-v2-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field for 3 rounds. Attacks made with this weapon deal +14 additional damage. Cooldown: 7 rounds."
+    },
+    "sentinel-v2-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +14 additional damage."
+    },
+    "sentinel-v3-name": {
+      "Offset": 0,
+      "Text": "Praetorian's Answer"
+    },
+    "sentinel-v3-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 20-29\n• Power Field: +16 damage for 4 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +6 Weapon Skill\n• +7% parry chance\n• +3% dodge chance"
+    },
+    "sentinel-v3-modifier-name": {
+      "Offset": 0,
+      "Text": "Praetorian's Answer Mastery"
+    },
+    "sentinel-v3-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped:\n• +6 Weapon Skill\n• +7% parry chance\n• +3% dodge chance"
+    },
+    "sentinel-v3-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +16 additional damage. Cooldown: 7 rounds."
+    },
+    "sentinel-v3-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +16 additional damage."
+    },
+    "sentinel-v4-name": {
+      "Offset": 0,
+      "Text": "Blade of the Ten Thousand"
+    },
+    "sentinel-v4-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 30-39\n• Power Field: +18 damage for 5 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +8 Weapon Skill\n• +9% parry chance\n• +5% dodge chance"
+    },
+    "sentinel-v4-modifier-name": {
+      "Offset": 0,
+      "Text": "Blade of the Ten Thousand Mastery"
+    },
+    "sentinel-v4-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped:\n• +8 Weapon Skill\n• +9% parry chance\n• +5% dodge chance"
+    },
+    "sentinel-v4-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field for 5 rounds. Attacks made with this weapon deal +18 additional damage. Cooldown: 7 rounds."
+    },
+    "sentinel-v4-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +18 additional damage."
+    },
+    "sentinel-v5-name": {
+      "Offset": 0,
+      "Text": "Judgement of Terra"
+    },
+    "sentinel-v5-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 40-49\n• Power Field: +20 damage for 6 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +10 Weapon Skill\n• +12% parry chance\n• +7% dodge chance"
+    },
+    "sentinel-v5-modifier-name": {
+      "Offset": 0,
+      "Text": "Judgement of Terra Mastery"
+    },
+    "sentinel-v5-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped:\n• +10 Weapon Skill\n• +12% parry chance\n• +7% dodge chance"
+    },
+    "sentinel-v5-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field for 6 rounds. Attacks made with this weapon deal +20 additional damage. Cooldown: 7 rounds."
+    },
+    "sentinel-v5-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +20 additional damage."
+    },
+    "sentinel-v6-name": {
+      "Offset": 0,
+      "Text": "The Emperor's Final Decree"
+    },
+    "sentinel-v6-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 50-55\n• Power Field: +22 damage until combat ends\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +12 Weapon Skill\n• +15% parry chance\n• +10% dodge chance"
+    },
+    "sentinel-v6-modifier-name": {
+      "Offset": 0,
+      "Text": "The Emperor's Final Decree Mastery"
+    },
+    "sentinel-v6-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped:\n• +12 Weapon Skill\n• +15% parry chance\n• +10% dodge chance"
+    },
+    "sentinel-v6-power-field-desc": {
+      "Offset": 0,
+      "Text": "Activates the Sentinel Sword's power field until combat ends. Attacks made with this weapon deal +22 additional damage. Cooldown: 7 rounds."
+    },
+    "sentinel-v6-power-field-buff-desc": {
+      "Offset": 0,
+      "Text": "The Sentinel Sword is energised. Its attacks deal +22 additional damage."
     }
   }
 }
