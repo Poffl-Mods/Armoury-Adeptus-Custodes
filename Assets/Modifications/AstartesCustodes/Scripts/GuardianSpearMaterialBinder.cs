@@ -17,7 +17,8 @@ namespace AstartesCustodes.Runtime
             Shader shader = Shader.Find("Owlcat/Lit");
             if (shader == null) return;
 
-            foreach (Renderer renderer in GetComponentsInChildren<Renderer>(true))
+            Renderer[] renderers = GetComponentsInChildren<Renderer>(true);
+            foreach (Renderer renderer in renderers)
             {
                 Material[] materials = renderer.materials;
                 bool changed = false;
@@ -28,6 +29,17 @@ namespace AstartesCustodes.Runtime
                     changed = true;
                 }
                 if (changed) renderer.materials = materials;
+            }
+
+            if (name.IndexOf("SentinelSword", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                string details = renderers.Length == 0
+                    ? "no renderers found"
+                    : string.Join(", ", System.Array.ConvertAll(renderers, renderer =>
+                        renderer.name + " active=" + renderer.gameObject.activeInHierarchy +
+                        " enabled=" + renderer.enabled +
+                        " bounds=" + renderer.bounds.size));
+                Debug.Log("[AstartesCustodes][SentinelSword] Visual instantiated: " + details);
             }
         }
     }

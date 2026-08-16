@@ -695,6 +695,7 @@ namespace AstartesCustodes.Editor
         public static void Build()
         {
             Generate();
+            SentinelSwordGenerator.Generate();
             var mod = AssetDatabase.LoadAssetAtPath<Modification>(Root + "/AstartesCustodes.asset");
             if (mod == null) throw new InvalidOperationException("AstartesCustodes Modification asset was not found.");
             var result = Builder.Build(mod);
@@ -1064,7 +1065,10 @@ namespace AstartesCustodes.Editor
                 ["gs-hidden-cleave-flavor"] = Entry("Not intended for inventory or loot."),
                 ["gs-shot-name"] = Entry("Bolt Shot"),
                 ["gs-cleave-name"] = Entry("Guardian Cleave"),
-                ["gs-burst-name"] = Entry("Bolt Burst")
+                ["gs-burst-name"] = Entry("Bolt Burst"),
+                ["sentinel-sword-name"] = Entry("Sentinel Sword"),
+                ["sentinel-sword-desc"] = Entry("A master-crafted power sword of the Adeptus Custodes."),
+                ["sentinel-sword-flavor"] = Entry("A gleaming blade fashioned for the unwavering guardians of the Golden Throne.")
             };
             for (int i = 0; i < 6; i++)
             {

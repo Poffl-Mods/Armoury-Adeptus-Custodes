@@ -44,6 +44,18 @@
       "Offset": 0,
       "Text": "Bolt Burst"
     },
+    "sentinel-sword-name": {
+      "Offset": 0,
+      "Text": "Sentinel Sword"
+    },
+    "sentinel-sword-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted power sword of the Adeptus Custodes."
+    },
+    "sentinel-sword-flavor": {
+      "Offset": 0,
+      "Text": "A gleaming blade fashioned for the unwavering guardians of the Golden Throne."
+    },
     "gs-v1-name": {
       "Offset": 0,
       "Text": "Guardian Spear V1"
