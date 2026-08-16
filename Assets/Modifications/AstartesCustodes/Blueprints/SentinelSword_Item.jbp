@@ -18,9 +18,31 @@
       "CanBeUsedInGame",
       "IsUnlootable",
       "IsNonRemovable",
-      "m_IsNotable"
+      "m_IsNotable",
+      "WeaponAbilities.Ability4.Type",
+      "WeaponAbilities.Ability4.Mode",
+      "WeaponAbilities.Ability4.m_Ability",
+      "WeaponAbilities.Ability4.m_FXSettings",
+      "WeaponAbilities.Ability4.AP",
+      "WeaponAbilities.Ability5.Type",
+      "WeaponAbilities.Ability5.Mode",
+      "WeaponAbilities.Ability5.m_Ability",
+      "WeaponAbilities.Ability5.m_FXSettings",
+      "WeaponAbilities.Ability5.AP"
     ],
-    "Components": [],
+    "Components": [
+      {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$sentinel-power-field",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_7bd2c146f08a4e5489c991acee473721"
+      }
+    ],
     "Author": "GeorgiiDoronin",
     "Comment": "",
     "m_DisplayName": {
@@ -144,22 +166,22 @@
         "AP": 2
       },
       "Ability4": {
-        "Type": "None",
+        "Type": "Custom",
         "Mode": "Default",
-        "m_Ability": null,
+        "m_Ability": "!bp_7bd2c146f08a4e5489c991acee473721",
         "m_FXSettings": null,
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
         "AP": 0
       },
       "Ability5": {
-        "Type": "None",
+        "Type": "Custom",
         "Mode": "Default",
-        "m_Ability": null,
-        "m_FXSettings": null,
+        "m_Ability": "!bp_641128fea4664f61a734b46f6085ac8e",
+        "m_FXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
-        "AP": 0
+        "AP": 1
       }
     },
     "m_AttackOfOpportunityAbility": "!bp_9dec1bdade284190b0977f5f70d26d3e",

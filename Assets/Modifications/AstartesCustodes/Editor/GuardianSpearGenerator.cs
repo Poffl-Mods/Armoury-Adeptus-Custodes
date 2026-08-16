@@ -1068,7 +1068,12 @@ namespace AstartesCustodes.Editor
                 ["gs-burst-name"] = Entry("Bolt Burst"),
                 ["sentinel-sword-name"] = Entry("Sentinel Sword"),
                 ["sentinel-sword-desc"] = Entry("A master-crafted power sword of the Adeptus Custodes."),
-                ["sentinel-sword-flavor"] = Entry("A gleaming blade fashioned for the unwavering guardians of the Golden Throne.")
+                ["sentinel-sword-flavor"] = Entry("A gleaming blade fashioned for the unwavering guardians of the Golden Throne."),
+                ["sentinel-power-field-name"] = Entry("Activate Power Field"),
+                ["sentinel-power-field-desc"] = Entry("Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +6 additional damage. Cooldown: 5 rounds."),
+                ["sentinel-power-field-buff-desc"] = Entry("The Sentinel Sword is energised. Its attacks deal +6 additional damage."),
+                ["sentinel-wave-name"] = Entry("Sentinel Wave"),
+                ["sentinel-wave-desc"] = Entry("Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP.")
             };
             for (int i = 0; i < 6; i++)
             {

@@ -15,6 +15,9 @@ namespace AstartesCustodes.Editor
     internal static class SentinelSwordGenerator
     {
         internal const string WeaponGuid = "94d7497e0b1941c1910a6b29ed8911c2";
+        internal const string PowerFieldAbilityGuid = "7bd2c146f08a4e5489c991acee473721";
+        internal const string PowerFieldBuffGuid = "c89d128481df4fe096639d1d7d8c50af";
+        internal const string SentinelWaveAbilityGuid = "641128fea4664f61a734b46f6085ac8e";
 
         private const string Root = "Assets/Modifications/AstartesCustodes";
         private const string Art = Root + "/Art";
@@ -32,6 +35,13 @@ namespace AstartesCustodes.Editor
 
         // Early-game one-handed power sword; special components are removed for the initial plain sword version.
         private const string PowerSwordPrototype = "c431fcd14b45453e8fea6b2b4186778d";
+        private const string PowerFieldAbilityPrototype = "afdae4482b3d4161a75224e8e52e8baf";
+        private const string PowerFieldBuffPrototype = "22144723ab574b998e90580b8385a26e";
+        private const string SentinelWavePrototype = "9dec1bdade284190b0977f5f70d26d3e";
+        private const string SwordAttackFxGuid = "1bc92b9832fe402caa887d8c5d990cb4";
+        private const string TelekinesisIconGuid = "d2db9cd1a850eba4790dac666bad955e";
+        // Vanilla Aeldari Force Sword activation: an energy-weapon self-buff icon rather than a caster hand.
+        private const string PowerFieldIconGuid = "35279bc29c0d21649ad4157b24b22c7a";
         // Built-in two-handed sword attack artwork; used temporarily as an unmistakable sword inventory icon.
         private const string SwordIconGuid = "a6cba97367839af4e8869281de029095";
 
@@ -105,17 +115,27 @@ namespace AstartesCustodes.Editor
             // without disturbing the already-correct hand and shoulder animation.
             SerializedObject serialized = new SerializedObject(offsets);
             SerializedProperty slots = serialized.FindProperty("m_SlotOffsets");
-            slots.arraySize = 13;
+            slots.arraySize = 12;
             for (int i = 0; i < slots.arraySize; i++)
             {
                 SerializedProperty slot = slots.GetArrayElementAtIndex(i);
                 slot.FindPropertyRelative("Position").vector3Value = Vector3.zero;
                 slot.FindPropertyRelative("Rotation").vector3Value = Vector3.zero;
             }
-            foreach (int index in new[] { 1, 3, 6, 8 })
-                slots.GetArrayElementAtIndex(index).FindPropertyRelative("Position").vector3Value =
-                    new Vector3(0f, 0f, -0.20f);
+            // Exact offsets used by Owlcat's MSW_PowerSword1 and MSW_PowerSword2 prefabs.
+            ConfigureHolsterSlot(slots, 1, new Vector3(0.04f, 0.03f, -0.15f), new Vector3(1.75f, 255.27f, 266.19f));
+            ConfigureHolsterSlot(slots, 3, new Vector3(-0.01f, -0.04f, -0.11f), new Vector3(11.24f, 90.97f, 74.20f));
+            ConfigureHolsterSlot(slots, 6, new Vector3(0.01f, -0.03f, -0.12f), new Vector3(358.31f, 95.50f, 90.41f));
+            ConfigureHolsterSlot(slots, 8, new Vector3(-0.06f, -0.04f, -0.09f), new Vector3(0.91f, 281.02f, 276.02f));
             serialized.ApplyModifiedPropertiesWithoutUndo();
+        }
+
+        private static void ConfigureHolsterSlot(SerializedProperty slots, int index,
+            Vector3 position, Vector3 rotation)
+        {
+            SerializedProperty slot = slots.GetArrayElementAtIndex(index);
+            slot.FindPropertyRelative("Position").vector3Value = position;
+            slot.FindPropertyRelative("Rotation").vector3Value = rotation;
         }
 
         private static void AddComponentByName(GameObject host, string fullName, bool required)
@@ -157,6 +177,8 @@ namespace AstartesCustodes.Editor
             SetTexture(material, normal, "_BumpMap", "_NormalMap");
             SetFloat(material, 1f, "_Metallic");
             SetFloat(material, 1f, "_Smoothness");
+            Color brighterAlbedo = new Color(1.15f, 1.15f, 1.15f, 1f);
+            SetColor(material, brighterAlbedo, "_BaseColor", "_Color", "_AdditionalAlbedoColor");
             material.EnableKeyword("_METALLICSPECGLOSSMAP");
             material.EnableKeyword("_NORMALMAP");
             EditorUtility.SetDirty(material);
@@ -212,14 +234,31 @@ namespace AstartesCustodes.Editor
         private static void SetFloat(Material material, float value, params string[] names)
         { foreach (string name in names) if (material.HasProperty(name)) material.SetFloat(name, value); }
 
+        private static void SetColor(Material material, Color value, params string[] names)
+        { foreach (string name in names) if (material.HasProperty(name)) material.SetColor(name, value); }
+
         private static void GenerateBlueprint()
         {
             UnityEngine.Object prefab = AssetDatabase.LoadMainAssetAtPath(PrefabPath);
             if (prefab == null || !AssetDatabase.TryGetGUIDAndLocalFileIdentifier(prefab, out string prefabGuid, out long prefabFileId))
                 throw new InvalidDataException("Sentinel Sword prefab could not be resolved.");
 
+            GeneratePowerFieldBlueprints();
+            GenerateSentinelWaveBlueprint();
+
             JObject weapon = PrepareClone(Load(PowerSwordPrototype), WeaponGuid, PowerSwordPrototype);
-            weapon["Data"]["Components"] = new JArray();
+            weapon["Data"]["Components"] = new JArray
+            {
+                new JObject
+                {
+                    ["$type"] = "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+                    ["name"] = "$AddFactToEquipmentWielder$sentinel-power-field",
+                    ["m_Flags"] = 0,
+                    ["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" },
+                    ["m_Overrides"] = new JArray(),
+                    ["m_Fact"] = "!bp_" + PowerFieldAbilityGuid
+                }
+            };
             SetText(weapon, "sentinel-sword-name", "sentinel-sword-desc", "sentinel-sword-flavor");
             weapon["Data"]["m_Icon"] = UnityReference(SwordIconGuid, 21300000L);
             AddOverride(weapon, "m_Icon");
@@ -235,8 +274,154 @@ namespace AstartesCustodes.Editor
             Override(weapon, "IsUnlootable", false);
             Override(weapon, "IsNonRemovable", false);
             Override(weapon, "m_IsNotable", true);
+            SetWeaponAbility(weapon, "Ability4", "Custom", PowerFieldAbilityGuid, null, 0);
+            SetWeaponAbility(weapon, "Ability5", "Custom", SentinelWaveAbilityGuid, SwordAttackFxGuid, 1);
             File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_Item.jbp"), weapon.ToString(Formatting.Indented));
         }
+
+        private static void SetWeaponAbility(JObject weapon, string slotName, string type,
+            string abilityGuid, string fxGuid, int ap)
+        {
+            JObject slot = (JObject)weapon["Data"]["AbilityContainer"][slotName];
+            slot["Type"] = type;
+            slot["Mode"] = "Default";
+            slot["m_Ability"] = "!bp_" + abilityGuid;
+            slot["m_FXSettings"] = fxGuid == null ? null : "!bp_" + fxGuid;
+            slot["OnHitOverrideType"] = "None";
+            slot["m_OnHitActions"] = null;
+            slot["AP"] = ap;
+            AddOverride(weapon, "WeaponAbilities." + slotName + ".Type");
+            AddOverride(weapon, "WeaponAbilities." + slotName + ".Mode");
+            AddOverride(weapon, "WeaponAbilities." + slotName + ".m_Ability");
+            AddOverride(weapon, "WeaponAbilities." + slotName + ".m_FXSettings");
+            AddOverride(weapon, "WeaponAbilities." + slotName + ".AP");
+        }
+
+        private static void GeneratePowerFieldBlueprints()
+        {
+            JObject buff = PrepareClone(Load(PowerFieldBuffPrototype), PowerFieldBuffGuid, PowerFieldBuffPrototype);
+            JObject damageModifier = buff["Data"]["Components"].Children<JObject>()
+                .First(component => component["$type"]?.ToString().Contains("WarhammerDamageModifierInitiator") == true);
+            damageModifier["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            damageModifier["m_Overrides"] = new JArray();
+            JObject weaponGetter = damageModifier["Restrictions"]?["Property"]?["Getters"]?.Children<JObject>()
+                .First(getter => getter["$type"]?.ToString().Contains("CheckAbilityWeaponBlueprintGetter") == true);
+            weaponGetter["m_Weapon"] = "!bp_" + WeaponGuid;
+            JObject flatDamage = (JObject)damageModifier["UnmodifiableFlatDamageModifier"];
+            flatDamage["ValueType"] = "Simple";
+            flatDamage["Value"] = 6;
+            flatDamage["Property"] = "None";
+            flatDamage["m_CustomProperty"] = null;
+            flatDamage["PropertyName"] = "Value1";
+            flatDamage["Enabled"] = true;
+            buff["Data"]["Components"] = new JArray(damageModifier);
+            buff["Data"]["m_DisplayName"] = Localized("sentinel-power-field-name");
+            buff["Data"]["m_Description"] = Localized("sentinel-power-field-buff-desc");
+            buff["Data"]["m_Flags"] = 0;
+            buff["Data"]["Stacking"] = "Replace";
+            buff["Data"]["FxOnStart"] = new JObject { ["AssetId"] = "cf6b6016a28a1bb42aef4576da77ebb4" };
+            AddOverride(buff, "m_DisplayName");
+            AddOverride(buff, "m_Description");
+            File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_PowerField_Buff.jbp"), buff.ToString(Formatting.Indented));
+
+            JObject ability = PrepareClone(Load(PowerFieldAbilityPrototype), PowerFieldAbilityGuid, PowerFieldAbilityPrototype);
+            ability["Data"]["Components"] = new JArray
+            {
+                new JObject
+                {
+                    ["$type"] = "66e032e5cf38801428940a1a0d14b946, AbilityEffectRunAction",
+                    ["name"] = "$AbilityEffectRunAction$sentinel-power-field",
+                    ["m_Flags"] = 0,
+                    ["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" },
+                    ["m_Overrides"] = new JArray(),
+                    ["SavingThrowType"] = "Unknown",
+                    ["Actions"] = new JObject
+                    {
+                        ["Actions"] = new JArray
+                        {
+                            new JObject
+                            {
+                                ["$type"] = "5d13a597de91e4746b804f8233518523, ContextActionApplyBuff",
+                                ["name"] = "$ContextActionApplyBuff$sentinel-power-field",
+                                ["m_Buff"] = "!bp_" + PowerFieldBuffGuid,
+                                ["BuffEndCondition"] = "CombatEnd",
+                                ["Permanent"] = false,
+                                ["DurationValue"] = new JObject
+                                {
+                                    ["BonusValue"] = SimpleContextValue(0),
+                                    ["RoundsValue"] = SimpleContextValue(4)
+                                },
+                                ["ToCaster"] = true,
+                                ["AsChild"] = false,
+                                ["SameDuration"] = false,
+                                ["Ranks"] = SimpleContextValue(1),
+                                ["ActionsOnApply"] = new JObject { ["Actions"] = new JArray() },
+                                ["ActionsOnImmune"] = new JObject { ["Actions"] = new JArray() },
+                                ["AddFactSource"] = true
+                            }
+                        }
+                    }
+                }
+            };
+            ability["Data"]["m_DisplayName"] = Localized("sentinel-power-field-name");
+            ability["Data"]["m_Description"] = Localized("sentinel-power-field-desc");
+            ability["Data"]["m_Icon"] = UnityReference(PowerFieldIconGuid, 21300000L);
+            ability["Data"]["ActionPointCost"] = 0;
+            ability["Data"]["CooldownRounds"] = 5;
+            ability["Data"]["Range"] = "Personal";
+            ability["Data"]["CanTargetPoint"] = false;
+            ability["Data"]["CanTargetEnemies"] = false;
+            ability["Data"]["CanTargetFriends"] = false;
+            ability["Data"]["CanTargetSelf"] = true;
+            ability["Data"]["NotOffensive"] = true;
+            ability["Data"]["Animation"] = "None";
+            ability["Data"]["IsFreeAction"] = true;
+            ability["Data"]["CombatStateRestriction"] = "InCombatOnly";
+            AddOverride(ability, "m_DisplayName");
+            AddOverride(ability, "m_Description");
+            AddOverride(ability, "m_Icon");
+            File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_PowerField_Ability.jbp"), ability.ToString(Formatting.Indented));
+        }
+
+        private static void GenerateSentinelWaveBlueprint()
+        {
+            JObject ability = PrepareClone(Load(SentinelWavePrototype), SentinelWaveAbilityGuid, SentinelWavePrototype);
+            ability["Data"]["m_DisplayName"] = Localized("sentinel-wave-name");
+            ability["Data"]["m_Description"] = Localized("sentinel-wave-desc");
+            ability["Data"]["m_Icon"] = UnityReference(TelekinesisIconGuid, 21300000L);
+            ability["Data"]["Type"] = "Weapon";
+            ability["Data"]["Range"] = "Custom";
+            ability["Data"]["CustomRange"] = 5;
+            ability["Data"]["MinRange"] = 1;
+            ability["Data"]["ActionPointCost"] = 1;
+            ability["Data"]["AbilityParamsSource"] = "Weapon";
+            ability["Data"]["PsychicPower"] = "None";
+            ability["Data"]["VeilThicknessPointsToAdd"] = 0;
+            ability["Data"]["CooldownRounds"] = 0;
+            ability["Data"]["CanTargetEnemies"] = true;
+            ability["Data"]["CanTargetFriends"] = false;
+            ability["Data"]["CanTargetSelf"] = false;
+            ability["Data"]["NotOffensive"] = false;
+            ability["Data"]["Animation"] = "Directional";
+            ability["Data"]["ShouldTurnToTarget"] = true;
+            ability["Data"]["m_AbilityGroups"] = new JArray();
+            // The normal sword attack delivery is deliberately retained. It drives the equipped
+            // weapon's actual melee swing even though this custom attack may target up to 5 cells.
+            ability["Data"]["m_FXSettings"] = "!bp_" + SwordAttackFxGuid;
+            foreach (string property in new[] { "m_DisplayName", "m_Description", "m_Icon", "Type", "Range",
+                "CustomRange", "MinRange", "ActionPointCost", "AbilityParamsSource", "PsychicPower",
+                "VeilThicknessPointsToAdd", "CooldownRounds", "CanTargetEnemies", "CanTargetFriends",
+                "CanTargetSelf", "NotOffensive", "Animation", "ShouldTurnToTarget", "m_AbilityGroups", "m_FXSettings" })
+                AddOverride(ability, property);
+            File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_Wave_Ability.jbp"), ability.ToString(Formatting.Indented));
+        }
+
+        private static JObject SimpleContextValue(int value) => new JObject
+        {
+            ["ValueType"] = "Simple", ["Value"] = value, ["ValueRank"] = "Default",
+            ["ValueShared"] = "Damage", ["Property"] = "None", ["m_CustomProperty"] = null,
+            ["PropertyName"] = "Value1"
+        };
 
         private static JObject Load(string id)
         {
@@ -295,6 +480,11 @@ namespace AstartesCustodes.Editor
             strings["sentinel-sword-name"] = Entry("Sentinel Sword");
             strings["sentinel-sword-desc"] = Entry("A master-crafted power sword of the Adeptus Custodes.");
             strings["sentinel-sword-flavor"] = Entry("A gleaming blade fashioned for the unwavering guardians of the Golden Throne.");
+            strings["sentinel-power-field-name"] = Entry("Activate Power Field");
+            strings["sentinel-power-field-desc"] = Entry("Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +6 additional damage. Cooldown: 5 rounds.");
+            strings["sentinel-power-field-buff-desc"] = Entry("The Sentinel Sword is energised. Its attacks deal +6 additional damage.");
+            strings["sentinel-wave-name"] = Entry("Sentinel Wave");
+            strings["sentinel-wave-desc"] = Entry("Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP.");
             File.WriteAllText(Localization, document.ToString(Formatting.Indented));
         }
 

@@ -82,24 +82,22 @@ MonoBehaviour:
   m_SlotOffsets:
   - Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: -0.2}
+  - Position: {x: 0.04, y: 0.03, z: -0.15}
+    Rotation: {x: 1.75, y: 255.27, z: 266.19}
+  - Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+  - Position: {x: -0.01, y: -0.04, z: -0.11}
+    Rotation: {x: 11.24, y: 90.97, z: 74.2}
+  - Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0}
   - Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: -0.2}
-    Rotation: {x: 0, y: 0, z: 0}
+  - Position: {x: 0.01, y: -0.03, z: -0.12}
+    Rotation: {x: 358.31, y: 95.5, z: 90.41}
   - Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: -0.2}
-    Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: -0.2}
-    Rotation: {x: 0, y: 0, z: 0}
-  - Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0}
+  - Position: {x: -0.06, y: -0.04, z: -0.09}
+    Rotation: {x: 0.91, y: 281.02, z: 276.02}
   - Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0}
   - Position: {x: 0, y: 0, z: 0}
