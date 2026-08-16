@@ -486,6 +486,8 @@ namespace AstartesCustodes.Editor
                 JObject visible = PrepareClone(Load(ImperialStaff), VisibleWeapons[i], ImperialStaff);
                 visible["Data"]["Components"] = new JArray();
                 SetText(visible, $"gs-v{tier}-name", $"gs-v{tier}-desc", "gs-flavor");
+                visible["Data"]["m_TypeNameText"] = Localized("gs-type-name");
+                AddOverride(visible, "m_TypeNameText");
                 SetUnityReference(visible, "m_Icon", iconGuid, iconFileId);
                 visible["Data"]["m_VisualParameters"]["m_WeaponModel"] = UnityReference(prefabGuid, prefabFileId);
                 AddOverride(visible, "m_VisualParameters.m_WeaponModel");
@@ -1051,6 +1053,7 @@ namespace AstartesCustodes.Editor
             JObject strings = new JObject
             {
                 ["gs-flavor"] = Entry("The Guardian Spear is both symbol of office and peerless instrument of the Emperor's judgement."),
+                ["gs-type-name"] = Entry("Guardian Spear"),
                 ["gs-hidden-name"] = Entry("Guardian Spear Hidden Bolter"),
                 ["gs-hidden-desc"] = Entry("Internal ranged profile used by the Guardian Spear."),
                 ["gs-hidden-flavor"] = Entry("Not intended for inventory or loot."),

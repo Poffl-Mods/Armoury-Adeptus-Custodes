@@ -7,6 +7,7 @@
       "m_DisplayName",
       "m_Description",
       "m_FlavorText",
+      "m_TypeNameText",
       "m_Icon",
       "m_VisualParameters.m_WeaponModel",
       "WarhammerDamage",
@@ -210,7 +211,7 @@
     "m_Heaviness": "NotHeavy",
     "CanBeUsedInGame": true,
     "m_TypeNameText": {
-      "m_Key": "",
+      "m_Key": "gs-type-name",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
