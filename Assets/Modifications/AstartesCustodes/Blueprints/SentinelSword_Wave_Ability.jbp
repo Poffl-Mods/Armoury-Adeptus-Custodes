@@ -206,7 +206,7 @@
     "PsychicPower": "None",
     "VeilThicknessPointsToAdd": 0,
     "ParamsSkill": "SkillAthletics",
-    "CooldownRounds": 0,
+    "CooldownRounds": 2,
     "CanTargetPoint": false,
     "CanTargetEnemies": true,
     "CanTargetFriends": false,

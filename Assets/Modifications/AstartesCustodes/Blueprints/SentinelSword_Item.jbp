@@ -13,12 +13,25 @@
       "Classification",
       "m_HoldingType",
       "IsTwoHanded",
+      "WarhammerDamage",
+      "WarhammerMaxDamage",
+      "WarhammerPenetration",
       "m_Enchantments",
       "m_Rarity",
       "CanBeUsedInGame",
       "IsUnlootable",
       "IsNonRemovable",
       "m_IsNotable",
+      "WeaponAbilities.Ability2.Type",
+      "WeaponAbilities.Ability2.Mode",
+      "WeaponAbilities.Ability2.m_Ability",
+      "WeaponAbilities.Ability2.m_FXSettings",
+      "WeaponAbilities.Ability2.AP",
+      "WeaponAbilities.Ability3.Type",
+      "WeaponAbilities.Ability3.Mode",
+      "WeaponAbilities.Ability3.m_Ability",
+      "WeaponAbilities.Ability3.m_FXSettings",
+      "WeaponAbilities.Ability3.AP",
       "WeaponAbilities.Ability4.Type",
       "WeaponAbilities.Ability4.Mode",
       "WeaponAbilities.Ability4.m_Ability",
@@ -33,34 +46,34 @@
     "Components": [
       {
         "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
-        "name": "$AddFactToEquipmentWielder$sentinel-power-field",
+        "name": "$AddFactToEquipmentWielder$sentinel-v1-modifiers",
         "m_Flags": 0,
         "PrototypeLink": {
           "guid": "",
           "name": ""
         },
         "m_Overrides": [],
-        "m_Fact": "!bp_7bd2c146f08a4e5489c991acee473721"
+        "m_Fact": "!bp_a9809b2974f04717b44d20a5e9ec99ed"
       }
     ],
     "Author": "GeorgiiDoronin",
     "Comment": "",
     "m_DisplayName": {
-      "m_Key": "sentinel-sword-name",
+      "m_Key": "sentinel-v1-name",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
       "Shared": null
     },
     "m_Description": {
-      "m_Key": "sentinel-sword-desc",
+      "m_Key": "sentinel-v1-desc",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
       "Shared": null
     },
     "m_Icon": {
-      "guid": "a6cba97367839af4e8869281de029095",
+      "guid": "f430875d43562984c9055e7083ad6fa0",
       "fileid": 21300000
     },
     "m_FlavorText": {
@@ -150,7 +163,7 @@
       "Ability2": {
         "Type": "AOE",
         "Mode": "Default",
-        "m_Ability": "!bp_bac8a9c632934bec87c72fece5831673",
+        "m_Ability": "!bp_eb82eb0ba0de4554a97438190498a90b",
         "m_FXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
@@ -159,7 +172,7 @@
       "Ability3": {
         "Type": "AOE",
         "Mode": "Default",
-        "m_Ability": "!bp_bb3fd8ea6c9e425780be92e054ace715",
+        "m_Ability": "!bp_887833acc8b647caac76c48714fc78b0",
         "m_FXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
@@ -215,9 +228,9 @@
       "Shared": null
     },
     "IsTwoHanded": false,
-    "WarhammerDamage": 12,
-    "WarhammerMaxDamage": 21,
-    "WarhammerPenetration": 25,
+    "WarhammerDamage": 10,
+    "WarhammerMaxDamage": 16,
+    "WarhammerPenetration": 20,
     "DodgePenetration": 0,
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 0,

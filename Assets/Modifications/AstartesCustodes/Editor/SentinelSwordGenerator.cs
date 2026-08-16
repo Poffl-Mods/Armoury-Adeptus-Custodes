@@ -15,9 +15,49 @@ namespace AstartesCustodes.Editor
     internal static class SentinelSwordGenerator
     {
         internal const string WeaponGuid = "94d7497e0b1941c1910a6b29ed8911c2";
+        internal static readonly string[] WeaponGuids =
+        {
+            WeaponGuid, "2a4f993df4414fc58b0a98dca5867182", "716bd961aa6e4b69bf29305ed5898c32",
+            "82ea713354744f8f879d55f53d21e78d", "ca4598d179194496ab44584b22c98761", "ed577626cb164bdebb29849e01bd2ec7"
+        };
+        private static readonly string[] PowerFieldAbilityGuids =
+        {
+            "7bd2c146f08a4e5489c991acee473721", "51bf0ad45c474982acf010915d102be1", "982d06e208d24556ba20d0a419075647",
+            "25a4857bb6604f298311a1d8dc8c92bd", "fac22e7feb624bf9bb01e7ff82e8af1d", "30fa7b9e996d4023adf40267f6a1a7c4"
+        };
+        private static readonly string[] PowerFieldBuffGuids =
+        {
+            "c89d128481df4fe096639d1d7d8c50af", "28eb64168c8c4671955baa5a44705e16", "34847618e4334e45834f6920d35ab8d8",
+            "070cc0ff43ef4e878306311a74eb671c", "8ce9c82a59be41b5bb7a35dded4e4bc8", "98621a4eeef94232a0ba13913de2dde1"
+        };
+        private static readonly string[] ModifierFeatureGuids =
+        {
+            "a9809b2974f04717b44d20a5e9ec99ed", "d72a76bfd6b14741af45b465786ad85c", "70614d41990d46a7acda8035f570d9cc",
+            "d775f0b20bc646428ac1fb44c075b894", "ef38a780b02e4915977a53c9578272af", "32d05afe887748048598d8c7c7868374"
+        };
         internal const string PowerFieldAbilityGuid = "7bd2c146f08a4e5489c991acee473721";
         internal const string PowerFieldBuffGuid = "c89d128481df4fe096639d1d7d8c50af";
         internal const string SentinelWaveAbilityGuid = "641128fea4664f61a734b46f6085ac8e";
+        private static readonly string[] SentinelCleaveAbilityGuids =
+        {
+            "eb82eb0ba0de4554a97438190498a90b", "d38d7b04f24641d59d048afda2dff6c8", "b712356d2ca34478891ff8e55638a2d7",
+            "7283e4ec972d427fac60407aba50eaf2", "d41180db811e44d8beec4eb241db95f1", "1814d159a21f4703b9ce84bbff33bfd2"
+        };
+        private static readonly string[] SentinelOnslaughtAbilityGuids =
+        {
+            "887833acc8b647caac76c48714fc78b0", "0b60557b7eb849ee933825c089745ff1", "0ad616083be647f9a7c304f1cda2d51a",
+            "b69755388d744c238c266b044b1ec495", "bd18e205e85e463c95f8a2ecfd9a897a", "7a4fdb4f9fad4b01ae2f1e0ff79c99eb"
+        };
+        private static readonly string[] CleaveWeaponGuids =
+        {
+            "7221ce8c21604cc997d93a4e200b4f81", "cc11a17b6cda4cf783703fae1db2cba4", "228532198f3541c9bd3a971e6210a02b",
+            "643838107ded47f2a620dac2fc47df89", "e9759ff697e74d7189acc4e7617fd75e", "67fba488997f4f47a87be85fb6307367"
+        };
+        private static readonly string[] OnslaughtWeaponGuids =
+        {
+            "1952402769154ebe9036762b4b03c457", "47a99eb2cc1348a59c4730dc900237f5", "91b3679f8d9e4a1b9a06a44c8d5921bd",
+            "828fb0f2ee0644098cfe04bfea7bd089", "d5fcadd003eb412f859a1880480216bb", "7f7c6e43c9004a05b353b90475bad1e6"
+        };
 
         private const string Root = "Assets/Modifications/AstartesCustodes";
         private const string Art = Root + "/Art";
@@ -25,6 +65,7 @@ namespace AstartesCustodes.Editor
         private const string Localization = Root + "/Localization/enGB.json";
         private const string FbxPath = Art + "/SentinelSword.fbx";
         private const string PrefabPath = Art + "/SentinelSword.prefab";
+        private const string InventoryIconPath = Art + "/SentinelSword_InventoryIcon.png";
         private const string BaseColorPath = Art + "/SentinelSword_BaseColor.png";
         private const string MetallicPath = Art + "/SentinelSword_Metallic.png";
         private const string NormalPath = Art + "/SentinelSword_Normal_Source.png";
@@ -38,12 +79,25 @@ namespace AstartesCustodes.Editor
         private const string PowerFieldAbilityPrototype = "afdae4482b3d4161a75224e8e52e8baf";
         private const string PowerFieldBuffPrototype = "22144723ab574b998e90580b8385a26e";
         private const string SentinelWavePrototype = "9dec1bdade284190b0977f5f70d26d3e";
+        private const string CleavePrototype = "bac8a9c632934bec87c72fece5831673";
+        private const string OnslaughtPrototype = "bb3fd8ea6c9e425780be92e054ace715";
+        private const string DamageModifierReference = "8ee5002b220a42249cd6e0ecd416d451";
+        private const string OverrideWeaponReference = "84c32baad3f14585a32f5747d721dfc3";
         private const string SwordAttackFxGuid = "1bc92b9832fe402caa887d8c5d990cb4";
         private const string TelekinesisIconGuid = "d2db9cd1a850eba4790dac666bad955e";
         // Vanilla Aeldari Force Sword activation: an energy-weapon self-buff icon rather than a caster hand.
         private const string PowerFieldIconGuid = "35279bc29c0d21649ad4157b24b22c7a";
-        // Built-in two-handed sword attack artwork; used temporarily as an unmistakable sword inventory icon.
-        private const string SwordIconGuid = "a6cba97367839af4e8869281de029095";
+        private const string WsModifierReference = "08e144a9788040ea81a99421b5576bc3";
+        private const string ParryModifierReference = "53c19a9468d24539863989b3be9ed1f5";
+        private const string DodgeModifierReference = "96e84143a45d4150b0233b5b58087fd1";
+        private static readonly int[] MinDamage = { 10, 14, 17, 21, 25, 29 };
+        private static readonly int[] MaxDamage = { 16, 20, 25, 30, 36, 41 };
+        private static readonly int[] Penetration = { 20, 20, 25, 25, 30, 35 };
+        private static readonly int[] WeaponSkill = { 2, 4, 6, 8, 10, 12 };
+        private static readonly int[] Parry = { 3, 5, 7, 9, 12, 15 };
+        private static readonly int[] Dodge = { 0, 2, 3, 5, 7, 10 };
+        private static readonly int[] PowerFieldDuration = { 2, 3, 4, 5, 6, 0 };
+        private static readonly int[] PowerFieldDamage = { 12, 14, 16, 18, 20, 22 };
 
         [MenuItem("Astartes Custodes/Generate Sentinel Sword")]
         public static void Generate()
@@ -54,7 +108,7 @@ namespace AstartesCustodes.Editor
             GenerateBlueprint();
             WriteLocalization();
             AssetDatabase.Refresh();
-            Debug.Log("[AstartesCustodes] Sentinel Sword base weapon generated: " + WeaponGuid);
+            Debug.Log("[AstartesCustodes] Sentinel Sword V1-V6 generated.");
         }
 
         private static void GenerateArt()
@@ -242,42 +296,127 @@ namespace AstartesCustodes.Editor
             UnityEngine.Object prefab = AssetDatabase.LoadMainAssetAtPath(PrefabPath);
             if (prefab == null || !AssetDatabase.TryGetGUIDAndLocalFileIdentifier(prefab, out string prefabGuid, out long prefabFileId))
                 throw new InvalidDataException("Sentinel Sword prefab could not be resolved.");
+            UnityEngine.Object inventoryIcon = PrepareInventoryIcon();
+            if (!AssetDatabase.TryGetGUIDAndLocalFileIdentifier(inventoryIcon, out string iconGuid, out long iconFileId))
+                throw new InvalidDataException("Sentinel Sword inventory icon could not be resolved.");
 
-            GeneratePowerFieldBlueprints();
-            GenerateSentinelWaveBlueprint();
-
-            JObject weapon = PrepareClone(Load(PowerSwordPrototype), WeaponGuid, PowerSwordPrototype);
-            weapon["Data"]["Components"] = new JArray
+            JObject overrideWeaponTemplate = (JObject)Load(OverrideWeaponReference)["Data"]["Components"]
+                .Children<JObject>().First(component => component["$type"]?.ToString().Contains("WarhammerOverrideAbilityWeapon") == true).DeepClone();
+            for (int i = 0; i < WeaponGuids.Length; i++)
             {
-                new JObject
-                {
-                    ["$type"] = "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
-                    ["name"] = "$AddFactToEquipmentWielder$sentinel-power-field",
-                    ["m_Flags"] = 0,
-                    ["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" },
-                    ["m_Overrides"] = new JArray(),
-                    ["m_Fact"] = "!bp_" + PowerFieldAbilityGuid
-                }
-            };
-            SetText(weapon, "sentinel-sword-name", "sentinel-sword-desc", "sentinel-sword-flavor");
-            weapon["Data"]["m_Icon"] = UnityReference(SwordIconGuid, 21300000L);
-            AddOverride(weapon, "m_Icon");
-            weapon["Data"]["m_VisualParameters"]["m_WeaponModel"] = UnityReference(prefabGuid, prefabFileId);
-            AddOverride(weapon, "m_VisualParameters.m_WeaponModel");
-            Override(weapon, "Family", "Power");
-            Override(weapon, "Classification", "Sword");
-            Override(weapon, "m_HoldingType", "OneHanded");
-            Override(weapon, "IsTwoHanded", false);
-            Override(weapon, "m_Enchantments", new JArray());
-            Override(weapon, "m_Rarity", "Pattern");
-            Override(weapon, "CanBeUsedInGame", true);
-            Override(weapon, "IsUnlootable", false);
-            Override(weapon, "IsNonRemovable", false);
-            Override(weapon, "m_IsNotable", true);
-            SetWeaponAbility(weapon, "Ability4", "Custom", PowerFieldAbilityGuid, null, 0);
-            SetWeaponAbility(weapon, "Ability5", "Custom", SentinelWaveAbilityGuid, SwordAttackFxGuid, 1);
-            File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_Item.jbp"), weapon.ToString(Formatting.Indented));
+                GenerateHiddenAttackWeapon(i, true);
+                GenerateHiddenAttackWeapon(i, false);
+                GenerateProfiledMeleeAbility(i, true, overrideWeaponTemplate);
+                GenerateProfiledMeleeAbility(i, false, overrideWeaponTemplate);
+                GenerateModifierFeature(i);
+                GeneratePowerFieldBlueprints(i);
+            }
+            GenerateSentinelWaveBlueprint();
+            for (int i = 0; i < WeaponGuids.Length; i++)
+            {
+                int tier = i + 1;
+                JObject weapon = PrepareClone(Load(PowerSwordPrototype), WeaponGuids[i], PowerSwordPrototype);
+                weapon["Data"]["Components"] = new JArray(CreateAddFact(ModifierFeatureGuids[i], $"sentinel-v{tier}-modifiers"));
+                SetText(weapon, $"sentinel-v{tier}-name", $"sentinel-v{tier}-desc", "sentinel-sword-flavor");
+                weapon["Data"]["m_Icon"] = UnityReference(iconGuid, iconFileId);
+                AddOverride(weapon, "m_Icon");
+                weapon["Data"]["m_VisualParameters"]["m_WeaponModel"] = UnityReference(prefabGuid, prefabFileId);
+                AddOverride(weapon, "m_VisualParameters.m_WeaponModel");
+                Override(weapon, "Family", "Power");
+                Override(weapon, "Classification", "Sword");
+                Override(weapon, "m_HoldingType", "OneHanded");
+                Override(weapon, "IsTwoHanded", false);
+                Override(weapon, "WarhammerDamage", MinDamage[i]);
+                Override(weapon, "WarhammerMaxDamage", MaxDamage[i]);
+                Override(weapon, "WarhammerPenetration", Penetration[i]);
+                Override(weapon, "m_Enchantments", new JArray());
+                Override(weapon, "m_Rarity", "Pattern");
+                Override(weapon, "CanBeUsedInGame", true);
+                Override(weapon, "IsUnlootable", false);
+                Override(weapon, "IsNonRemovable", false);
+                Override(weapon, "m_IsNotable", true);
+                SetWeaponAbility(weapon, "Ability2", "AOE", SentinelCleaveAbilityGuids[i], SwordAttackFxGuid, 2);
+                SetWeaponAbility(weapon, "Ability3", "AOE", SentinelOnslaughtAbilityGuids[i], SwordAttackFxGuid, 2);
+                SetWeaponAbility(weapon, "Ability4", "Custom", PowerFieldAbilityGuids[i], null, 0);
+                SetWeaponAbility(weapon, "Ability5", "Custom", SentinelWaveAbilityGuid, SwordAttackFxGuid, 1);
+                string fileName = tier == 1 ? "SentinelSword_Item.jbp" : $"SentinelSword_V{tier}_Item.jbp";
+                File.WriteAllText(Path.Combine(Blueprints, fileName), weapon.ToString(Formatting.Indented));
+            }
         }
+
+        private static UnityEngine.Object PrepareInventoryIcon()
+        {
+            AssetDatabase.ImportAsset(InventoryIconPath, ImportAssetOptions.ForceSynchronousImport);
+            TextureImporter importer = AssetImporter.GetAtPath(InventoryIconPath) as TextureImporter;
+            if (importer == null) throw new InvalidDataException("Sentinel Sword inventory icon importer was not found.");
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.alphaIsTransparency = true;
+            importer.mipmapEnabled = false;
+            importer.textureCompression = TextureImporterCompression.CompressedHQ;
+            importer.SaveAndReimport();
+            return AssetDatabase.LoadAllAssetsAtPath(InventoryIconPath).FirstOrDefault(asset => asset is Sprite)
+                ?? AssetDatabase.LoadMainAssetAtPath(InventoryIconPath);
+        }
+
+        private static void GenerateHiddenAttackWeapon(int i, bool cleave)
+        {
+            int tier = i + 1;
+            int percent = cleave ? 90 : 80;
+            string guid = cleave ? CleaveWeaponGuids[i] : OnslaughtWeaponGuids[i];
+            JObject weapon = PrepareClone(Load(PowerSwordPrototype), guid, PowerSwordPrototype);
+            weapon["Data"]["Components"] = new JArray();
+            weapon["Data"]["m_VisualParameters"]["m_WeaponModel"] = null;
+            AddOverride(weapon, "m_VisualParameters.m_WeaponModel");
+            Override(weapon, "CanBeUsedInGame", false);
+            Override(weapon, "IsUnlootable", true);
+            Override(weapon, "WarhammerDamage", ScaleDamage(MinDamage[i], percent));
+            Override(weapon, "WarhammerMaxDamage", ScaleDamage(MaxDamage[i], percent));
+            Override(weapon, "WarhammerPenetration", Penetration[i]);
+            SetText(weapon, $"sentinel-v{tier}-name", $"sentinel-v{tier}-desc", "sentinel-sword-flavor");
+            string fileName = tier == 1
+                ? $"SentinelSword_Hidden{(cleave ? "Cleave" : "Onslaught")}_Item.jbp"
+                : $"SentinelSword_V{tier}_Hidden{(cleave ? "Cleave" : "Onslaught")}_Item.jbp";
+            File.WriteAllText(Path.Combine(Blueprints, fileName), weapon.ToString(Formatting.Indented));
+        }
+
+        private static int ScaleDamage(int value, int percent) => (value * percent + 50) / 100;
+
+        private static void GenerateProfiledMeleeAbility(int i, bool cleave, JObject overrideTemplate)
+        {
+            int tier = i + 1;
+            string prototype = cleave ? CleavePrototype : OnslaughtPrototype;
+            string guid = cleave ? SentinelCleaveAbilityGuids[i] : SentinelOnslaughtAbilityGuids[i];
+            string hiddenWeapon = cleave ? CleaveWeaponGuids[i] : OnslaughtWeaponGuids[i];
+            JObject ability = PrepareClone(Load(prototype), guid, prototype);
+            JObject overrideWeapon = (JObject)overrideTemplate.DeepClone();
+            overrideWeapon["name"] = $"$WarhammerOverrideAbilityWeapon$sentinel-v{tier}-{(cleave ? "cleave" : "onslaught")}";
+            overrideWeapon["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            overrideWeapon["m_Weapon"] = "!bp_" + hiddenWeapon;
+            overrideWeapon["m_ForceShowWeaponDamageInUi"] = true;
+            ((JArray)ability["Data"]["Components"]).Add(overrideWeapon);
+            AddOverride(ability, overrideWeapon["name"].ToString());
+            ability["Data"]["m_DisplayName"] = Localized(cleave ? "sentinel-cleave-name" : "sentinel-onslaught-name");
+            ability["Data"]["m_Description"] = Localized(cleave ? "sentinel-cleave-desc" : "sentinel-onslaught-desc");
+            ability["Data"]["m_Icon"] = UnityReference(cleave ? "16fd1bbd2c6ab964db8067cbd185a32c" : "8836c5b61879f50448931d4962b0aa88", 21300000L);
+            AddOverride(ability, "m_DisplayName");
+            AddOverride(ability, "m_Description");
+            AddOverride(ability, "m_Icon");
+            string fileName = tier == 1
+                ? $"SentinelSword_{(cleave ? "Cleave" : "Onslaught")}_Ability.jbp"
+                : $"SentinelSword_V{tier}_{(cleave ? "Cleave" : "Onslaught")}_Ability.jbp";
+            File.WriteAllText(Path.Combine(Blueprints, fileName), ability.ToString(Formatting.Indented));
+        }
+
+        private static JObject CreateAddFact(string guid, string name) => new JObject
+        {
+            ["$type"] = "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+            ["name"] = "$AddFactToEquipmentWielder$" + name,
+            ["m_Flags"] = 0,
+            ["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" },
+            ["m_Overrides"] = new JArray(),
+            ["m_Fact"] = "!bp_" + guid
+        };
 
         private static void SetWeaponAbility(JObject weapon, string slotName, string type,
             string abilityGuid, string fxGuid, int ap)
@@ -297,34 +436,43 @@ namespace AstartesCustodes.Editor
             AddOverride(weapon, "WeaponAbilities." + slotName + ".AP");
         }
 
-        private static void GeneratePowerFieldBlueprints()
+        private static void GeneratePowerFieldBlueprints(int i)
         {
-            JObject buff = PrepareClone(Load(PowerFieldBuffPrototype), PowerFieldBuffGuid, PowerFieldBuffPrototype);
+            int tier = i + 1;
+            JObject buff = PrepareClone(Load(PowerFieldBuffPrototype), PowerFieldBuffGuids[i], PowerFieldBuffPrototype);
             JObject damageModifier = buff["Data"]["Components"].Children<JObject>()
                 .First(component => component["$type"]?.ToString().Contains("WarhammerDamageModifierInitiator") == true);
             damageModifier["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
             damageModifier["m_Overrides"] = new JArray();
-            JObject weaponGetter = damageModifier["Restrictions"]?["Property"]?["Getters"]?.Children<JObject>()
-                .First(getter => getter["$type"]?.ToString().Contains("CheckAbilityWeaponBlueprintGetter") == true);
-            weaponGetter["m_Weapon"] = "!bp_" + WeaponGuid;
             JObject flatDamage = (JObject)damageModifier["UnmodifiableFlatDamageModifier"];
             flatDamage["ValueType"] = "Simple";
-            flatDamage["Value"] = 6;
+            flatDamage["Value"] = PowerFieldDamage[i];
             flatDamage["Property"] = "None";
             flatDamage["m_CustomProperty"] = null;
             flatDamage["PropertyName"] = "Value1";
             flatDamage["Enabled"] = true;
-            buff["Data"]["Components"] = new JArray(damageModifier);
+            JArray damageModifiers = new JArray();
+            string[] affectedWeapons = { WeaponGuids[i], CleaveWeaponGuids[i], OnslaughtWeaponGuids[i] };
+            for (int weaponIndex = 0; weaponIndex < affectedWeapons.Length; weaponIndex++)
+            {
+                JObject scopedModifier = (JObject)damageModifier.DeepClone();
+                scopedModifier["name"] = $"$WarhammerDamageModifierInitiator$sentinel-v{tier}-power-field-{weaponIndex}";
+                JObject weaponGetter = scopedModifier["Restrictions"]?["Property"]?["Getters"]?.Children<JObject>()
+                    .First(getter => getter["$type"]?.ToString().Contains("CheckAbilityWeaponBlueprintGetter") == true);
+                weaponGetter["m_Weapon"] = "!bp_" + affectedWeapons[weaponIndex];
+                damageModifiers.Add(scopedModifier);
+            }
+            buff["Data"]["Components"] = damageModifiers;
             buff["Data"]["m_DisplayName"] = Localized("sentinel-power-field-name");
-            buff["Data"]["m_Description"] = Localized("sentinel-power-field-buff-desc");
+            buff["Data"]["m_Description"] = Localized($"sentinel-v{tier}-power-field-buff-desc");
             buff["Data"]["m_Flags"] = 0;
             buff["Data"]["Stacking"] = "Replace";
             buff["Data"]["FxOnStart"] = new JObject { ["AssetId"] = "cf6b6016a28a1bb42aef4576da77ebb4" };
             AddOverride(buff, "m_DisplayName");
             AddOverride(buff, "m_Description");
-            File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_PowerField_Buff.jbp"), buff.ToString(Formatting.Indented));
+            File.WriteAllText(Path.Combine(Blueprints, tier == 1 ? "SentinelSword_PowerField_Buff.jbp" : $"SentinelSword_V{tier}_PowerField_Buff.jbp"), buff.ToString(Formatting.Indented));
 
-            JObject ability = PrepareClone(Load(PowerFieldAbilityPrototype), PowerFieldAbilityGuid, PowerFieldAbilityPrototype);
+            JObject ability = PrepareClone(Load(PowerFieldAbilityPrototype), PowerFieldAbilityGuids[i], PowerFieldAbilityPrototype);
             ability["Data"]["Components"] = new JArray
             {
                 new JObject
@@ -343,13 +491,13 @@ namespace AstartesCustodes.Editor
                             {
                                 ["$type"] = "5d13a597de91e4746b804f8233518523, ContextActionApplyBuff",
                                 ["name"] = "$ContextActionApplyBuff$sentinel-power-field",
-                                ["m_Buff"] = "!bp_" + PowerFieldBuffGuid,
+                                ["m_Buff"] = "!bp_" + PowerFieldBuffGuids[i],
                                 ["BuffEndCondition"] = "CombatEnd",
-                                ["Permanent"] = false,
+                                ["Permanent"] = i == 5,
                                 ["DurationValue"] = new JObject
                                 {
                                     ["BonusValue"] = SimpleContextValue(0),
-                                    ["RoundsValue"] = SimpleContextValue(4)
+                                    ["RoundsValue"] = SimpleContextValue(PowerFieldDuration[i])
                                 },
                                 ["ToCaster"] = true,
                                 ["AsChild"] = false,
@@ -364,10 +512,10 @@ namespace AstartesCustodes.Editor
                 }
             };
             ability["Data"]["m_DisplayName"] = Localized("sentinel-power-field-name");
-            ability["Data"]["m_Description"] = Localized("sentinel-power-field-desc");
+            ability["Data"]["m_Description"] = Localized($"sentinel-v{tier}-power-field-desc");
             ability["Data"]["m_Icon"] = UnityReference(PowerFieldIconGuid, 21300000L);
             ability["Data"]["ActionPointCost"] = 0;
-            ability["Data"]["CooldownRounds"] = 5;
+            ability["Data"]["CooldownRounds"] = 7;
             ability["Data"]["Range"] = "Personal";
             ability["Data"]["CanTargetPoint"] = false;
             ability["Data"]["CanTargetEnemies"] = false;
@@ -380,7 +528,48 @@ namespace AstartesCustodes.Editor
             AddOverride(ability, "m_DisplayName");
             AddOverride(ability, "m_Description");
             AddOverride(ability, "m_Icon");
-            File.WriteAllText(Path.Combine(Blueprints, "SentinelSword_PowerField_Ability.jbp"), ability.ToString(Formatting.Indented));
+            File.WriteAllText(Path.Combine(Blueprints, tier == 1 ? "SentinelSword_PowerField_Ability.jbp" : $"SentinelSword_V{tier}_PowerField_Ability.jbp"), ability.ToString(Formatting.Indented));
+        }
+
+        private static void GenerateModifierFeature(int i)
+        {
+            int tier = i + 1;
+            JObject feature = PrepareClone(Load(WsModifierReference), ModifierFeatureGuids[i], WsModifierReference);
+            feature["Meta"]["ShadowDeleted"] = false;
+            JArray components = new JArray();
+            JObject ws = CloneComponent(WsModifierReference, "AddStatBonus", $"$AddStatBonus$sentinel-v{tier}-ws");
+            ws["Stat"] = "WarhammerWeaponSkill";
+            ws["Value"] = WeaponSkill[i];
+            components.Add(ws);
+            JObject parry = CloneComponent(ParryModifierReference, "WarhammerParryChanceModifierDefender", $"$WarhammerParryChanceModifierDefender$sentinel-v{tier}");
+            parry["Restrictions"]["Property"]["Getters"] = new JArray();
+            parry["ParryChance"]["Value"] = Parry[i];
+            components.Add(parry);
+            if (Dodge[i] > 0)
+            {
+                JObject dodge = CloneComponent(DodgeModifierReference, "WarhammerDodgeChanceModifierDefender", $"$WarhammerDodgeChanceModifierDefender$sentinel-v{tier}");
+                dodge["Restrictions"]["Property"]["Getters"] = new JArray();
+                dodge["DodgeChance"]["Value"] = Dodge[i];
+                dodge["PercentDodgeModifier"] = false;
+                components.Add(dodge);
+            }
+            feature["Data"]["Components"] = components;
+            feature["Data"]["m_DisplayName"] = Localized($"sentinel-v{tier}-modifier-name");
+            feature["Data"]["m_Description"] = Localized($"sentinel-v{tier}-modifier-desc");
+            feature["Data"]["HideInUI"] = false;
+            feature["Data"]["HideInCharacterSheetAndLevelUp"] = true;
+            foreach (string property in new[] { "m_DisplayName", "m_Description", "HideInUI", "HideInCharacterSheetAndLevelUp" }) AddOverride(feature, property);
+            File.WriteAllText(Path.Combine(Blueprints, $"SentinelSword_V{tier}_Modifiers_Feature.jbp"), feature.ToString(Formatting.Indented));
+        }
+
+        private static JObject CloneComponent(string blueprintId, string typeName, string name)
+        {
+            JObject component = (JObject)Load(blueprintId)["Data"]["Components"].Children<JObject>()
+                .First(item => item["$type"]?.ToString().Contains(typeName) == true).DeepClone();
+            component["name"] = name;
+            component["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            component["m_Overrides"] = new JArray();
+            return component;
         }
 
         private static void GenerateSentinelWaveBlueprint()
@@ -397,7 +586,7 @@ namespace AstartesCustodes.Editor
             ability["Data"]["AbilityParamsSource"] = "Weapon";
             ability["Data"]["PsychicPower"] = "None";
             ability["Data"]["VeilThicknessPointsToAdd"] = 0;
-            ability["Data"]["CooldownRounds"] = 0;
+            ability["Data"]["CooldownRounds"] = 2;
             ability["Data"]["CanTargetEnemies"] = true;
             ability["Data"]["CanTargetFriends"] = false;
             ability["Data"]["CanTargetSelf"] = false;
@@ -477,15 +666,38 @@ namespace AstartesCustodes.Editor
             JObject document = File.Exists(Localization) ? JObject.Parse(File.ReadAllText(Localization)) : new JObject();
             JObject strings = document["strings"] as JObject ?? new JObject();
             document["strings"] = strings;
-            strings["sentinel-sword-name"] = Entry("Sentinel Sword");
-            strings["sentinel-sword-desc"] = Entry("A master-crafted power sword of the Adeptus Custodes.");
+            AddLocalizationEntries(strings);
+            File.WriteAllText(Localization, document.ToString(Formatting.Indented));
+        }
+
+        internal static void AddLocalizationEntries(JObject strings)
+        {
+            string[] sentinelSwordNames =
+            {
+                "Custodian's Edge", "Auric Talon", "Praetorian's Answer",
+                "Blade of the Ten Thousand", "Judgement of Terra", "The Emperor's Final Decree"
+            };
             strings["sentinel-sword-flavor"] = Entry("A gleaming blade fashioned for the unwavering guardians of the Golden Throne.");
             strings["sentinel-power-field-name"] = Entry("Activate Power Field");
-            strings["sentinel-power-field-desc"] = Entry("Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +6 additional damage. Cooldown: 5 rounds.");
-            strings["sentinel-power-field-buff-desc"] = Entry("The Sentinel Sword is energised. Its attacks deal +6 additional damage.");
             strings["sentinel-wave-name"] = Entry("Sentinel Wave");
-            strings["sentinel-wave-desc"] = Entry("Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP.");
-            File.WriteAllText(Localization, document.ToString(Formatting.Indented));
+            strings["sentinel-wave-desc"] = Entry("Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP. Cooldown: 2 rounds.");
+            strings["sentinel-cleave-name"] = Entry("Cleave");
+            strings["sentinel-cleave-desc"] = Entry("Sweep the Sentinel Sword through several enemies. Deals 90% of the weapon's Strike damage.");
+            strings["sentinel-onslaught-name"] = Entry("Onslaught");
+            strings["sentinel-onslaught-desc"] = Entry("Unleash a wide, powerful sweep. Deals 80% of the weapon's Strike damage.");
+            for (int i = 0; i < 6; i++)
+            {
+                int tier = i + 1;
+                string levels = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
+                string duration = tier == 6 ? "until combat ends" : $"for {PowerFieldDuration[i]} rounds";
+                string dodge = Dodge[i] > 0 ? $"\n• +{Dodge[i]}% dodge chance" : "";
+                strings[$"sentinel-v{tier}-name"] = Entry(sentinelSwordNames[i]);
+                strings[$"sentinel-v{tier}-desc"] = Entry($"A master-crafted Custodes power sword.\n\n• Levels: {levels}\n• Power Field: +{PowerFieldDamage[i]} damage {duration}\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +{WeaponSkill[i]} Weapon Skill\n• +{Parry[i]}% parry chance{dodge}");
+                strings[$"sentinel-v{tier}-modifier-name"] = Entry($"{sentinelSwordNames[i]} Mastery");
+                strings[$"sentinel-v{tier}-modifier-desc"] = Entry($"While equipped:\n• +{WeaponSkill[i]} Weapon Skill\n• +{Parry[i]}% parry chance{dodge}");
+                strings[$"sentinel-v{tier}-power-field-desc"] = Entry($"Activates the Sentinel Sword's power field {duration}. Attacks made with this weapon deal +{PowerFieldDamage[i]} additional damage. Cooldown: 7 rounds.");
+                strings[$"sentinel-v{tier}-power-field-buff-desc"] = Entry($"The Sentinel Sword is energised. Its attacks deal +{PowerFieldDamage[i]} additional damage.");
+            }
         }
 
         private static JObject Entry(string text) => new JObject { ["Offset"] = 0, ["Text"] = text };

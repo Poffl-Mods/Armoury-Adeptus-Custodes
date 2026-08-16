@@ -1,0 +1,205 @@
+{
+  "AssetId": "643838107ded47f2a620dac2fc47df89",
+  "Data": {
+    "$type": "c00f723cccf2d314198c42a572c631fd, BlueprintItemWeapon",
+    "PrototypeLink": "c431fcd14b45453e8fea6b2b4186778d",
+    "m_Overrides": [
+      "m_VisualParameters.m_WeaponModel",
+      "CanBeUsedInGame",
+      "IsUnlootable",
+      "WarhammerDamage",
+      "WarhammerMaxDamage",
+      "WarhammerPenetration",
+      "m_DisplayName",
+      "m_Description",
+      "m_FlavorText"
+    ],
+    "Components": [],
+    "Author": "GeorgiiDoronin",
+    "Comment": "",
+    "m_DisplayName": {
+      "m_Key": "sentinel-v4-name",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_Description": {
+      "m_Key": "sentinel-v4-desc",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_Icon": null,
+    "m_FlavorText": {
+      "m_Key": "sentinel-sword-flavor",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_NonIdentifiedNameText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_NonIdentifiedDescriptionText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_NotStackable": false,
+    "m_Weight": 0.0,
+    "m_Origin": "MeleeWeaponry",
+    "m_Rarity": "Unique",
+    "m_Tag": "None",
+    "m_IsNotable": false,
+    "m_ProfitFactorCost": 0.0,
+    "m_CargoVolumePercent": 20,
+    "m_InventoryPutSound": "UI_INV_Power_Put_Play",
+    "m_InventoryTakeSound": "UI_INV_Power_Take_Play",
+    "ToCargoAutomatically": false,
+    "ItemLevel": 0,
+    "SpendCharges": false,
+    "Charges": 1,
+    "RestoreChargesAfterCombat": false,
+    "IsNonRemovable": false,
+    "IsUnlootable": true,
+    "m_EquipmentEntity": null,
+    "m_EquipmentEntityAlternatives": [],
+    "m_ForcedRampColorPresetIndex": -1,
+    "m_VisualParameters": {
+      "m_WeaponAnimationStyle": "BrutalOneHanded",
+      "m_SpecialAnimation": "None",
+      "m_BurstAnimationDelay": 0.0,
+      "m_WeaponModel": null,
+      "m_WeaponBeltModelOverride": null,
+      "m_WeaponSheathModelOverride": null,
+      "m_SoundSize": "Medium",
+      "m_SoundType": "SlashMetal",
+      "m_SoundSizeSwitch": {
+        "Value": "Medium",
+        "Group": "WeaponSize"
+      },
+      "m_SoundTypeSwitch": {
+        "Value": "Power",
+        "Group": "ProjectileType"
+      },
+      "m_MuffledTypeSwitch": {
+        "Value": "",
+        "Group": ""
+      },
+      "m_MissSoundType": "None",
+      "m_EquipSound": "Foley_WP_M_PowerSword_Equip_Play",
+      "m_UnequipSound": "Foley_WP_M_PowerSword_Remove_Play",
+      "m_OutOfAmmoSound": "",
+      "m_InventoryEquipSound": "UI_INV_Power_Equip_Play",
+      "m_InventoryPutSound": "UI_INV_Power_Put_Play",
+      "m_InventoryTakeSound": "UI_INV_Power_Take_Play"
+    },
+    "m_OnHitActions": null,
+    "AbilityContainer": {
+      "Ability1": {
+        "Type": "SingleShot",
+        "Mode": "Default",
+        "m_Ability": "!bp_9dec1bdade284190b0977f5f70d26d3e",
+        "m_FXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 1
+      },
+      "Ability2": {
+        "Type": "AOE",
+        "Mode": "Default",
+        "m_Ability": "!bp_bac8a9c632934bec87c72fece5831673",
+        "m_FXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 2
+      },
+      "Ability3": {
+        "Type": "AOE",
+        "Mode": "Default",
+        "m_Ability": "!bp_bb3fd8ea6c9e425780be92e054ace715",
+        "m_FXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 2
+      },
+      "Ability4": {
+        "Type": "None",
+        "Mode": "Default",
+        "m_Ability": null,
+        "m_FXSettings": null,
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 0
+      },
+      "Ability5": {
+        "Type": "None",
+        "Mode": "Default",
+        "m_Ability": null,
+        "m_FXSettings": null,
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 0
+      }
+    },
+    "m_AttackOfOpportunityAbility": "!bp_9dec1bdade284190b0977f5f70d26d3e",
+    "m_AttackOfOpportunityAbilityFXSettings": "!bp_1bc92b9832fe402caa887d8c5d990cb4",
+    "Category": "Melee",
+    "Family": "Power",
+    "Classification": "Sword",
+    "m_HoldingType": "OneHanded",
+    "m_Range": "Melee",
+    "m_Heaviness": "NotHeavy",
+    "CanBeUsedInGame": false,
+    "m_TypeNameText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_DefaultNameText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_DescriptionText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "IsTwoHanded": false,
+    "WarhammerDamage": 19,
+    "WarhammerMaxDamage": 27,
+    "WarhammerPenetration": 25,
+    "DodgePenetration": 0,
+    "AdditionalHitChance": 0,
+    "WarhammerRecoil": 0,
+    "WarhammerMaxDistance": 1,
+    "WarhammerMaxAmmo": -1,
+    "RateOfFire": 0,
+    "m_Enchantments": [
+      "!bp_800d7bc0c93b46cea5716353cea78748"
+    ],
+    "m_DamageType": {
+      "Type": "Power"
+    },
+    "m_IsNatural": false,
+    "m_DamageStatBonusFactor": "One"
+  },
+  "Meta": {
+    "ShadowDeleted": false
+  }
+}

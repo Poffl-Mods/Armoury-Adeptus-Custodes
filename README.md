@@ -16,7 +16,7 @@ enable **Armoury: Adeptus Custodes**.
 
 ## Current version
 
-`1.0.23`
+`1.1.0`
 
 ## Obtaining the Guardian Spear
 

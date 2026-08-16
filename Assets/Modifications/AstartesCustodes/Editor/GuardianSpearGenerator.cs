@@ -1053,6 +1053,11 @@ namespace AstartesCustodes.Editor
 
         private static void WriteLocalization()
         {
+            string[] guardianSpearNames =
+            {
+                "Custodian's Vigil", "Auric Watch", "Praetorian's Oath",
+                "Wrath of the Ten Thousand", "Voice of the Golden Throne", "The Emperor's Vengeance"
+            };
             JObject strings = new JObject
             {
                 ["gs-flavor"] = Entry("The Guardian Spear is both symbol of office and peerless instrument of the Emperor's judgement."),
@@ -1079,7 +1084,7 @@ namespace AstartesCustodes.Editor
             {
                 int tier = i + 1;
                 string levelRange = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
-                strings[$"gs-v{tier}-name"] = Entry($"Guardian Spear V{tier}");
+                strings[$"gs-v{tier}-name"] = Entry(guardianSpearNames[i]);
                 strings[$"gs-v{tier}-desc"] = Entry(
                     $"A master-crafted Custodes hybrid weapon.\n\n" +
                     $"• Levels: {levelRange}\n" +
@@ -1102,6 +1107,7 @@ namespace AstartesCustodes.Editor
                 strings[$"gs-v{tier}-cleave-desc"] = Entry(
                     $"Sweep the Guardian Spear through a wide area for {CleaveMin[i]}-{CleaveMax[i]} damage and {CleavePen[i]}% armour penetration.");
             }
+            SentinelSwordGenerator.AddLocalizationEntries(strings);
             File.WriteAllText(Path.Combine(Root, "Localization", "enGB.json"),
                 new JObject { ["strings"] = strings }.ToString(Formatting.Indented));
         }

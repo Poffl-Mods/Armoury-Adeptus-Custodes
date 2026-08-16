@@ -39,7 +39,7 @@
                 },
                 "RoundsValue": {
                   "ValueType": "Simple",
-                  "Value": 4,
+                  "Value": 2,
                   "ValueRank": "Default",
                   "ValueShared": "Damage",
                   "Property": "None",
@@ -81,7 +81,7 @@
       "Shared": null
     },
     "m_Description": {
-      "m_Key": "sentinel-power-field-desc",
+      "m_Key": "sentinel-v1-power-field-desc",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
@@ -101,7 +101,7 @@
     "PsychicPower": "Minor",
     "VeilThicknessPointsToAdd": 1,
     "ParamsSkill": "SkillAthletics",
-    "CooldownRounds": 5,
+    "CooldownRounds": 7,
     "CanTargetPoint": false,
     "CanTargetEnemies": false,
     "CanTargetFriends": false,
