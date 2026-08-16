@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   Manifest:
     UniqueName: AstartesCustodes
-    Version: 0.1.18
-    DisplayName: Guardian Spear Prototype
-    Description: Minimal hybrid melee and bolter weapon proof of concept.
+    Version: 1.0.0
+    DisplayName: 'Armoury: Adeptus Custodes'
+    Description: Master-crafted weapons and wargear of the Adeptus Custodes.
     Author: Poffl
-    Repository:
-    HomePage:
+    Repository: https://github.com/Poffl-Mods/Armoury-Adeptus-Custodes
+    HomePage: https://github.com/Poffl-Mods/Armoury-Adeptus-Custodes
     Dependencies:
   Settings:
     RelativeThumbnailPath:

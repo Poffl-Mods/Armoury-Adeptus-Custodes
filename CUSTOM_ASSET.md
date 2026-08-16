@@ -172,7 +172,8 @@ The existing blueprint GUIDs and proven combat architecture are unchanged. Only
 
 The visible weapon remains melee, `GuardianSpear_HiddenBolter_Item` remains the actual ranged
 profile, and `GuardianSpear_BoltShot_Ability` still uses `WarhammerOverrideAbilityWeapon`, the
-existing Bolt projectile/VFX/sound, and `AbilityAmmoLogic.NoAmmoRequired`.
+existing Bolt projectile/VFX/sound. Version 0.1.22 enables normal ammunition consumption and reloads
+from the visible Guardian Spear's 18-round magazine.
 
 ## Asset files
 
@@ -305,8 +306,9 @@ offhand use; main-hand support would require a future optional Deathwatch compat
   must be confirmed in-game.
 - Deathwatch mainhand remains intentionally unsupported by Deathwatch's own slot rule.
 
-CUSTOM GUARDIAN SPEAR: PARTIAL SUCCESS
+CUSTOM GUARDIAN SPEAR: VERIFIED
 
-The original custom mesh, Owlcat/Lit materials, standalone prefab, correct bolter locator group,
-race scaling and updated installable build are complete. Final success requires the requested live
-verification of attachment/orientation and that projectile/muzzle FX resolve to the new locator.
+The original custom mesh, Owlcat/Lit materials, standalone prefab, bolter locator group, race
+scaling, attachment/orientation and projectile/muzzle FX have been verified in game. Version 0.1.21
+completes the weapon feature set with Guardian Cleave, Bolt Burst, vanilla attack icons and dedicated
+greatsword-cleave plus horizontal bolter aiming animation paths.

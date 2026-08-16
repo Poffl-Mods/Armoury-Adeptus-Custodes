@@ -1,16 +1,8 @@
 {
   "strings": {
-    "gs-name": {
-      "Offset": 0,
-      "Text": "Guardian Spear Prototype"
-    },
-    "gs-desc": {
-      "Offset": 0,
-      "Text": "A proof-of-concept polearm with a separate integrated bolt weapon profile. Provides a melee strike and Bolt Shot."
-    },
     "gs-flavor": {
       "Offset": 0,
-      "Text": "Prototype wargear for hybrid-weapon testing."
+      "Text": "The Guardian Spear is both symbol of office and peerless instrument of the Emperor's judgement."
     },
     "gs-hidden-name": {
       "Offset": 0,
@@ -18,9 +10,21 @@
     },
     "gs-hidden-desc": {
       "Offset": 0,
-      "Text": "Internal ranged profile used by Guardian Spear Bolt Shot."
+      "Text": "Internal ranged profile used by the Guardian Spear."
     },
     "gs-hidden-flavor": {
+      "Offset": 0,
+      "Text": "Not intended for inventory or loot."
+    },
+    "gs-hidden-cleave-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear Hidden Greatsword"
+    },
+    "gs-hidden-cleave-desc": {
+      "Offset": 0,
+      "Text": "Internal melee profile used to select the two-handed sword cleave animation."
+    },
+    "gs-hidden-cleave-flavor": {
       "Offset": 0,
       "Text": "Not intended for inventory or loot."
     },
@@ -28,9 +32,181 @@
       "Offset": 0,
       "Text": "Bolt Shot"
     },
-    "gs-shot-desc": {
+    "gs-cleave-name": {
       "Offset": 0,
-      "Text": "Fire the Guardian Spear's integrated bolter using its hidden ranged weapon profile."
+      "Text": "Guardian Cleave"
+    },
+    "gs-burst-name": {
+      "Offset": 0,
+      "Text": "Bolt Burst"
+    },
+    "gs-v1-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V1"
+    },
+    "gs-v1-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 1-9\n• Bolt Burst: 3 shots\n• Magazine: 9 rounds\n\nModifiers while equipped:\n• +2 Weapon Skill\n• +2 Ballistic Skill\n• +2% parry chance\n• +2% critical hit chance\n• +5% critical damage"
+    },
+    "gs-v1-modifier-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V1 Mastery"
+    },
+    "gs-v1-modifier-desc": {
+      "Offset": 0,
+      "Text": "+2 Weapon Skill, +2 Ballistic Skill, +2% parry chance, +2% critical hit chance and +5% critical damage."
+    },
+    "gs-v1-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire one precise bolt for 16-22 damage and 15% armour penetration. Magazine: 9 rounds."
+    },
+    "gs-v1-burst-desc": {
+      "Offset": 0,
+      "Text": "Fire 3 bolts, each dealing 10-14 damage with 10% armour penetration. Consumes 3 of 9 rounds."
+    },
+    "gs-v1-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Guardian Spear through a wide area for 14-20 damage and 10% armour penetration."
+    },
+    "gs-v2-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V2"
+    },
+    "gs-v2-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 10-19\n• Bolt Burst: 4 shots\n• Magazine: 12 rounds\n\nModifiers while equipped:\n• +4 Weapon Skill\n• +4 Ballistic Skill\n• +4% parry chance\n• +4% critical hit chance\n• +10% critical damage"
+    },
+    "gs-v2-modifier-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V2 Mastery"
+    },
+    "gs-v2-modifier-desc": {
+      "Offset": 0,
+      "Text": "+4 Weapon Skill, +4 Ballistic Skill, +4% parry chance, +4% critical hit chance and +10% critical damage."
+    },
+    "gs-v2-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire one precise bolt for 20-27 damage and 20% armour penetration. Magazine: 12 rounds."
+    },
+    "gs-v2-burst-desc": {
+      "Offset": 0,
+      "Text": "Fire 4 bolts, each dealing 12-17 damage with 12% armour penetration. Consumes 4 of 12 rounds."
+    },
+    "gs-v2-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Guardian Spear through a wide area for 18-25 damage and 15% armour penetration."
+    },
+    "gs-v3-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V3"
+    },
+    "gs-v3-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 20-29\n• Bolt Burst: 5 shots\n• Magazine: 15 rounds\n\nModifiers while equipped:\n• +6 Weapon Skill\n• +6 Ballistic Skill\n• +6% parry chance\n• +6% critical hit chance\n• +15% critical damage"
+    },
+    "gs-v3-modifier-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V3 Mastery"
+    },
+    "gs-v3-modifier-desc": {
+      "Offset": 0,
+      "Text": "+6 Weapon Skill, +6 Ballistic Skill, +6% parry chance, +6% critical hit chance and +15% critical damage."
+    },
+    "gs-v3-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire one precise bolt for 24-32 damage and 25% armour penetration. Magazine: 15 rounds."
+    },
+    "gs-v3-burst-desc": {
+      "Offset": 0,
+      "Text": "Fire 5 bolts, each dealing 14-19 damage with 15% armour penetration. Consumes 5 of 15 rounds."
+    },
+    "gs-v3-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Guardian Spear through a wide area for 22-30 damage and 20% armour penetration."
+    },
+    "gs-v4-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V4"
+    },
+    "gs-v4-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 30-39\n• Bolt Burst: 6 shots\n• Magazine: 18 rounds\n\nModifiers while equipped:\n• +8 Weapon Skill\n• +8 Ballistic Skill\n• +8% parry chance\n• +9% critical hit chance\n• +20% critical damage"
+    },
+    "gs-v4-modifier-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V4 Mastery"
+    },
+    "gs-v4-modifier-desc": {
+      "Offset": 0,
+      "Text": "+8 Weapon Skill, +8 Ballistic Skill, +8% parry chance, +9% critical hit chance and +20% critical damage."
+    },
+    "gs-v4-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire one precise bolt for 29-39 damage and 30% armour penetration. Magazine: 18 rounds."
+    },
+    "gs-v4-burst-desc": {
+      "Offset": 0,
+      "Text": "Fire 6 bolts, each dealing 16-22 damage with 18% armour penetration. Consumes 6 of 18 rounds."
+    },
+    "gs-v4-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Guardian Spear through a wide area for 27-36 damage and 25% armour penetration."
+    },
+    "gs-v5-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V5"
+    },
+    "gs-v5-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 40-49\n• Bolt Burst: 8 shots\n• Magazine: 24 rounds\n\nModifiers while equipped:\n• +10 Weapon Skill\n• +10 Ballistic Skill\n• +10% parry chance\n• +12% critical hit chance\n• +25% critical damage"
+    },
+    "gs-v5-modifier-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V5 Mastery"
+    },
+    "gs-v5-modifier-desc": {
+      "Offset": 0,
+      "Text": "+10 Weapon Skill, +10 Ballistic Skill, +10% parry chance, +12% critical hit chance and +25% critical damage."
+    },
+    "gs-v5-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire one precise bolt for 34-46 damage and 35% armour penetration. Magazine: 24 rounds."
+    },
+    "gs-v5-burst-desc": {
+      "Offset": 0,
+      "Text": "Fire 8 bolts, each dealing 18-25 damage with 20% armour penetration. Consumes 8 of 24 rounds."
+    },
+    "gs-v5-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Guardian Spear through a wide area for 31-42 damage and 30% armour penetration."
+    },
+    "gs-v6-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V6"
+    },
+    "gs-v6-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 50-55\n• Bolt Burst: 9 shots\n• Magazine: 27 rounds\n\nModifiers while equipped:\n• +12 Weapon Skill\n• +12 Ballistic Skill\n• +10% parry chance\n• +15% critical hit chance\n• +30% critical damage"
+    },
+    "gs-v6-modifier-name": {
+      "Offset": 0,
+      "Text": "Guardian Spear V6 Mastery"
+    },
+    "gs-v6-modifier-desc": {
+      "Offset": 0,
+      "Text": "+12 Weapon Skill, +12 Ballistic Skill, +10% parry chance, +15% critical hit chance and +30% critical damage."
+    },
+    "gs-v6-shot-desc": {
+      "Offset": 0,
+      "Text": "Fire one precise bolt for 39-52 damage and 40% armour penetration. Magazine: 27 rounds."
+    },
+    "gs-v6-burst-desc": {
+      "Offset": 0,
+      "Text": "Fire 9 bolts, each dealing 20-28 damage with 25% armour penetration. Consumes 9 of 27 rounds."
+    },
+    "gs-v6-cleave-desc": {
+      "Offset": 0,
+      "Text": "Sweep the Guardian Spear through a wide area for 35-48 damage and 35% armour penetration."
     }
   }
 }

@@ -21,22 +21,108 @@ namespace AstartesCustodes.Editor
         internal const string VisibleWeapon = "69a10b7bc7a94c5cb59cd91a6d88d160";
         internal const string HiddenBolter = "94fb9c35f58b4442bb7b17f660257f2f";
         internal const string BoltShot = "747e419a3f9c43579f51b27f41e88b35";
+        internal const string GuardianCleave = "b3d51e80873c49f49422eab82db9f720";
+        internal const string BoltBurst = "c4e65f9139c74d54bc08a87caf2bb381";
+        internal const string HiddenGreatsword = "d5f76a024ca14d6096e30c499cef65bd";
+
+        internal static readonly string[] VisibleWeapons =
+        {
+            VisibleWeapon,
+            "57fe8f5911961a2f7520902d00a08ade", "daa6cb6d22409135822d23800e71f1ea",
+            "db7158b0a3ab06fef59f60cb255d3b20", "6e3e198f6446b1a9de3fea683517ff69",
+            "bdb166b828685110dff677d0791a0bda"
+        };
+
+        private static readonly string[] ModifierFeatures =
+        {
+            "519fe85173c3595b07859de2cc158124", "07aa1e1bf5ed1a1400b34bcc0d9f47b3",
+            "d238ae6890c99240222096be32f7f31d", "e678600653fa97bbfa0b727460ebc52b",
+            "881cf5d2d7e98b244f23058eb3702b50", "20a770c998480071f610d85512f34f17"
+        };
+
+        private static readonly string[] ShotWeapons =
+        {
+            HiddenBolter, "0f1b7d2083022685087e217c044f7e3d", "3d237ad1c3263c675fc9fef021246b3d",
+            "117f98476e6f9f6b46279a74081c8a29", "0d1d51e21faee51aeed6928f5cd86a3b", "fc2f348879869b5ba90c0770c09b1eff"
+        };
+
+        private static readonly string[] BurstWeapons =
+        {
+            "544db66481a2b732d51b78e729260497", "7909dd4d12cea19143aa387b3c33ffdb",
+            "9c8c4d5b1dcb0615e31af9950b33246d", "5938060c531f777c7c486e0c3060f75b",
+            "f33889f768f0f3529651c6e2634a94f2", "27ddcc5b2797a73d692c6c0a7520eb1c"
+        };
+
+        private static readonly string[] CleaveWeapons =
+        {
+            HiddenGreatsword, "30728bf7306aa8120d0fd12705dac801", "0ce27ad62fabf27d98ea8e9abb561ebf",
+            "b5c1a56d7b092cef49a12ef54609e432", "849473385df21a63a38080412cf67cd8", "7f196f35e9547126748fc8cd8b4705f6"
+        };
+
+        private static readonly string[] ShotAbilities =
+        {
+            BoltShot, "5986262441d6940a7ba74e7199b17222", "728e8542d63b078a690053d7bf9805f7",
+            "a6c669d9e59ac497dbdd5d87f4f1c5c1", "f8f4c3ee58372fb4ac8c365577b43af9", "e2d02670d099362458097355bf04adb4"
+        };
+
+        private static readonly string[] BurstAbilities =
+        {
+            BoltBurst, "c7c3a20b3589b3c6fe4829a670e1a917", "e3b3153d60971a366702b2cd235743b1",
+            "bd48e166afa8ec7d8747d67ce9f4ba90", "c4636e1c3018bbaf41f8b82d32b37593", "b277a41d4a5beb42441122718a5816bc"
+        };
+
+        private static readonly string[] CleaveAbilities =
+        {
+            GuardianCleave, "176b12672fe98baedf3fcfc2421e651d", "e7a59c6b5ac8130e6dfefd3eaddcde2f",
+            "dacd5e8fb259493f316cedf8542e44af", "8b84cfa49fc46904e048762dd69febb5", "95b48767dabd6a13281c7dccd72db4df"
+        };
+
+        private static readonly int[] MeleeMin = { 18, 22, 27, 32, 37, 42 };
+        private static readonly int[] MeleeMax = { 24, 30, 36, 43, 50, 57 };
+        private static readonly int[] MeleePen = { 15, 20, 25, 30, 35, 40 };
+        private static readonly int[] CleaveMin = { 14, 18, 22, 27, 31, 35 };
+        private static readonly int[] CleaveMax = { 20, 25, 30, 36, 42, 48 };
+        private static readonly int[] CleavePen = { 10, 15, 20, 25, 30, 35 };
+        private static readonly int[] ShotMin = { 16, 20, 24, 29, 34, 39 };
+        private static readonly int[] ShotMax = { 22, 27, 32, 39, 46, 52 };
+        private static readonly int[] ShotPen = { 15, 20, 25, 30, 35, 40 };
+        private static readonly int[] BurstMin = { 10, 12, 14, 16, 18, 20 };
+        private static readonly int[] BurstMax = { 14, 17, 19, 22, 25, 28 };
+        private static readonly int[] BurstPen = { 10, 12, 15, 18, 20, 25 };
+        private static readonly int[] BurstShots = { 3, 4, 5, 6, 8, 9 };
+        private static readonly int[] Ammo = { 9, 12, 15, 18, 24, 27 };
+        private static readonly int[] SkillBonus = { 2, 4, 6, 8, 10, 12 };
+        private static readonly int[] ParryBonus = { 2, 4, 6, 8, 10, 10 };
+        private static readonly int[] CriticalChance = { 2, 4, 6, 9, 12, 15 };
+        private static readonly int[] CriticalDamage = { 5, 10, 15, 20, 25, 30 };
 
         private const string ImperialStaff = "993996a4c0a24463aa400b9441d4caa8";
         private const string AstartesBoltPistol = "5e1bae4c2c7e4bd99411173f8dbe74f0";
         private const string StandardBoltShot = "6a7f0c4523c34de7829c088556b62f11";
         private const string StandardBoltBurst = "347d38e3abad490dad41ee7b77092b24";
+        private const string StandardReload = "98f4a31b68e446ad9c63411c7b349146";
+        private const string TwoHandedSwordCleave = "163013a18e9c46419b2311454ad2b2c8";
+        private const string StaffStrike = "638cd0973175462b9faaeb1242761d32";
+        private const string TwoHandedSwordStrike = "9dec1bdade284190b0977f5f70d26d3e";
+        private const string GreatSword = "88863b6b0c61404b96b01c2bc648ba5e";
         private const string Vindictor = "0a5e8b407f9940589d44675f42783581";
         private const string VindictorHiddenMelee = "91ab9da13b8848aab46bd885a0199db3";
         private const string VindictorMeleeSingle = "84c32baad3f14585a32f5747d721dfc3";
         private const string VindictorMeleeAoe = "9098215cb3aa482d9c44b9c03a17b8cb";
+        private const string EvisceratorCh5 = "4d87435ddfa042269c1fe35df0430f8b";
+        private const string WsModifierReference = "08e144a9788040ea81a99421b5576bc3";
+        private const string BsModifierReference = "57c442a8026d4216b28a0501cb139d38";
+        private const string ParryModifierReference = "53c19a9468d24539863989b3be9ed1f5";
+        private const string CriticalChanceReference = "1a1ac3e3f133432a8c5c0d19cce16035";
+        private const string CriticalDamageReference = "f70e4a5d21ba4bc9a7fce7e3e84bb59f";
         private const string BolterFx = "afde0e8c0c9848deba8e38a1279ee7df";
         private const string BolterProjectile = "c83759d106dbcb44593c2090aa6d5d95";
         private const string BolterMuzzleLocator = "502467bbbcc0471285a4ab6936a285d8";
 
         private static readonly string[] References =
         {
-            ImperialStaff, AstartesBoltPistol, StandardBoltShot, StandardBoltBurst, Vindictor,
+            ImperialStaff, AstartesBoltPistol, StandardBoltShot, StandardBoltBurst, StaffStrike, TwoHandedSwordStrike,
+            TwoHandedSwordCleave, GreatSword, Vindictor,
             VindictorHiddenMelee, VindictorMeleeSingle, VindictorMeleeAoe,
             BolterFx, BolterProjectile, BolterMuzzleLocator
         };
@@ -98,6 +184,10 @@ namespace AstartesCustodes.Editor
         private static string Art => Path.Combine(Root, "Art");
         private const string GuardianSpearPrefabPath = Root + "/Art/GuardianSpear.prefab";
         private const string GuardianSpearFbxPath = Root + "/Art/GuardianSpear.fbx";
+        private const string GuardianSpearIconPath = Root + "/Art/GuardianSpear_InventoryIcon.png";
+        private const string SingleShotIconGuid = "be8ca8564aadea5439b33b0a41a99ef9";
+        private const string BurstFireIconGuid = "e30bba760a5331942a4e0829c38e4e4f";
+        private const string TwoHandedCleaveIconGuid = "16fd1bbd2c6ab964db8067cbd185a32c";
 
         [MenuItem("Astartes Custodes/Generate Guardian Spear art")]
         public static void GenerateArt()
@@ -249,89 +339,341 @@ namespace AstartesCustodes.Editor
                 UnityEngine.Debug.Log($"[AstartesCustodes][ABILITY EVENT INHERITS] {genericHandler.FullName} -> {inherited.FullName}");
         }
 
+        [MenuItem("Astartes Custodes/Inspect ammo APIs")]
+        public static void InspectAmmoApis()
+        {
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type[] types;
+                try { types = assembly.GetTypes(); }
+                catch (ReflectionTypeLoadException exception) { types = exception.Types.Where(type => type != null).ToArray(); }
+                foreach (Type type in types.Where(type => type.FullName != null &&
+                    (type.FullName.Contains("AbilityAmmoLogic") || type.FullName.Contains("ItemEntityWeapon") ||
+                     type.FullName.Contains("WeaponAmmo") || type.FullName == "Kingmaker.UnitLogic.Abilities.AbilityExecutionContext" ||
+                     type.FullName == "Kingmaker.UnitLogic.Abilities.AbilityData" ||
+                     type.FullName == "Kingmaker.UnitLogic.Abilities.Ability")))
+                {
+                    UnityEngine.Debug.Log($"[AstartesCustodes][AMMO TYPE] {assembly.GetName().Name} :: {type.FullName}");
+                    foreach (FieldInfo field in type.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                        UnityEngine.Debug.Log($"[AstartesCustodes][AMMO FIELD] {type.FullName} :: {field.FieldType.FullName} {field.Name}");
+                    foreach (PropertyInfo property in type.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                        UnityEngine.Debug.Log($"[AstartesCustodes][AMMO PROP] {type.FullName} :: {property.PropertyType.FullName} {property.Name} set={property.CanWrite}");
+                    foreach (MethodInfo method in type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
+                        UnityEngine.Debug.Log($"[AstartesCustodes][AMMO METHOD] {type.FullName} :: {method}");
+                }
+            }
+        }
+
+        [MenuItem("Astartes Custodes/Inspect progression APIs")]
+        public static void InspectProgressionApis()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/GuardianSpear/progression-api.txt");
+            Directory.CreateDirectory(Path.GetDirectoryName(output));
+            using var writer = new StreamWriter(output, false);
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type[] types;
+                try { types = assembly.GetTypes(); }
+                catch (ReflectionTypeLoadException exception) { types = exception.Types.Where(type => type != null).ToArray(); }
+                foreach (Type type in types.Where(type => type.FullName != null &&
+                    (type.FullName.IndexOf("LevelUp", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     type.FullName.IndexOf("LevelChanged", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     type.FullName.IndexOf("ItemsCollection", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     type.FullName.IndexOf("Inventory", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     type.FullName.IndexOf("CombatState", StringComparison.OrdinalIgnoreCase) >= 0)))
+                {
+                    writer.WriteLine("TYPE " + type.Assembly.GetName().Name + " :: " + type.FullName + " interface=" + type.IsInterface);
+                    foreach (FieldInfo field in type.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
+                        writer.WriteLine("  FIELD " + field.FieldType.FullName + " " + field.Name);
+                    foreach (PropertyInfo property in type.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
+                        writer.WriteLine("  PROP " + property.PropertyType.FullName + " " + property.Name + " set=" + property.CanWrite);
+                    foreach (MethodInfo method in type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
+                        writer.WriteLine("  METHOD " + method);
+                }
+            }
+            UnityEngine.Debug.Log("[AstartesCustodes] Progression API inspection written to " + output);
+        }
+
+        [MenuItem("Astartes Custodes/Inspect progression targets")]
+        public static void InspectProgressionTargets()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/GuardianSpear/progression-targets.txt");
+            using var writer = new StreamWriter(output, false);
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type[] types;
+                try { types = assembly.GetTypes(); }
+                catch (ReflectionTypeLoadException exception) { types = exception.Types.Where(type => type != null).ToArray(); }
+                foreach (Type type in types.Where(type => type.FullName != null &&
+                    (type.FullName == "Kingmaker.Game" || type.FullName == "Kingmaker.Player" ||
+                     type.FullName == "Kingmaker.EntitySystem.Entities.BaseUnitEntity" ||
+                     type.FullName == "Kingmaker.Items.ItemEntity" || type.FullName == "Kingmaker.Items.ItemEntityWeapon" ||
+                     type.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
+                         .Any(method => method.Name == "HandlePartyCombatStateChanged"))))
+                {
+                    writer.WriteLine("TYPE " + type.Assembly.GetName().Name + " :: " + type.FullName + " interface=" + type.IsInterface);
+                    writer.WriteLine("  INTERFACES " + string.Join(", ", type.GetInterfaces().Select(item => item.FullName)));
+                    foreach (FieldInfo field in type.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                        if (field.Name.IndexOf("Inventory", StringComparison.OrdinalIgnoreCase) >= 0 || field.Name.IndexOf("Stash", StringComparison.OrdinalIgnoreCase) >= 0 || field.Name.IndexOf("Combat", StringComparison.OrdinalIgnoreCase) >= 0 || field.Name.IndexOf("Level", StringComparison.OrdinalIgnoreCase) >= 0)
+                            writer.WriteLine("  FIELD " + field.FieldType.FullName + " " + field.Name);
+                    foreach (PropertyInfo property in type.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                        if (property.Name.IndexOf("Inventory", StringComparison.OrdinalIgnoreCase) >= 0 || property.Name.IndexOf("Stash", StringComparison.OrdinalIgnoreCase) >= 0 || property.Name.IndexOf("Combat", StringComparison.OrdinalIgnoreCase) >= 0 || property.Name.IndexOf("Level", StringComparison.OrdinalIgnoreCase) >= 0 || property.Name == "Player")
+                            writer.WriteLine("  PROP " + property.PropertyType.FullName + " " + property.Name + " set=" + property.CanWrite);
+                    foreach (MethodInfo method in type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                        if (method.Name.IndexOf("Inventory", StringComparison.OrdinalIgnoreCase) >= 0 || method.Name.IndexOf("Stash", StringComparison.OrdinalIgnoreCase) >= 0 || method.Name.IndexOf("Combat", StringComparison.OrdinalIgnoreCase) >= 0 || method.Name.IndexOf("Level", StringComparison.OrdinalIgnoreCase) >= 0 || method.Name == "HandlePartyCombatStateChanged")
+                            writer.WriteLine("  METHOD " + method);
+                }
+            }
+            UnityEngine.Debug.Log("[AstartesCustodes] Progression target inspection written to " + output);
+        }
+
+        [MenuItem("Astartes Custodes/Inspect item slot APIs")]
+        public static void InspectItemSlotApis()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/GuardianSpear/item-slot-api.txt");
+            using var writer = new StreamWriter(output, false);
+            string[] names = { "Kingmaker.Items.ItemEntity", "Kingmaker.Items.ItemEntityWeapon", "Kingmaker.Items.Slots.ItemSlot", "Kingmaker.Items.Slots.HandSlot", "Kingmaker.Items.PartUnitBody" };
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            foreach (Type type in names.Select(name => assembly.GetType(name, false)).Where(type => type != null))
+            {
+                writer.WriteLine("TYPE " + type.Assembly.GetName().Name + " :: " + type.FullName);
+                foreach (FieldInfo field in type.GetFields(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                    writer.WriteLine("  FIELD " + field.FieldType.FullName + " " + field.Name);
+                foreach (PropertyInfo property in type.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                    writer.WriteLine("  PROP " + property.PropertyType.FullName + " " + property.Name + " set=" + property.CanWrite);
+                foreach (MethodInfo method in type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+                    writer.WriteLine("  METHOD " + method);
+            }
+            UnityEngine.Debug.Log("[AstartesCustodes] Item slot API inspection written to " + output);
+        }
+
         [MenuItem("Astartes Custodes/Generate Guardian Spear prototype")]
         public static void Generate()
         {
             GenerateArt();
             Directory.CreateDirectory(Blueprints);
             Directory.CreateDirectory(Path.Combine(Root, "Localization"));
-
-            JObject visible = PrepareClone(Load(ImperialStaff), VisibleWeapon, ImperialStaff);
-            visible["Data"]["Components"] = new JArray();
-            SetText(visible, "gs-name", "gs-desc", "gs-flavor");
-            SetUnityReference(visible, "m_Icon", "1a969545a91471441b4a02441fae7483", 21300000L);
+            UnityEngine.Object icon = PrepareInventoryIcon();
+            if (!AssetDatabase.TryGetGUIDAndLocalFileIdentifier(icon, out string iconGuid, out long iconFileId))
+                throw new InvalidDataException("Guardian Spear inventory icon could not be resolved.");
             UnityEngine.Object prefab = AssetDatabase.LoadMainAssetAtPath(GuardianSpearPrefabPath);
             if (prefab == null || !AssetDatabase.TryGetGUIDAndLocalFileIdentifier(prefab, out string prefabGuid, out long prefabFileId))
                 throw new InvalidDataException("Guardian Spear prefab could not be resolved.");
-            visible["Data"]["m_VisualParameters"]["m_WeaponModel"] = UnityReference(prefabGuid, prefabFileId);
-            AddOverride(visible, "m_VisualParameters.m_WeaponModel");
-            Override(visible, "WarhammerDamage", 18);
-            Override(visible, "WarhammerMaxDamage", 24);
-            Override(visible, "WarhammerPenetration", 15);
-            Override(visible, "CanBeUsedInGame", true);
-            JObject boltSlot = (JObject)visible["Data"]["AbilityContainer"]["Ability2"];
-            // Route animation selection through the existing burst attack path. The custom delivery
-            // remains one projectile because the hidden weapon's RateOfFire is explicitly one.
-            boltSlot["Type"] = "SingleShot";
-            boltSlot["Mode"] = "Default";
-            boltSlot["m_Ability"] = "!bp_" + BoltShot;
-            boltSlot["m_FXSettings"] = "!bp_" + BolterFx;
-            boltSlot["AP"] = 1;
-            foreach (string field in new[] { "Type", "Mode", "m_Ability", "m_FXSettings", "AP" })
-                AddOverride(visible, "WeaponAbilities.Ability2." + field);
-            ClearAbilitySlot(visible, "Ability3");
-            ClearAbilitySlot(visible, "Ability4");
-            ClearAbilitySlot(visible, "Ability5");
-            Save("GuardianSpear_Prototype_Item", visible);
-
-            JObject hidden = PrepareClone(Load(AstartesBoltPistol), HiddenBolter, AstartesBoltPistol);
-            hidden["Data"]["Components"] = new JArray();
-            hidden["Data"]["m_VisualParameters"]["m_WeaponModel"] = null;
-            AddOverride(hidden, "m_VisualParameters.m_WeaponModel");
-            // The hidden profile supplies the Bolt Shot damage and its ability-specific animation
-            // style. HeavyOnHip gives the ranged shot a heavy-weapon hip pose while the visible
-            // weapon remains Staff, preserving the proven melee swing.
-            hidden["Data"]["m_VisualParameters"]["m_WeaponAnimationStyle"] = "HeavyOnHip";
-            AddOverride(hidden, "m_VisualParameters.m_WeaponAnimationStyle");
-            Override(hidden, "m_HoldingType", "TwoHanded");
-            Override(hidden, "IsTwoHanded", true);
-            Override(hidden, "CanBeUsedInGame", false);
-            Override(hidden, "IsUnlootable", true);
-            Override(hidden, "WarhammerMaxAmmo", -1);
-            Override(hidden, "WarhammerDamage", 17);
-            Override(hidden, "WarhammerMaxDamage", 22);
-            Override(hidden, "WarhammerPenetration", 20);
-            SetText(hidden, "gs-hidden-name", "gs-hidden-desc", "gs-hidden-flavor");
-            Save("GuardianSpear_HiddenBolter_Item", hidden);
-
-            JObject shot = PrepareClone(Load(StandardBoltShot), BoltShot, StandardBoltShot);
             JObject meleeReference = Load(VindictorMeleeSingle);
-            JObject overrideWeapon = (JObject)meleeReference["Data"]["Components"]
+            JObject overrideWeaponTemplate = (JObject)meleeReference["Data"]["Components"]
                 .Children<JObject>().First(c => c["$type"]?.ToString().Contains("WarhammerOverrideAbilityWeapon") == true).DeepClone();
-            overrideWeapon["name"] = "$WarhammerOverrideAbilityWeapon$guardian-spear-hidden-bolter";
-            overrideWeapon["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
-            overrideWeapon["m_Weapon"] = "!bp_" + HiddenBolter;
-            overrideWeapon["m_ForceShowWeaponDamageInUi"] = true;
-            ((JArray)shot["Data"]["Components"]).Add(overrideWeapon);
-            AddOverride(shot, overrideWeapon["name"].ToString());
-            JObject ammo = (JObject)meleeReference["Data"]["Components"]
+            JObject ammoTemplate = (JObject)meleeReference["Data"]["Components"]
                 .Children<JObject>().First(c => c["$type"]?.ToString().Contains("AbilityAmmoLogic") == true).DeepClone();
-            ammo["name"] = "$AbilityAmmoLogic$guardian-spear-no-ammo";
-            ammo["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
-            ammo["NoAmmoRequired"] = true;
-            ((JArray)shot["Data"]["Components"]).Add(ammo);
-            AddOverride(shot, ammo["name"].ToString());
-            shot["Data"]["m_FXSettings"] = "!bp_" + BolterFx;
-            AddOverride(shot, "m_FXSettings");
-            shot["Data"]["m_DisplayName"] = Localized("gs-shot-name");
-            shot["Data"]["m_Description"] = Localized("gs-shot-desc");
-            AddOverride(shot, "m_DisplayName");
-            AddOverride(shot, "m_Description");
-            Save("GuardianSpear_BoltShot_Ability", shot);
+
+            JObject addFactTemplate = (JObject)Load(EvisceratorCh5)["Data"]["Components"]
+                .Children<JObject>().First(c => c["$type"]?.ToString().Contains("AddFactToEquipmentWielder") == true).DeepClone();
+
+            for (int i = 0; i < 6; i++)
+            {
+                int tier = i + 1;
+                CreateModifierFeature(i);
+                CreateHiddenRangedWeapon(i, false);
+                CreateHiddenRangedWeapon(i, true);
+                CreateHiddenCleaveWeapon(i);
+                CreateAttackAbility(i, false, overrideWeaponTemplate, ammoTemplate);
+                CreateAttackAbility(i, true, overrideWeaponTemplate, ammoTemplate);
+                CreateCleaveAbility(i, overrideWeaponTemplate);
+
+                JObject visible = PrepareClone(Load(ImperialStaff), VisibleWeapons[i], ImperialStaff);
+                visible["Data"]["Components"] = new JArray();
+                SetText(visible, $"gs-v{tier}-name", $"gs-v{tier}-desc", "gs-flavor");
+                SetUnityReference(visible, "m_Icon", iconGuid, iconFileId);
+                visible["Data"]["m_VisualParameters"]["m_WeaponModel"] = UnityReference(prefabGuid, prefabFileId);
+                AddOverride(visible, "m_VisualParameters.m_WeaponModel");
+                Override(visible, "WarhammerDamage", MeleeMin[i]);
+                Override(visible, "WarhammerMaxDamage", MeleeMax[i]);
+                Override(visible, "WarhammerPenetration", MeleePen[i]);
+                Override(visible, "WarhammerMaxAmmo", Ammo[i]);
+                Override(visible, "ItemLevel", tier == 6 ? 55 : i * 10 + 9);
+                Override(visible, "m_Rarity", tier <= 2 ? "Rare" : tier <= 4 ? "VeryRare" : "Unique");
+                Override(visible, "m_IsNotable", true);
+                Override(visible, "IsNonRemovable", false);
+                Override(visible, "CanBeUsedInGame", true);
+                JObject addFact = (JObject)addFactTemplate.DeepClone();
+                addFact["name"] = $"$AddFactToEquipmentWielder$guardian-spear-v{tier}";
+                addFact["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+                addFact["m_Fact"] = "!bp_" + ModifierFeatures[i];
+                ((JArray)visible["Data"]["Components"]).Add(addFact);
+                AddOverride(visible, addFact["name"].ToString());
+                SetAbilitySlot(visible, "Ability1", "SingleShot", TwoHandedSwordStrike, "046cf83ca27244998b0603750d4a833e", 1);
+                SetAbilitySlot(visible, "Ability2", "SingleShot", ShotAbilities[i], BolterFx, 1);
+                SetAbilitySlot(visible, "Ability3", "AOE", CleaveAbilities[i], "046cf83ca27244998b0603750d4a833e", 2);
+                SetAbilitySlot(visible, "Ability4", "Burst", BurstAbilities[i], BolterFx, 2);
+                SetAbilitySlot(visible, "Ability5", "Reload", StandardReload, BolterFx, 2, "Any");
+                visible["Data"]["m_AttackOfOpportunityAbility"] = "!bp_" + TwoHandedSwordStrike;
+                AddOverride(visible, "m_AttackOfOpportunityAbility");
+                Save(tier == 1 ? "GuardianSpear_Prototype_Item" : $"GuardianSpear_V{tier}_Item", visible);
+            }
 
             WriteLocalization();
             AssetDatabase.Refresh();
-            UnityEngine.Debug.Log("[AstartesCustodes] Guardian Spear prototype generated.");
+            UnityEngine.Debug.Log("[AstartesCustodes] Guardian Spear V1-V6 progression generated.");
+        }
+
+        private static UnityEngine.Object PrepareInventoryIcon()
+        {
+            AssetDatabase.ImportAsset(GuardianSpearIconPath, ImportAssetOptions.ForceSynchronousImport);
+            TextureImporter importer = AssetImporter.GetAtPath(GuardianSpearIconPath) as TextureImporter;
+            if (importer == null) throw new InvalidDataException("Guardian Spear inventory icon importer was not found.");
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.alphaIsTransparency = true;
+            importer.mipmapEnabled = false;
+            importer.textureCompression = TextureImporterCompression.CompressedHQ;
+            importer.SaveAndReimport();
+            return AssetDatabase.LoadAllAssetsAtPath(GuardianSpearIconPath).FirstOrDefault(asset => asset is Sprite)
+                ?? AssetDatabase.LoadMainAssetAtPath(GuardianSpearIconPath);
+        }
+
+        private static void CreateHiddenRangedWeapon(int i, bool burst)
+        {
+            int tier = i + 1;
+            string id = burst ? BurstWeapons[i] : ShotWeapons[i];
+            JObject weapon = PrepareClone(Load(AstartesBoltPistol), id, AstartesBoltPistol);
+            weapon["Data"]["Components"] = new JArray();
+            weapon["Data"]["m_VisualParameters"]["m_WeaponModel"] = null;
+            weapon["Data"]["m_VisualParameters"]["m_WeaponAnimationStyle"] = "HeavyOnHip";
+            AddOverride(weapon, "m_VisualParameters.m_WeaponModel");
+            AddOverride(weapon, "m_VisualParameters.m_WeaponAnimationStyle");
+            Override(weapon, "m_HoldingType", "TwoHanded");
+            Override(weapon, "IsTwoHanded", true);
+            Override(weapon, "CanBeUsedInGame", false);
+            Override(weapon, "IsUnlootable", true);
+            Override(weapon, "WarhammerMaxAmmo", Ammo[i]);
+            Override(weapon, "WarhammerDamage", burst ? BurstMin[i] : ShotMin[i]);
+            Override(weapon, "WarhammerMaxDamage", burst ? BurstMax[i] : ShotMax[i]);
+            Override(weapon, "WarhammerPenetration", burst ? BurstPen[i] : ShotPen[i]);
+            Override(weapon, "RateOfFire", burst ? BurstShots[i] : 1);
+            SetText(weapon, "gs-hidden-name", "gs-hidden-desc", "gs-hidden-flavor");
+            Save(burst ? $"GuardianSpear_V{tier}_HiddenBurst_Item" :
+                (tier == 1 ? "GuardianSpear_HiddenBolter_Item" : $"GuardianSpear_V{tier}_HiddenShot_Item"), weapon);
+        }
+
+        private static void CreateHiddenCleaveWeapon(int i)
+        {
+            int tier = i + 1;
+            JObject weapon = PrepareClone(Load(GreatSword), CleaveWeapons[i], GreatSword);
+            weapon["Data"]["Components"] = new JArray();
+            weapon["Data"]["m_VisualParameters"]["m_WeaponModel"] = null;
+            AddOverride(weapon, "m_VisualParameters.m_WeaponModel");
+            Override(weapon, "CanBeUsedInGame", false);
+            Override(weapon, "IsUnlootable", true);
+            Override(weapon, "WarhammerDamage", CleaveMin[i]);
+            Override(weapon, "WarhammerMaxDamage", CleaveMax[i]);
+            Override(weapon, "WarhammerPenetration", CleavePen[i]);
+            SetText(weapon, "gs-hidden-cleave-name", "gs-hidden-cleave-desc", "gs-hidden-cleave-flavor");
+            Save(tier == 1 ? "GuardianSpear_HiddenGreatsword_Item" : $"GuardianSpear_V{tier}_HiddenCleave_Item", weapon);
+        }
+
+        private static void CreateAttackAbility(int i, bool burst, JObject overrideTemplate, JObject ammoTemplate)
+        {
+            int tier = i + 1;
+            string id = burst ? BurstAbilities[i] : ShotAbilities[i];
+            string prototype = burst ? StandardBoltBurst : StandardBoltShot;
+            string hiddenWeapon = burst ? BurstWeapons[i] : ShotWeapons[i];
+            JObject ability = PrepareClone(Load(prototype), id, prototype);
+            JObject overrideWeapon = (JObject)overrideTemplate.DeepClone();
+            overrideWeapon["name"] = $"$WarhammerOverrideAbilityWeapon$guardian-spear-v{tier}-{(burst ? "burst" : "shot")}";
+            overrideWeapon["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            overrideWeapon["m_Weapon"] = "!bp_" + hiddenWeapon;
+            overrideWeapon["m_ForceShowWeaponDamageInUi"] = true;
+            ((JArray)ability["Data"]["Components"]).Add(overrideWeapon);
+            AddOverride(ability, overrideWeapon["name"].ToString());
+            JObject ammo = (JObject)ammoTemplate.DeepClone();
+            ammo["name"] = $"$AbilityAmmoLogic$guardian-spear-v{tier}-{(burst ? "burst" : "shot")}";
+            ammo["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            ammo["NoAmmoRequired"] = false;
+            ammo["AdditionalAmmoCost"] = 0;
+            ((JArray)ability["Data"]["Components"]).Add(ammo);
+            AddOverride(ability, ammo["name"].ToString());
+            ability["Data"]["m_FXSettings"] = "!bp_" + BolterFx;
+            ability["Data"]["m_DisplayName"] = Localized(burst ? "gs-burst-name" : "gs-shot-name");
+            ability["Data"]["m_Description"] = Localized($"gs-v{tier}-{(burst ? "burst" : "shot")}-desc");
+            AddOverride(ability, "m_FXSettings");
+            AddOverride(ability, "m_DisplayName");
+            AddOverride(ability, "m_Description");
+            SetUnityReference(ability, "m_Icon", burst ? BurstFireIconGuid : SingleShotIconGuid, 21300000L);
+            Save(burst ? (tier == 1 ? "GuardianSpear_BoltBurst_Ability" : $"GuardianSpear_V{tier}_BoltBurst_Ability") :
+                (tier == 1 ? "GuardianSpear_BoltShot_Ability" : $"GuardianSpear_V{tier}_BoltShot_Ability"), ability);
+        }
+
+        private static void CreateCleaveAbility(int i, JObject overrideTemplate)
+        {
+            int tier = i + 1;
+            JObject ability = PrepareClone(Load(TwoHandedSwordCleave), CleaveAbilities[i], TwoHandedSwordCleave);
+            JObject overrideWeapon = (JObject)overrideTemplate.DeepClone();
+            overrideWeapon["name"] = $"$WarhammerOverrideAbilityWeapon$guardian-spear-v{tier}-cleave";
+            overrideWeapon["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            overrideWeapon["m_Weapon"] = "!bp_" + CleaveWeapons[i];
+            overrideWeapon["m_ForceShowWeaponDamageInUi"] = true;
+            ((JArray)ability["Data"]["Components"]).Add(overrideWeapon);
+            AddOverride(ability, overrideWeapon["name"].ToString());
+            ability["Data"]["m_DisplayName"] = Localized("gs-cleave-name");
+            ability["Data"]["m_Description"] = Localized($"gs-v{tier}-cleave-desc");
+            AddOverride(ability, "m_DisplayName");
+            AddOverride(ability, "m_Description");
+            SetUnityReference(ability, "m_Icon", TwoHandedCleaveIconGuid, 21300000L);
+            Save(tier == 1 ? "GuardianSpear_Cleave_Ability" : $"GuardianSpear_V{tier}_Cleave_Ability", ability);
+        }
+
+        private static void CreateModifierFeature(int i)
+        {
+            int tier = i + 1;
+            JObject feature = PrepareClone(Load(WsModifierReference), ModifierFeatures[i], WsModifierReference);
+            feature["Meta"]["ShadowDeleted"] = false;
+            JArray components = new JArray();
+
+            JObject ws = CloneComponent(WsModifierReference, "AddStatBonus", $"$AddStatBonus$guardian-spear-v{tier}-ws");
+            ws["Stat"] = "WarhammerWeaponSkill";
+            ws["Value"] = SkillBonus[i];
+            components.Add(ws);
+
+            JObject bs = CloneComponent(BsModifierReference, "AddStatBonus", $"$AddStatBonus$guardian-spear-v{tier}-bs");
+            bs["Stat"] = "WarhammerBallisticSkill";
+            bs["Value"] = SkillBonus[i];
+            components.Add(bs);
+
+            JObject parry = CloneComponent(ParryModifierReference, "WarhammerParryChanceModifierDefender", $"$WarhammerParryChanceModifierDefender$guardian-spear-v{tier}");
+            parry["Restrictions"]["Property"]["Getters"] = new JArray();
+            parry["ParryChance"]["Value"] = ParryBonus[i];
+            components.Add(parry);
+
+            JObject criticalChance = CloneComponent(CriticalChanceReference, "WarhammerRighteousFuryBonus", $"$WarhammerRighteousFuryBonus$guardian-spear-v{tier}");
+            criticalChance["Restrictions"]["Property"]["Getters"] = new JArray();
+            criticalChance["Value"]["Value"] = CriticalChance[i];
+            criticalChance["SpecificRangeType"] = false;
+            components.Add(criticalChance);
+
+            JObject criticalDamage = CloneComponent(CriticalDamageReference, "WarhammerCriticalDamageModifierInitiator", $"$WarhammerCriticalDamageModifierInitiator$guardian-spear-v{tier}");
+            criticalDamage["Restrictions"]["Property"]["Getters"] = new JArray();
+            criticalDamage["PercentCriticalDamageModifier"]["Value"] = CriticalDamage[i];
+            components.Add(criticalDamage);
+
+            feature["Data"]["Components"] = components;
+            feature["Data"]["m_DisplayName"] = Localized($"gs-v{tier}-modifier-name");
+            feature["Data"]["m_Description"] = Localized($"gs-v{tier}-modifier-desc");
+            feature["Data"]["HideInUI"] = false;
+            feature["Data"]["HideInCharacterSheetAndLevelUp"] = true;
+            AddOverride(feature, "m_DisplayName");
+            AddOverride(feature, "m_Description");
+            AddOverride(feature, "HideInUI");
+            AddOverride(feature, "HideInCharacterSheetAndLevelUp");
+            Save($"GuardianSpear_V{tier}_Modifiers_Feature", feature);
+        }
+
+        private static JObject CloneComponent(string blueprintId, string typeName, string name)
+        {
+            JObject component = (JObject)Load(blueprintId)["Data"]["Components"].Children<JObject>()
+                .First(item => item["$type"]?.ToString().Contains(typeName) == true).DeepClone();
+            component["name"] = name;
+            component["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
+            component["m_Overrides"] = new JArray();
+            return component;
         }
 
         [MenuItem("Astartes Custodes/Build Guardian Spear prototype")]
@@ -358,6 +700,88 @@ namespace AstartesCustodes.Editor
                 File.WriteAllText(Path.Combine(output, name + "_" + id + ".json"), root.ToString(Formatting.Indented));
             }
             UnityEngine.Debug.Log("[AstartesCustodes] Guardian Spear references exported to " + output);
+        }
+
+        [MenuItem("Astartes Custodes/Export endgame weapon survey")]
+        public static void ExportEndgameWeaponSurvey()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/endgame-weapon-survey.json");
+            var results = new JArray();
+            foreach (BlueprintItemWeapon weapon in BlueprintsDatabase.LoadAllOfType<BlueprintItemWeapon>())
+            {
+                string path = BlueprintsDatabase.GetAssetPath(weapon) ?? "";
+                if (path.IndexOf("CH5", StringComparison.OrdinalIgnoreCase) < 0 &&
+                    path.IndexOf("Chapter5", StringComparison.OrdinalIgnoreCase) < 0 &&
+                    path.IndexOf("Unique", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+                JObject root = Load(weapon.AssetGuid.ToString());
+                JArray components = (JArray)root["Data"]?["Components"];
+                JArray facts = new JArray(components?.Children<JObject>()
+                    .Where(c => c["$type"]?.ToString().Contains("AddFactToEquipmentWielder") == true)
+                    .Select(c => c["m_Fact"]?.ToString()).Where(value => !string.IsNullOrEmpty(value)) ?? Enumerable.Empty<string>());
+                if (facts.Count == 0) continue;
+                JObject data = (JObject)root["Data"];
+                results.Add(new JObject
+                {
+                    ["id"] = weapon.AssetGuid.ToString(), ["path"] = path, ["facts"] = facts,
+                    ["damage"] = data["WarhammerDamage"], ["maxDamage"] = data["WarhammerMaxDamage"],
+                    ["penetration"] = data["WarhammerPenetration"], ["recoil"] = data["WarhammerRecoil"],
+                    ["range"] = data["WarhammerMaxDistance"], ["ammo"] = data["WarhammerMaxAmmo"],
+                    ["rateOfFire"] = data["RateOfFire"], ["family"] = data["Family"],
+                    ["classification"] = data["Classification"]
+                });
+            }
+            Directory.CreateDirectory(Path.GetDirectoryName(output));
+            File.WriteAllText(output, results.ToString(Formatting.Indented));
+            UnityEngine.Debug.Log($"[AstartesCustodes] Endgame weapon survey exported: {results.Count} weapons to {output}");
+        }
+
+        [MenuItem("Astartes Custodes/Export endgame weapon facts")]
+        public static void ExportEndgameWeaponFacts()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/endgame-weapon-facts");
+            Directory.CreateDirectory(output);
+            string[] ids =
+            {
+                "31e68b1e7b7342759e011fd556764d01", "c31185d9515d4727aae60696c6fa96b9",
+                "53c19a9468d24539863989b3be9ed1f5", "f70e4a5d21ba4bc9a7fce7e3e84bb59f", "903bb235e56d4dbebbfaf9372976b66f",
+                "cdd3a569389d4a90b4b4c859652b3e19", "9962dd8fa12e4c8f8b6fe4832ae356c7",
+                "572c6fba29f8402fa5d86e157edf8f29", "adf766ad17194a3080f20cd93be25392",
+                "bedeb1015ba844e29223c658a5bfdd47", "717d2df9726144debabacc4d027bb5c1"
+            };
+            foreach (string id in ids)
+            {
+                JObject root = Load(id);
+                string name = root["Data"]?["name"]?.ToString() ?? id;
+                foreach (char invalid in Path.GetInvalidFileNameChars()) name = name.Replace(invalid, '_');
+                File.WriteAllText(Path.Combine(output, name + "_" + id + ".json"), root.ToString(Formatting.Indented));
+            }
+            UnityEngine.Debug.Log("[AstartesCustodes] Endgame weapon facts exported to " + output);
+        }
+
+        [MenuItem("Astartes Custodes/Export equipment modifier references")]
+        public static void ExportEquipmentModifierReferences()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/GuardianSpear/equipment-modifier-references");
+            Directory.CreateDirectory(output);
+            int count = 0;
+            foreach (Kingmaker.UnitLogic.Progression.Features.BlueprintFeature feature in
+                BlueprintsDatabase.LoadAllOfType<Kingmaker.UnitLogic.Progression.Features.BlueprintFeature>())
+            {
+                JObject root = Load(feature.AssetGuid.ToString());
+                string json = root.ToString(Formatting.None);
+                if (json.IndexOf("WeaponSkill", StringComparison.OrdinalIgnoreCase) < 0 &&
+                    json.IndexOf("BallisticSkill", StringComparison.OrdinalIgnoreCase) < 0 &&
+                    json.IndexOf("CriticalHit", StringComparison.OrdinalIgnoreCase) < 0 &&
+                    json.IndexOf("CriticalDamage", StringComparison.OrdinalIgnoreCase) < 0 &&
+                    json.IndexOf("ParryChance", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+                string name = root["Data"]?["name"]?.ToString() ?? feature.AssetGuid.ToString();
+                foreach (char invalid in Path.GetInvalidFileNameChars()) name = name.Replace(invalid, '_');
+                File.WriteAllText(Path.Combine(output, name + "_" + feature.AssetGuid + ".json"), root.ToString(Formatting.Indented));
+                if (++count >= 300) break;
+            }
+            UnityEngine.Debug.Log($"[AstartesCustodes] Exported {count} equipment modifier references to {output}");
         }
 
         private static JObject Load(string id)
@@ -553,6 +977,18 @@ namespace AstartesCustodes.Editor
                 AddOverride(weapon, "WeaponAbilities." + slotName + "." + field);
         }
 
+        private static void SetAbilitySlot(JObject weapon, string slotName, string type, string ability, string fx, int ap, string mode = "Default")
+        {
+            JObject slot = (JObject)weapon["Data"]["AbilityContainer"][slotName];
+            slot["Type"] = type;
+            slot["Mode"] = mode;
+            slot["m_Ability"] = "!bp_" + ability;
+            slot["m_FXSettings"] = "!bp_" + fx;
+            slot["AP"] = ap;
+            foreach (string field in new[] { "Type", "Mode", "m_Ability", "m_FXSettings", "AP" })
+                AddOverride(weapon, "WeaponAbilities." + slotName + "." + field);
+        }
+
         private static void SetText(JObject root, string name, string description, string flavor)
         {
             root["Data"]["m_DisplayName"] = Localized(name);
@@ -592,8 +1028,8 @@ namespace AstartesCustodes.Editor
 
         private static void Save(string name, JObject root)
         {
-            root["Data"]["Author"] = "Poffl";
-            AddOverride(root, "Author");
+            // Blueprint Author is Owlcat's internal Authors enum, not a free-form mod credit.
+            // Preserve the valid value inherited from the vanilla prototype.
             File.WriteAllText(Path.Combine(Blueprints, name + ".jbp"), root.ToString(Formatting.Indented));
         }
 
@@ -603,15 +1039,44 @@ namespace AstartesCustodes.Editor
         {
             JObject strings = new JObject
             {
-                ["gs-name"] = Entry("Guardian Spear Prototype"),
-                ["gs-desc"] = Entry("A proof-of-concept polearm with a separate integrated bolt weapon profile. Provides a melee strike and Bolt Shot."),
-                ["gs-flavor"] = Entry("Prototype wargear for hybrid-weapon testing."),
+                ["gs-flavor"] = Entry("The Guardian Spear is both symbol of office and peerless instrument of the Emperor's judgement."),
                 ["gs-hidden-name"] = Entry("Guardian Spear Hidden Bolter"),
-                ["gs-hidden-desc"] = Entry("Internal ranged profile used by Guardian Spear Bolt Shot."),
+                ["gs-hidden-desc"] = Entry("Internal ranged profile used by the Guardian Spear."),
                 ["gs-hidden-flavor"] = Entry("Not intended for inventory or loot."),
+                ["gs-hidden-cleave-name"] = Entry("Guardian Spear Hidden Greatsword"),
+                ["gs-hidden-cleave-desc"] = Entry("Internal melee profile used to select the two-handed sword cleave animation."),
+                ["gs-hidden-cleave-flavor"] = Entry("Not intended for inventory or loot."),
                 ["gs-shot-name"] = Entry("Bolt Shot"),
-                ["gs-shot-desc"] = Entry("Fire the Guardian Spear's integrated bolter using its hidden ranged weapon profile.")
+                ["gs-cleave-name"] = Entry("Guardian Cleave"),
+                ["gs-burst-name"] = Entry("Bolt Burst")
             };
+            for (int i = 0; i < 6; i++)
+            {
+                int tier = i + 1;
+                string levelRange = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
+                strings[$"gs-v{tier}-name"] = Entry($"Guardian Spear V{tier}");
+                strings[$"gs-v{tier}-desc"] = Entry(
+                    $"A master-crafted Custodes hybrid weapon.\n\n" +
+                    $"• Levels: {levelRange}\n" +
+                    $"• Bolt Burst: {BurstShots[i]} shots\n" +
+                    $"• Magazine: {Ammo[i]} rounds\n\n" +
+                    $"Modifiers while equipped:\n" +
+                    $"• +{SkillBonus[i]} Weapon Skill\n" +
+                    $"• +{SkillBonus[i]} Ballistic Skill\n" +
+                    $"• +{ParryBonus[i]}% parry chance\n" +
+                    $"• +{CriticalChance[i]}% critical hit chance\n" +
+                    $"• +{CriticalDamage[i]}% critical damage");
+                strings[$"gs-v{tier}-modifier-name"] = Entry($"Guardian Spear V{tier} Mastery");
+                strings[$"gs-v{tier}-modifier-desc"] = Entry(
+                    $"+{SkillBonus[i]} Weapon Skill, +{SkillBonus[i]} Ballistic Skill, +{ParryBonus[i]}% parry chance, " +
+                    $"+{CriticalChance[i]}% critical hit chance and +{CriticalDamage[i]}% critical damage.");
+                strings[$"gs-v{tier}-shot-desc"] = Entry(
+                    $"Fire one precise bolt for {ShotMin[i]}-{ShotMax[i]} damage and {ShotPen[i]}% armour penetration. Magazine: {Ammo[i]} rounds.");
+                strings[$"gs-v{tier}-burst-desc"] = Entry(
+                    $"Fire {BurstShots[i]} bolts, each dealing {BurstMin[i]}-{BurstMax[i]} damage with {BurstPen[i]}% armour penetration. Consumes {BurstShots[i]} of {Ammo[i]} rounds.");
+                strings[$"gs-v{tier}-cleave-desc"] = Entry(
+                    $"Sweep the Guardian Spear through a wide area for {CleaveMin[i]}-{CleaveMax[i]} damage and {CleavePen[i]}% armour penetration.");
+            }
             File.WriteAllText(Path.Combine(Root, "Localization", "enGB.json"),
                 new JObject { ["strings"] = strings }.ToString(Formatting.Indented));
         }

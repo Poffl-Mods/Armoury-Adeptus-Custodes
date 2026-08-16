@@ -12,7 +12,18 @@
       "WarhammerDamage",
       "WarhammerMaxDamage",
       "WarhammerPenetration",
+      "WarhammerMaxAmmo",
+      "ItemLevel",
+      "m_Rarity",
+      "m_IsNotable",
+      "IsNonRemovable",
       "CanBeUsedInGame",
+      "$AddFactToEquipmentWielder$guardian-spear-v1",
+      "WeaponAbilities.Ability1.Type",
+      "WeaponAbilities.Ability1.Mode",
+      "WeaponAbilities.Ability1.m_Ability",
+      "WeaponAbilities.Ability1.m_FXSettings",
+      "WeaponAbilities.Ability1.AP",
       "WeaponAbilities.Ability2.Type",
       "WeaponAbilities.Ability2.Mode",
       "WeaponAbilities.Ability2.m_Ability",
@@ -33,27 +44,39 @@
       "WeaponAbilities.Ability5.m_Ability",
       "WeaponAbilities.Ability5.m_FXSettings",
       "WeaponAbilities.Ability5.AP",
-      "Author"
+      "m_AttackOfOpportunityAbility"
     ],
-    "Components": [],
-    "Author": "Poffl",
+    "Components": [
+      {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$guardian-spear-v1",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_519fe85173c3595b07859de2cc158124"
+      }
+    ],
+    "Author": "EvgeniyShanhiev",
     "Comment": "10 Willpower, 5 Fellowship, Emperor's Wrath 9",
     "m_DisplayName": {
-      "m_Key": "gs-name",
+      "m_Key": "gs-v1-name",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
       "Shared": null
     },
     "m_Description": {
-      "m_Key": "gs-desc",
+      "m_Key": "gs-v1-desc",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
       "Shared": null
     },
     "m_Icon": {
-      "guid": "1a969545a91471441b4a02441fae7483",
+      "guid": "cff9640065190d448a0c475d427994e6",
       "fileid": 21300000
     },
     "m_FlavorText": {
@@ -80,15 +103,15 @@
     "m_NotStackable": false,
     "m_Weight": 0.0,
     "m_Origin": "MeleeWeaponry",
-    "m_Rarity": "Common",
+    "m_Rarity": "Rare",
     "m_Tag": "None",
-    "m_IsNotable": false,
+    "m_IsNotable": true,
     "m_ProfitFactorCost": 0.0,
     "m_CargoVolumePercent": 20,
     "m_InventoryPutSound": "UI_INV_Blunt_Put_Play",
     "m_InventoryTakeSound": "UI_INV_Blunt_Take_Play",
     "ToCargoAutomatically": false,
-    "ItemLevel": 0,
+    "ItemLevel": 9,
     "SpendCharges": false,
     "Charges": 1,
     "RestoreChargesAfterCombat": false,
@@ -134,8 +157,8 @@
       "Ability1": {
         "Type": "SingleShot",
         "Mode": "Default",
-        "m_Ability": "!bp_638cd0973175462b9faaeb1242761d32",
-        "m_FXSettings": "!bp_612936da5a8948ccab3ac067e5d45144",
+        "m_Ability": "!bp_9dec1bdade284190b0977f5f70d26d3e",
+        "m_FXSettings": "!bp_046cf83ca27244998b0603750d4a833e",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
         "AP": 1
@@ -150,34 +173,34 @@
         "AP": 1
       },
       "Ability3": {
-        "Type": "None",
+        "Type": "AOE",
         "Mode": "Default",
-        "m_Ability": null,
-        "m_FXSettings": null,
+        "m_Ability": "!bp_b3d51e80873c49f49422eab82db9f720",
+        "m_FXSettings": "!bp_046cf83ca27244998b0603750d4a833e",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
-        "AP": 0
+        "AP": 2
       },
       "Ability4": {
-        "Type": "None",
+        "Type": "Burst",
         "Mode": "Default",
-        "m_Ability": null,
-        "m_FXSettings": null,
+        "m_Ability": "!bp_c4e65f9139c74d54bc08a87caf2bb381",
+        "m_FXSettings": "!bp_afde0e8c0c9848deba8e38a1279ee7df",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
-        "AP": 0
+        "AP": 2
       },
       "Ability5": {
-        "Type": "None",
-        "Mode": "Default",
-        "m_Ability": null,
-        "m_FXSettings": null,
+        "Type": "Reload",
+        "Mode": "Any",
+        "m_Ability": "!bp_98f4a31b68e446ad9c63411c7b349146",
+        "m_FXSettings": "!bp_afde0e8c0c9848deba8e38a1279ee7df",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
-        "AP": 0
+        "AP": 2
       }
     },
-    "m_AttackOfOpportunityAbility": "!bp_638cd0973175462b9faaeb1242761d32",
+    "m_AttackOfOpportunityAbility": "!bp_9dec1bdade284190b0977f5f70d26d3e",
     "m_AttackOfOpportunityAbilityFXSettings": "!bp_0ebd832aea364e23a9aa6abc76228e2d",
     "Category": "Melee",
     "Family": "Primitive",
@@ -215,7 +238,7 @@
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 0,
     "WarhammerMaxDistance": 1,
-    "WarhammerMaxAmmo": -1,
+    "WarhammerMaxAmmo": 9,
     "RateOfFire": 0,
     "m_Enchantments": [],
     "m_DamageType": {

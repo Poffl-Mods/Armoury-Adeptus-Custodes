@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: BlueprintDirectReferences
   m_EditorClassIdentifier: 
   m_Entries:
+  - AssetId: cff9640065190d448a0c475d427994e6
+    FileId: 21300000
+    Asset: {fileID: 21300000, guid: cff9640065190d448a0c475d427994e6, type: 3}
   - AssetId: 1efcf90da19091e498cce6ba0e9fd5bc
     FileId: 5499664329099543335
     Asset: {fileID: 5499664329099543335, guid: 1efcf90da19091e498cce6ba0e9fd5bc, type: 3}

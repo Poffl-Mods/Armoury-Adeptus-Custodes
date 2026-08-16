@@ -13,7 +13,7 @@
   `3` from the hidden Vindictor melee weapon GUID: the verified GUID is
   `91ab9da13b8848aab46bd885a0199db3`.
 - Full local blueprint exports confirmed that `VindictorFlamer_MeleeSingle_Ability` adds both
-  `WarhammerOverrideAbilityWeapon` and `AbilityAmmoLogic(NoAmmoRequired)` to a weapon attack.
+  `WarhammerOverrideAbilityWeapon` and `AbilityAmmoLogic` to a weapon attack.
 
 ## New blueprints
 
@@ -32,7 +32,10 @@ Its second weapon slot exposes `GuardianSpear_BoltShot_Ability`. That ability re
 `WarhammerAbilityAttackDelivery` with `WeaponAttack: Ranged`, then adds
 `WarhammerOverrideAbilityWeapon` pointing to `GuardianSpear_HiddenBolter_Item`. The hidden profile is
 a Bolt-family ranged weapon with 17–22 damage, 20% penetration, range 15, and no visible model. It is
-marked unusable as a standalone item and unlootable. `AbilityAmmoLogic.NoAmmoRequired` is enabled.
+marked unusable as a standalone item and unlootable. Version 0.1.22 gives the visible hybrid item an
+18-round magazine; Bolt Shot consumes one round and Bolt Burst uses the hidden profile's six-round rate of fire.
+Because `WarhammerOverrideAbilityWeapon` redirects vanilla consumption to a visual-less profile, the runtime
+pose controller also routes the committed attack's cost to `AbilityData.SourceWeapon.CurrentAmmo` exactly once.
 
 The ability and weapon slot reuse `FX_Bolter_BoltShot_AbilityVisualFXSettings`
 (`afde0e8c0c9848deba8e38a1279ee7df`); its referenced vanilla projectile is
@@ -63,7 +66,9 @@ investigation, current Deathwatch offhand requirement, and the new in-game visua
 7. Record where the projectile and muzzle flash originate. Also verify that Bolt Shot does not
    consume ammunition.
 
-## Next step (not implemented)
+## In-game verification
 
-Run the above combat test and capture the muzzle result. Only if the placeholder lacks a usable
-fallback should the next iteration add a weapon prefab with a correctly placed bolt muzzle locator.
+The custom model, attachment, melee attack, Bolt Shot, projectile origin and muzzle result have now
+been verified successfully in game. Version 0.1.21 uses the game's Single Shot, Heavy Bolter Burst
+and two-handed Cleave icons. Bolt Burst shares Bolt Shot's horizontal aiming pose, while Guardian
+Cleave routes animation selection through a hidden vanilla greatsword profile.

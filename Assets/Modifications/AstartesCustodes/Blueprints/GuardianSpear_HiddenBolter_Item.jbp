@@ -14,13 +14,13 @@
       "WarhammerDamage",
       "WarhammerMaxDamage",
       "WarhammerPenetration",
+      "RateOfFire",
       "m_DisplayName",
       "m_Description",
-      "m_FlavorText",
-      "Author"
+      "m_FlavorText"
     ],
     "Components": [],
-    "Author": "Poffl",
+    "Author": "ElenaMironova",
     "Comment": "",
     "m_DisplayName": {
       "m_Key": "gs-hidden-name",
@@ -186,15 +186,15 @@
       "Shared": null
     },
     "IsTwoHanded": true,
-    "WarhammerDamage": 17,
+    "WarhammerDamage": 16,
     "WarhammerMaxDamage": 22,
-    "WarhammerPenetration": 20,
+    "WarhammerPenetration": 15,
     "DodgePenetration": 0,
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 25,
     "WarhammerMaxDistance": 15,
-    "WarhammerMaxAmmo": -1,
-    "RateOfFire": 3,
+    "WarhammerMaxAmmo": 9,
+    "RateOfFire": 1,
     "m_Enchantments": [],
     "m_DamageType": {
       "Type": "Impact"

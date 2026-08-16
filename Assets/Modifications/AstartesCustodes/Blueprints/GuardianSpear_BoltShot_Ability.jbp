@@ -4,12 +4,12 @@
     "$type": "da11db195c86e0d4dae17a2c03a4ba9a, BlueprintAbility",
     "PrototypeLink": "6a7f0c4523c34de7829c088556b62f11",
     "m_Overrides": [
-      "$WarhammerOverrideAbilityWeapon$guardian-spear-hidden-bolter",
-      "$AbilityAmmoLogic$guardian-spear-no-ammo",
+      "$WarhammerOverrideAbilityWeapon$guardian-spear-v1-shot",
+      "$AbilityAmmoLogic$guardian-spear-v1-shot",
       "m_FXSettings",
       "m_DisplayName",
       "m_Description",
-      "Author"
+      "m_Icon"
     ],
     "Components": [
       {
@@ -99,7 +99,7 @@
       },
       {
         "$type": "c12d0b47a00427c47be7af83bb98bf3c, WarhammerOverrideAbilityWeapon",
-        "name": "$WarhammerOverrideAbilityWeapon$guardian-spear-hidden-bolter",
+        "name": "$WarhammerOverrideAbilityWeapon$guardian-spear-v1-shot",
         "m_Flags": 0,
         "PrototypeLink": {
           "guid": "",
@@ -111,18 +111,18 @@
       },
       {
         "$type": "1cdb53f94f674412b307c2142759b437, AbilityAmmoLogic",
-        "name": "$AbilityAmmoLogic$guardian-spear-no-ammo",
+        "name": "$AbilityAmmoLogic$guardian-spear-v1-shot",
         "m_Flags": 0,
         "PrototypeLink": {
           "guid": "",
           "name": ""
         },
         "m_Overrides": [],
-        "NoAmmoRequired": true,
+        "NoAmmoRequired": false,
         "AdditionalAmmoCost": 0
       }
     ],
-    "Author": "Poffl",
+    "Author": "EvgeniyIvanovGD",
     "Comment": "",
     "m_DisplayName": {
       "m_Key": "gs-shot-name",
@@ -132,13 +132,16 @@
       "Shared": null
     },
     "m_Description": {
-      "m_Key": "gs-shot-desc",
+      "m_Key": "gs-v1-shot-desc",
       "m_OwnerString": "",
       "m_OwnerPropertyPath": "",
       "m_JsonPath": "",
       "Shared": null
     },
-    "m_Icon": null,
+    "m_Icon": {
+      "guid": "be8ca8564aadea5439b33b0a41a99ef9",
+      "fileid": 21300000
+    },
     "m_AllowNonContextActions": false,
     "Type": "Weapon",
     "Range": "Weapon",
