@@ -496,7 +496,7 @@ namespace AstartesCustodes.Editor
                 Override(visible, "WarhammerPenetration", MeleePen[i]);
                 Override(visible, "WarhammerMaxAmmo", Ammo[i]);
                 Override(visible, "ItemLevel", tier == 6 ? 55 : i * 10 + 9);
-                Override(visible, "m_Rarity", tier <= 2 ? "Rare" : tier <= 4 ? "VeryRare" : "Unique");
+                Override(visible, "m_Rarity", tier <= 2 ? "Pattern" : "Unique");
                 Override(visible, "m_IsNotable", true);
                 Override(visible, "IsNonRemovable", false);
                 Override(visible, "CanBeUsedInGame", true);
