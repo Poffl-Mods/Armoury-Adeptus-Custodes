@@ -231,6 +231,7 @@ namespace AstartesCustodes.Editor
             SetTexture(material, normal, "_BumpMap", "_NormalMap");
             SetFloat(material, 1f, "_Metallic");
             SetFloat(material, 1f, "_Smoothness");
+            SetFloat(material, 0.24f, "_Roughness");
             Color brighterAlbedo = new Color(1.15f, 1.15f, 1.15f, 1f);
             SetColor(material, brighterAlbedo, "_BaseColor", "_Color", "_AdditionalAlbedoColor");
             material.EnableKeyword("_METALLICSPECGLOSSMAP");
@@ -584,7 +585,9 @@ namespace AstartesCustodes.Editor
             ability["Data"]["MinRange"] = 1;
             ability["Data"]["ActionPointCost"] = 1;
             ability["Data"]["AbilityParamsSource"] = "Weapon";
-            ability["Data"]["PsychicPower"] = "None";
+            // PsychicPower has no None enum value. Minor is the engine default; the ability
+            // remains non-psychic because its AbilityParamsSource is Weapon.
+            ability["Data"]["PsychicPower"] = "Minor";
             ability["Data"]["VeilThicknessPointsToAdd"] = 0;
             ability["Data"]["CooldownRounds"] = 2;
             ability["Data"]["CanTargetEnemies"] = true;

@@ -1,3 +1,4 @@
+using HarmonyLib;
 using Kingmaker.Modding;
 using UnityEngine;
 
@@ -9,9 +10,11 @@ namespace AstartesCustodes.Runtime
         [OwlcatModificationEnterPoint]
         public static void Initialize(OwlcatModification modification)
         {
+            PraesidiumShieldSetPlacementPatch.SetEnabled(true);
             GuardianSpearProgressionController.EnsureController();
             modification.OnSetEnabled += enabled =>
             {
+                PraesidiumShieldSetPlacementPatch.SetEnabled(enabled);
                 if (enabled) GuardianSpearProgressionController.EnsureController();
             };
             Debug.Log("[AstartesCustodes] Runtime initialized.");

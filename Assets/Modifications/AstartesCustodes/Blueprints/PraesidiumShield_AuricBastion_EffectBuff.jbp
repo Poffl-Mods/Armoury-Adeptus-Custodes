@@ -1,0 +1,152 @@
+{
+  "AssetId": "837dea32138544beb11d744c60e98b97",
+  "Data": {
+    "$type": "618a7e0d54149064ab3ffa5d9057362c, BlueprintBuff",
+    "PrototypeLink": "7f46b1545f9c4a938cde02e107ce135e",
+    "m_Overrides": [
+      "m_DisplayName",
+      "m_Description",
+      "m_Icon",
+      "IsImportantBuff"
+    ],
+    "Components": [
+      {
+        "$type": "76dd00a1f560ad2438ed8bf8cbfcd039, AddIncomingDamageTrigger",
+        "name": "$AddIncomingDamageTrigger$b078f96c-27ed-449b-bb2b-3dd5271d3077",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "7f46b1545f9c4a938cde02e107ce135e",
+          "name": "$AddIncomingDamageTrigger$b078f96c-27ed-449b-bb2b-3dd5271d3077"
+        },
+        "m_Overrides": [],
+        "Actions": {
+          "Actions": [
+            {
+              "$type": "120df4726e71c854e95f84b87a99a3c5, ContextActionSpawnFx",
+              "name": "$ContextActionSpawnFx$5600e8c0-5672-46c4-b142-06ac26c72adc",
+              "PrefabLink": {
+                "AssetId": "f94293339a19d3240a3398697467a03c"
+              }
+            }
+          ]
+        },
+        "ActionsToAttacker": {
+          "Actions": []
+        },
+        "TriggerOnStatDamageOrEnergyDrain": false,
+        "IgnoreDamageFromThisFact": false,
+        "ReduceBelowZero": false,
+        "CheckDamageDealt": true,
+        "CompareType": "Equal",
+        "TargetValue": {
+          "ValueType": "Simple",
+          "Value": 0,
+          "ValueRank": "Default",
+          "ValueShared": "Damage",
+          "Property": "None",
+          "m_CustomProperty": null,
+          "PropertyName": "Value1"
+        },
+        "CheckWeaponAttackType": false,
+        "AttackType": 0,
+        "CheckDamageType": false,
+        "DamageType": "Toxic",
+        "TriggersForDamageOverTime": false
+      },
+      {
+        "$type": "b28e1f5ac7e12074e9457c0f862f1ae8, WarhammerIncomingDamageNullifier",
+        "name": "$WarhammerIncomingDamageNullifier$2300fae7-925c-4ffa-a060-b732b9cb1a8e",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "7f46b1545f9c4a938cde02e107ce135e",
+          "name": "$WarhammerIncomingDamageNullifier$2300fae7-925c-4ffa-a060-b732b9cb1a8e"
+        },
+        "m_Overrides": [
+          "m_NullifyChances"
+        ],
+        "Restrictions": {
+          "Property": {
+            "Operation": "Sum",
+            "TargetType": "CurrentEntity",
+            "TargetEvaluator": null,
+            "FailSilentlyIfNoTarget": false,
+            "Getters": []
+          }
+        },
+        "m_NullifyChances": {
+          "ValueType": "Simple",
+          "Value": 100,
+          "ValueRank": "Default",
+          "ValueShared": "Damage",
+          "Property": "None",
+          "m_CustomProperty": null,
+          "PropertyName": "Value1"
+        },
+        "m_OnlyCritical": false
+      },
+      {
+        "$type": "7f88b1ffc2c3465fa25234cf97093e7f, AddVisualForceShield",
+        "name": "$AddVisualForceShield$PraesidiumAuricBastion",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "ShieldType": "TelekineticShield"
+      }
+    ],
+    "Author": "VadimBgatzev",
+    "Comment": "",
+    "m_DisplayName": {
+      "m_Key": "praesidium-bastion-effect-name",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_Description": {
+      "m_Key": "praesidium-bastion-effect-desc",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_Icon": {
+      "guid": "01334144738df8b43871501b756957f8",
+      "fileid": 21300000
+    },
+    "m_AllowNonContextActions": false,
+    "m_Flags": 0,
+    "m_SoundTypeSwitch": {
+      "Value": "",
+      "Group": ""
+    },
+    "m_MuffledTypeSwitch": {
+      "Value": "",
+      "Group": ""
+    },
+    "Stacking": "Replace",
+    "ProlongWhenRankAdded": false,
+    "PriorityProperty": "Value1",
+    "Initiative": "ByCaster",
+    "Ranks": 0,
+    "FxOnStart": {
+      "AssetId": "b2b091e01e26e9e43aea369e7b4cb04d"
+    },
+    "FxOnRemove": {
+      "AssetId": ""
+    },
+    "m_FXSettings": "!bp_db7d7fbfe1b741eea4b9d52b777cd977",
+    "ResourceAssetIds": [],
+    "PlayOnlyFirstHitSound": false,
+    "m_priorityInUI": 0,
+    "m_AbilityGroups": [],
+    "m_Cyclical": false,
+    "NeedCollapseStack": true,
+    "IsImportantBuff": true
+  },
+  "Meta": {
+    "ShadowDeleted": false
+  }
+}

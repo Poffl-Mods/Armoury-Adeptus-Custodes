@@ -1,0 +1,260 @@
+{
+  "AssetId": "c540d8eb059a42c8aacdd2a3eb540c8e",
+  "Data": {
+    "$type": "9ed5cf7385012e747b3d2e8f9d1ac6b8, BlueprintItemShield",
+    "PrototypeLink": "667427778eb743f2883b0e8915541ab6",
+    "m_Overrides": [
+      "m_DisplayName",
+      "m_Description",
+      "m_FlavorText",
+      "m_VisualParameters.m_WeaponModel",
+      "m_Icon",
+      "m_WeaponComponent",
+      "ItemLevel",
+      "Components",
+      "AbilityContainer.Ability4.Type",
+      "AbilityContainer.Ability4.Mode",
+      "AbilityContainer.Ability4.m_Ability",
+      "AbilityContainer.Ability4.m_FXSettings",
+      "AbilityContainer.Ability4.AP",
+      "AbilityContainer.Ability5.Type",
+      "AbilityContainer.Ability5.Mode",
+      "AbilityContainer.Ability5.m_Ability",
+      "AbilityContainer.Ability5.m_FXSettings",
+      "AbilityContainer.Ability5.AP"
+    ],
+    "Components": [
+      {
+        "$type": "d7b23547716f4a949471625ff6c66fb2, EquipmentRestrictionHasFacts",
+        "name": "$EquipmentRestrictionHasFacts$72d5e037-0af1-488b-a698-5d47ce25469c",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "667427778eb743f2883b0e8915541ab6",
+          "name": "$EquipmentRestrictionHasFacts$72d5e037-0af1-488b-a698-5d47ce25469c"
+        },
+        "m_Overrides": [],
+        "m_Facts": [
+          "!bp_590cb5c394ee4b5eb213121c96063dec",
+          "!bp_c7a53b43ac5f4f11a1aef612dd3f4f71",
+          "!bp_affa5fdded7e404b910b990f5d344a8c",
+          "!bp_777d9f9c570443b59120e78f2d9dd515",
+          "!bp_b901e045ca514d53bae43f4a9ecdf0b4"
+        ],
+        "m_Inverted": true,
+        "All": false
+      },
+      {
+        "$type": "3c5267edd045432ab5bd6dbe606d4da3, AdditionalDescriptionComponent",
+        "name": "$AdditionalDescriptionComponent$266b6128-4e40-4310-9f00-35272dbd17f0",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "667427778eb743f2883b0e8915541ab6",
+          "name": "$AdditionalDescriptionComponent$266b6128-4e40-4310-9f00-35272dbd17f0"
+        },
+        "m_Overrides": [],
+        "AdditionalDescription": {
+          "m_Key": "",
+          "m_OwnerString": "",
+          "m_OwnerPropertyPath": "",
+          "m_JsonPath": "",
+          "Shared": {
+            "assetguid": "6bedfacdd5f702844bcaa33d7bbdf22d",
+            "stringkey": "4255a0f5-8fd3-4a3f-af71-a7c3f5762abe"
+          }
+        }
+      },
+      {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$44ceab54-e8cf-47f4-920f-b79429d169c4",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "667427778eb743f2883b0e8915541ab6",
+          "name": "$AddFactToEquipmentWielder$44ceab54-e8cf-47f4-920f-b79429d169c4"
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_442c6212b43347fb80c511b7415d1a59"
+      },
+      {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$1d7a011c-fa9a-471d-8ddf-3791a505922a",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "667427778eb743f2883b0e8915541ab6",
+          "name": "$AddFactToEquipmentWielder$1d7a011c-fa9a-471d-8ddf-3791a505922a"
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_ad7978b34be447128cf701768c03ab7f"
+      },
+      {
+        "$type": "ee483046b4df4eda8e96cd762bbdf594, ReapplyFactsFromItem",
+        "name": "$ReapplyFactsFromItem$78af3e88-3132-438d-80ac-38a1e73266a6",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "667427778eb743f2883b0e8915541ab6",
+          "name": "$ReapplyFactsFromItem$78af3e88-3132-438d-80ac-38a1e73266a6"
+        },
+        "m_Overrides": [],
+        "Version": 0
+      },
+      {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$praesidium-v5-modifiers",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_1aecdd15164544cf88d5c4d6b4e87e45"
+      }
+    ],
+    "Author": "Unknown",
+    "Comment": "",
+    "m_DisplayName": {
+      "m_Key": "praesidium-v5-name",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_Description": {
+      "m_Key": "praesidium-v5-desc",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_Icon": {
+      "guid": "7f7e1bc935fac6c49b322341473cad07",
+      "fileid": 21300000
+    },
+    "m_FlavorText": {
+      "m_Key": "praesidium-shield-flavor",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_NonIdentifiedNameText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_NonIdentifiedDescriptionText": {
+      "m_Key": "",
+      "m_OwnerString": "",
+      "m_OwnerPropertyPath": "",
+      "m_JsonPath": "",
+      "Shared": null
+    },
+    "m_NotStackable": false,
+    "m_Weight": 0.0,
+    "m_Origin": "Armours",
+    "m_Rarity": "Pattern",
+    "m_Tag": "None",
+    "m_IsNotable": false,
+    "m_ProfitFactorCost": 0.0,
+    "m_CargoVolumePercent": 25,
+    "m_InventoryPutSound": "UI_INV_PowerArmour_Put_Play",
+    "m_InventoryTakeSound": "UI_INV_PowerArmour_Take_Play",
+    "ToCargoAutomatically": false,
+    "ItemLevel": 49,
+    "SpendCharges": false,
+    "Charges": 1,
+    "RestoreChargesAfterCombat": false,
+    "IsNonRemovable": false,
+    "IsUnlootable": false,
+    "m_EquipmentEntity": null,
+    "m_EquipmentEntityAlternatives": [],
+    "m_ForcedRampColorPresetIndex": -1,
+    "m_VisualParameters": {
+      "m_WeaponAnimationStyle": "Shield",
+      "m_SpecialAnimation": "None",
+      "m_BurstAnimationDelay": 0.0,
+      "m_WeaponModel": {
+        "guid": "b217d6f483183dd468dab483d91ca8cc",
+        "fileid": 3872355766687709617
+      },
+      "m_WeaponBeltModelOverride": null,
+      "m_WeaponSheathModelOverride": null,
+      "m_SoundSize": "None",
+      "m_SoundType": "None",
+      "m_SoundSizeSwitch": {
+        "Value": "",
+        "Group": ""
+      },
+      "m_SoundTypeSwitch": {
+        "Value": "Shield",
+        "Group": "ProjectileType"
+      },
+      "m_MuffledTypeSwitch": {
+        "Value": "Straight",
+        "Group": "HitMainMuffle"
+      },
+      "m_MissSoundType": "None",
+      "m_EquipSound": "Foley_WP_M_Shield_Equip_Play",
+      "m_UnequipSound": "Foley_WP_M_Shield_Remove_Play",
+      "m_OutOfAmmoSound": "",
+      "m_InventoryEquipSound": "UI_INV_PowerArmour_Equip_Play",
+      "m_InventoryPutSound": "UI_INV_PowerArmour_Put_Play",
+      "m_InventoryTakeSound": "UI_INV_PowerArmour_Take_Play"
+    },
+    "AbilityContainer": {
+      "Ability1": {
+        "Type": "SingleShot",
+        "Mode": "Default",
+        "m_Ability": "!bp_1c5f4edca9f64fe0911bc946e0b4ea4a",
+        "m_FXSettings": null,
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 1
+      },
+      "Ability2": {
+        "Type": "Custom",
+        "Mode": "Default",
+        "m_Ability": "!bp_f6a60b4556214528b0ce295c4f69306e",
+        "m_FXSettings": "!bp_e7acbb04cada484ea19890b89863d2ff",
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 1
+      },
+      "Ability3": {
+        "Type": "None",
+        "Mode": "Default",
+        "m_Ability": "!bp_22fb38fc07f948d383774862347e5cfe",
+        "m_FXSettings": null,
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 0
+      },
+      "Ability4": {
+        "Type": "Custom",
+        "Mode": "Default",
+        "m_Ability": "!bp_5716cf3a8453489ca4a85e91adcc34d3",
+        "m_FXSettings": null,
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 1
+      },
+      "Ability5": {
+        "Type": "Custom",
+        "Mode": "Default",
+        "m_Ability": "!bp_c42f55581541496192b345a8aa37ed44",
+        "m_FXSettings": null,
+        "OnHitOverrideType": "None",
+        "m_OnHitActions": null,
+        "AP": 1
+      }
+    },
+    "m_Category": "None",
+    "m_BlockChance": 50,
+    "m_WeaponComponent": "!bp_bdab5b71f5544e098d1d4dae2c1b8c53",
+    "m_EnableScatterAutoBlockAfterFirstBlock": true,
+    "m_Enchantments": []
+  },
+  "Meta": {
+    "ShadowDeleted": false
+  }
+}

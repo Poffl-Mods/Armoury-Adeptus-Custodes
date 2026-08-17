@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Kingmaker;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Items;
@@ -33,6 +34,13 @@ namespace AstartesCustodes.Runtime
             "94d7497e0b1941c1910a6b29ed8911c2", "2a4f993df4414fc58b0a98dca5867182",
             "716bd961aa6e4b69bf29305ed5898c32", "82ea713354744f8f879d55f53d21e78d",
             "ca4598d179194496ab44584b22c98761", "ed577626cb164bdebb29849e01bd2ec7"
+        };
+
+        private static readonly string[] PraesidiumShieldGuids =
+        {
+            "e44e715029c9490ab7df80ad4366996b", "b269c2b1beef4958b6fb80512a9c84d9",
+            "361f5576f230408b86f7232808b6e4b7", "945a4bb3c4b34454ba12db26cf025653",
+            "c540d8eb059a42c8aacdd2a3eb540c8e", "36b54ba6bf994d2e9863c6a42b53cf1d"
         };
 
         private static readonly MethodInfo SubscribeGlobalMethod = typeof(EventBus).GetMethod(
@@ -96,6 +104,7 @@ namespace AstartesCustodes.Runtime
         {
             Player player = Game.Instance?.Player;
             if (player == null || m_ChangingItems) return;
+            ClearStalePraesidiumShieldOverrides(player);
             if (IsCombatActive(player))
             {
                 m_DeferredByCombat = true;
@@ -116,11 +125,25 @@ namespace AstartesCustodes.Runtime
                     PropertyInfo bodyProperty = unit.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
                         .FirstOrDefault(property => typeof(PartUnitBody).IsAssignableFrom(property.PropertyType));
                     if (bodyProperty?.GetValue(unit) is PartUnitBody body)
-                    foreach (ItemEntity item in body.Items.ToArray())
-                        TryUpgradeItem(item, targetTier);
+                    {
+                        foreach (ItemEntity item in body.Items.ToArray())
+                            TryUpgradeItem(item, targetTier);
+                    }
                 }
             }
             finally { m_ChangingItems = false; }
+        }
+
+        private static void ClearStalePraesidiumShieldOverrides(Player player)
+        {
+            const BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            foreach (BaseUnitEntity unit in EnumeratePartyUnits(player))
+            {
+                PropertyInfo bodyProperty = unit.GetType().GetProperties(flags)
+                    .FirstOrDefault(property => typeof(PartUnitBody).IsAssignableFrom(property.PropertyType));
+                if (bodyProperty?.GetValue(unit) is PartUnitBody body)
+                    PraesidiumShieldSetPlacementPatch.ClearStaleOverrides(body);
+            }
         }
 
         private static IEnumerable<BaseUnitEntity> EnumeratePartyUnits(Player player)
@@ -160,7 +183,8 @@ namespace AstartesCustodes.Runtime
         {
             if (item?.Blueprint == null) return;
             if (TryUpgradeItemInSeries(item, targetTier, GuardianSpearGuids, "Guardian Spear")) return;
-            TryUpgradeItemInSeries(item, targetTier, SentinelSwordGuids, "Sentinel Sword");
+            if (TryUpgradeItemInSeries(item, targetTier, SentinelSwordGuids, "Sentinel Sword")) return;
+            TryUpgradeItemInSeries(item, targetTier, PraesidiumShieldGuids, "Praesidium Shield");
         }
 
         private bool TryUpgradeItemInSeries(ItemEntity item, int targetTier, string[] weaponGuids, string weaponName)
@@ -168,8 +192,8 @@ namespace AstartesCustodes.Runtime
             int currentTier = Array.IndexOf(weaponGuids, item.Blueprint.AssetGuid.ToString());
             if (currentTier < 0 || currentTier >= targetTier) return false;
 
-            BlueprintItemWeapon target = ResourcesLibrary.TryGetBlueprint(
-                weaponGuids[targetTier]) as BlueprintItemWeapon;
+            BlueprintItem target = ResourcesLibrary.TryGetBlueprint(
+                weaponGuids[targetTier]) as BlueprintItem;
             if (target == null)
             {
                 Debug.LogError($"[AstartesCustodes] {weaponName} tier blueprint was not found: " + weaponGuids[targetTier]);

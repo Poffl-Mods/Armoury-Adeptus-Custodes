@@ -203,7 +203,7 @@
     "MinRange": 1,
     "ActionPointCost": 1,
     "AbilityParamsSource": "Weapon",
-    "PsychicPower": "None",
+    "PsychicPower": "Minor",
     "VeilThicknessPointsToAdd": 0,
     "ParamsSkill": "SkillAthletics",
     "CooldownRounds": 2,

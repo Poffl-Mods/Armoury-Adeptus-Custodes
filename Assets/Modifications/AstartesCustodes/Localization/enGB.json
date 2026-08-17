@@ -76,6 +76,178 @@
       "Offset": 0,
       "Text": "Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP. Cooldown: 2 rounds."
     },
+    "praesidium-shield-flavor": {
+      "Offset": 0,
+      "Text": "An auric bulwark bearing the twin eagle, raised between the Emperor's servants and annihilation."
+    },
+    "praesidium-bastion-name": {
+      "Offset": 0,
+      "Text": "Auric Bastion"
+    },
+    "praesidium-bastion-effect-name": {
+      "Offset": 0,
+      "Text": "Auric Bastion"
+    },
+    "praesidium-bastion-effect-desc": {
+      "Offset": 0,
+      "Text": "All incoming damage is nullified while the unit remains within the Praesidium Shield's protective field."
+    },
+    "praesidium-null-zone-name": {
+      "Offset": 0,
+      "Text": "Null Shockwave"
+    },
+    "praesidium-null-mute-name": {
+      "Offset": 0,
+      "Text": "Null-Muted"
+    },
+    "praesidium-null-mute-desc": {
+      "Offset": 0,
+      "Text": "Psychic Power abilities cannot be used while this unit remains within the Praesidium Shield's null zone. Weapon, item and Navigator abilities remain available."
+    },
+    "praesidium-v1-name": {
+      "Offset": 0,
+      "Text": "Custodian's Aegis"
+    },
+    "praesidium-v1-desc": {
+      "Offset": 0,
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 1-9\n• Shield Bash damage: 10\n• Shield block chance: 50%\n• Auric Bastion cooldown: 8 rounds\n• Null Shockwave cooldown: 8 rounds"
+    },
+    "praesidium-v1-modifier-name": {
+      "Offset": 0,
+      "Text": "Custodian's Aegis — Wielder Bonuses"
+    },
+    "praesidium-v1-modifier-desc": {
+      "Offset": 0,
+      "Text": "This shield grants no additional characteristic bonus at its current tier."
+    },
+    "praesidium-bastion-v1-desc": {
+      "Offset": 0,
+      "Text": "Raise the Praesidium Shield's auric field. For 1 round, the wielder and allies within 2 cells gain individual force shields that nullify all incoming damage. Cost: 1 AP. Cooldown: 8 rounds."
+    },
+    "praesidium-null-zone-v1-desc": {
+      "Offset": 0,
+      "Text": "Release a nullifying shockwave from the Praesidium Shield. For 1 round, all units within 7 cells—including allies—cannot use Psychic Power abilities. Weapon, item and Navigator abilities are unaffected. Cost: 1 AP. Cooldown: 8 rounds."
+    },
+    "praesidium-v2-name": {
+      "Offset": 0,
+      "Text": "Sentinel's Aegis"
+    },
+    "praesidium-v2-desc": {
+      "Offset": 0,
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 10-19\n• Shield Bash damage: 13\n• Shield block chance: 50%\n• Auric Bastion cooldown: 7 rounds\n• Null Shockwave cooldown: 7 rounds\n• +2 Strength\n• +2 Toughness"
+    },
+    "praesidium-v2-modifier-name": {
+      "Offset": 0,
+      "Text": "Sentinel's Aegis — Wielder Bonuses"
+    },
+    "praesidium-v2-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped: +2 Strength and +2 Toughness."
+    },
+    "praesidium-bastion-v2-desc": {
+      "Offset": 0,
+      "Text": "Raise the Praesidium Shield's auric field. For 1 round, the wielder and allies within 2 cells gain individual force shields that nullify all incoming damage. Cost: 1 AP. Cooldown: 7 rounds."
+    },
+    "praesidium-null-zone-v2-desc": {
+      "Offset": 0,
+      "Text": "Release a nullifying shockwave from the Praesidium Shield. For 1 round, all units within 7 cells—including allies—cannot use Psychic Power abilities. Weapon, item and Navigator abilities are unaffected. Cost: 1 AP. Cooldown: 7 rounds."
+    },
+    "praesidium-v3-name": {
+      "Offset": 0,
+      "Text": "Praesidium Aegis"
+    },
+    "praesidium-v3-desc": {
+      "Offset": 0,
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 20-29\n• Shield Bash damage: 16\n• Shield block chance: 50%\n• Auric Bastion cooldown: 6 rounds\n• Null Shockwave cooldown: 6 rounds\n• +4 Strength\n• +4 Toughness"
+    },
+    "praesidium-v3-modifier-name": {
+      "Offset": 0,
+      "Text": "Praesidium Aegis — Wielder Bonuses"
+    },
+    "praesidium-v3-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped: +4 Strength and +4 Toughness."
+    },
+    "praesidium-bastion-v3-desc": {
+      "Offset": 0,
+      "Text": "Raise the Praesidium Shield's auric field. For 1 round, the wielder and allies within 2 cells gain individual force shields that nullify all incoming damage. Cost: 1 AP. Cooldown: 6 rounds."
+    },
+    "praesidium-null-zone-v3-desc": {
+      "Offset": 0,
+      "Text": "Release a nullifying shockwave from the Praesidium Shield. For 1 round, all units within 7 cells—including allies—cannot use Psychic Power abilities. Weapon, item and Navigator abilities are unaffected. Cost: 1 AP. Cooldown: 6 rounds."
+    },
+    "praesidium-v4-name": {
+      "Offset": 0,
+      "Text": "Aegis of the Ten Thousand"
+    },
+    "praesidium-v4-desc": {
+      "Offset": 0,
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 30-39\n• Shield Bash damage: 19\n• Shield block chance: 50%\n• Auric Bastion cooldown: 5 rounds\n• Null Shockwave cooldown: 5 rounds\n• +6 Strength\n• +6 Toughness"
+    },
+    "praesidium-v4-modifier-name": {
+      "Offset": 0,
+      "Text": "Aegis of the Ten Thousand — Wielder Bonuses"
+    },
+    "praesidium-v4-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped: +6 Strength and +6 Toughness."
+    },
+    "praesidium-bastion-v4-desc": {
+      "Offset": 0,
+      "Text": "Raise the Praesidium Shield's auric field. For 1 round, the wielder and allies within 2 cells gain individual force shields that nullify all incoming damage. Cost: 1 AP. Cooldown: 5 rounds."
+    },
+    "praesidium-null-zone-v4-desc": {
+      "Offset": 0,
+      "Text": "Release a nullifying shockwave from the Praesidium Shield. For 1 round, all units within 7 cells—including allies—cannot use Psychic Power abilities. Weapon, item and Navigator abilities are unaffected. Cost: 1 AP. Cooldown: 5 rounds."
+    },
+    "praesidium-v5-name": {
+      "Offset": 0,
+      "Text": "Auric Aegis"
+    },
+    "praesidium-v5-desc": {
+      "Offset": 0,
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 40-49\n• Shield Bash damage: 22\n• Shield block chance: 50%\n• Auric Bastion cooldown: 4 rounds\n• Null Shockwave cooldown: 4 rounds\n• +8 Strength\n• +8 Toughness"
+    },
+    "praesidium-v5-modifier-name": {
+      "Offset": 0,
+      "Text": "Auric Aegis — Wielder Bonuses"
+    },
+    "praesidium-v5-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped: +8 Strength and +8 Toughness."
+    },
+    "praesidium-bastion-v5-desc": {
+      "Offset": 0,
+      "Text": "Raise the Praesidium Shield's auric field. For 1 round, the wielder and allies within 2 cells gain individual force shields that nullify all incoming damage. Cost: 1 AP. Cooldown: 4 rounds."
+    },
+    "praesidium-null-zone-v5-desc": {
+      "Offset": 0,
+      "Text": "Release a nullifying shockwave from the Praesidium Shield. For 1 round, all units within 7 cells—including allies—cannot use Psychic Power abilities. Weapon, item and Navigator abilities are unaffected. Cost: 1 AP. Cooldown: 4 rounds."
+    },
+    "praesidium-v6-name": {
+      "Offset": 0,
+      "Text": "Aegis of the Emperor"
+    },
+    "praesidium-v6-desc": {
+      "Offset": 0,
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 50-55\n• Shield Bash damage: 25\n• Shield block chance: 50%\n• Auric Bastion cooldown: 3 rounds\n• Null Shockwave cooldown: 3 rounds\n• +10 Strength\n• +10 Toughness"
+    },
+    "praesidium-v6-modifier-name": {
+      "Offset": 0,
+      "Text": "Aegis of the Emperor — Wielder Bonuses"
+    },
+    "praesidium-v6-modifier-desc": {
+      "Offset": 0,
+      "Text": "While equipped: +10 Strength and +10 Toughness."
+    },
+    "praesidium-bastion-v6-desc": {
+      "Offset": 0,
+      "Text": "Raise the Praesidium Shield's auric field. For 1 round, the wielder and allies within 2 cells gain individual force shields that nullify all incoming damage. Cost: 1 AP. Cooldown: 3 rounds."
+    },
+    "praesidium-null-zone-v6-desc": {
+      "Offset": 0,
+      "Text": "Release a nullifying shockwave from the Praesidium Shield. For 1 round, all units within 7 cells—including allies—cannot use Psychic Power abilities. Weapon, item and Navigator abilities are unaffected. Cost: 1 AP. Cooldown: 3 rounds."
+    },
     "gs-v1-name": {
       "Offset": 0,
       "Text": "Custodian's Vigil"

@@ -209,6 +209,8 @@ namespace AstartesCustodes.Editor
             Material importedMaterial = AssetDatabase.LoadAssetAtPath<Material>(Art + "/GuardianSpear_GLB.mat");
             if (importedFbx == null || importedMaterial == null)
                 throw new InvalidDataException("Guardian Spear FBX or preserved GLB material assets are missing.");
+            if (importedMaterial.HasProperty("_Roughness")) importedMaterial.SetFloat("_Roughness", 0.24f);
+            EditorUtility.SetDirty(importedMaterial);
 
             GameObject root = new GameObject("GuardianSpear_Root");
             EquipmentOffsets offsets = root.AddComponent<EquipmentOffsets>();
@@ -728,6 +730,7 @@ namespace AstartesCustodes.Editor
         {
             Generate();
             SentinelSwordGenerator.Generate();
+            PraesidiumShieldGenerator.Generate();
             var mod = AssetDatabase.LoadAssetAtPath<Modification>(Root + "/AstartesCustodes.asset");
             if (mod == null) throw new InvalidOperationException("AstartesCustodes Modification asset was not found.");
             var result = Builder.Build(mod);
@@ -1112,6 +1115,7 @@ namespace AstartesCustodes.Editor
                 ["sentinel-wave-name"] = Entry("Sentinel Wave"),
                 ["sentinel-wave-desc"] = Entry("Swing the Sentinel Sword to project a cutting wave of force at an enemy up to 5 cells away. The attack uses the weapon's normal damage and armour penetration. Cost: 1 AP.")
             };
+            PraesidiumShieldGenerator.AddLocalizationEntries(strings);
             for (int i = 0; i < 6; i++)
             {
                 int tier = i + 1;
