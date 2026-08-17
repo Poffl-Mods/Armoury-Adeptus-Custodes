@@ -212,6 +212,7 @@ namespace AstartesCustodes.Editor
 
             GameObject root = new GameObject("GuardianSpear_Root");
             EquipmentOffsets offsets = root.AddComponent<EquipmentOffsets>();
+            ConfigureBackSheathOffsets(offsets);
             offsets.raceScaleList = new System.Collections.Generic.List<EquipmentOffsets.RaceScale>
             {
                 // A value just above the owner's base scale prevents Deathwatch's optional 1.5x Staff fallback
@@ -270,6 +271,37 @@ namespace AstartesCustodes.Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             UnityEngine.Debug.Log("[AstartesCustodes] Guardian Spear GLB art generated with shader " + importedMaterial.shader.name);
+        }
+
+        private static void ConfigureBackSheathOffsets(EquipmentOffsets offsets)
+        {
+            // Staff weapons use LeftBack01 (6) and RightBack01 (8) while sheathed. These provide
+            // the initial pose; the runtime controller then normalizes its distance from Spine_3
+            // for the concrete character rig.
+            SerializedObject serialized = new SerializedObject(offsets);
+            SerializedProperty slots = serialized.FindProperty("m_SlotOffsets");
+            slots.arraySize = 12;
+            for (int i = 0; i < slots.arraySize; i++)
+            {
+                SerializedProperty slot = slots.GetArrayElementAtIndex(i);
+                slot.FindPropertyRelative("Position").vector3Value = Vector3.zero;
+                slot.FindPropertyRelative("Rotation").vector3Value = Vector3.zero;
+            }
+            // The spear's long axis is local Y and the back bone's local Z controls height, so
+            // the plane of the character's back is Y/Z. Rotate around its normal (local X) to
+            // lay the spear diagonally across that plane, with its spearhead above the shoulder.
+            Vector3 backRotation = new Vector3(-90f, 0f, 0f);
+            ConfigureBackSheathSlot(slots, 6, new Vector3(0.18f, -0.18f, -0.12f), backRotation);
+            ConfigureBackSheathSlot(slots, 8, new Vector3(-0.18f, -0.18f, -0.12f), backRotation);
+            serialized.ApplyModifiedPropertiesWithoutUndo();
+        }
+
+        private static void ConfigureBackSheathSlot(SerializedProperty slots, int index,
+            Vector3 position, Vector3 rotation)
+        {
+            SerializedProperty slot = slots.GetArrayElementAtIndex(index);
+            slot.FindPropertyRelative("Position").vector3Value = position;
+            slot.FindPropertyRelative("Rotation").vector3Value = rotation;
         }
 
         [MenuItem("Astartes Custodes/Inspect Guardian Spear FBX")]

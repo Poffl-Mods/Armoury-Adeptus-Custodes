@@ -2,7 +2,7 @@
 
 A Custodes armoury mod for *Warhammer 40,000: Rogue Trader*.
 
-Version 1.1.0 includes two complete weapons: the **Guardian Spear**, a two-handed
+Version 1.2.0 includes two complete weapons: the **Guardian Spear**, a two-handed
 hybrid melee and bolter weapon, and the **Sentinel Sword**, a defensive one-handed
 power sword. Both weapons have custom models and inventory icons, six progressively
 stronger variants, and automatically upgrade with their wielder from level 1 to 55.
@@ -16,7 +16,10 @@ enable **Armoury: Adeptus Custodes**.
 
 ## Current version
 
-`1.1.0`
+`1.2.0`
+
+Version 1.2.0 aligns the sheathed Guardian Spear at runtime relative to the loaded character's
+`Spine_3`, preserving its height and rotation while maintaining a consistent distance from the back.
 
 ## Automatic weapon progression
 
@@ -67,7 +70,7 @@ The final variant's Power Field remains active until combat ends once activated.
 
 ## Obtaining the weapons
 
-Version 1.1.0 does not yet distribute the weapons through a quest, vendor, or
+Version 1.2.0 does not yet distribute the weapons through a quest, vendor, or
 starting equipment. ToyBox is currently required. Search for the first variant and
 add it to the inventory:
 
