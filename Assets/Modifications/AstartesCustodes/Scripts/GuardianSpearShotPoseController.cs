@@ -43,6 +43,7 @@ namespace AstartesCustodes.Runtime
         private Transform m_PoseRoot;
         private bool m_ShotActive;
         private float m_ReturnDelay;
+        private bool m_BackAlignmentApplied;
         private static readonly MethodInfo SubscribeGlobalMethod = typeof(EventBus).GetMethod(
             "SubscribeGlobal", BindingFlags.Static | BindingFlags.NonPublic);
         private static readonly MethodInfo UnsubscribeGlobalMethod = typeof(EventBus).GetMethod(
@@ -66,6 +67,7 @@ namespace AstartesCustodes.Runtime
             UnsubscribeGlobalMethod?.Invoke(null, new object[] { this, null });
             m_ShotActive = false;
             m_ReturnDelay = 0f;
+            m_BackAlignmentApplied = false;
             if (m_PoseRoot != null) m_PoseRoot.localRotation = IdleRotation;
         }
 
@@ -76,6 +78,48 @@ namespace AstartesCustodes.Runtime
             Quaternion target = m_ShotActive || m_ReturnDelay > 0f ? ShotRotation : IdleRotation;
             m_PoseRoot.localRotation = Quaternion.RotateTowards(
                 m_PoseRoot.localRotation, target, 540f * Time.deltaTime);
+        }
+
+        private void LateUpdate()
+        {
+            TryAlignSheathedModelToBack();
+        }
+
+        private void TryAlignSheathedModelToBack()
+        {
+            if (m_BackAlignmentApplied) return;
+            Transform parent = transform.parent;
+            if (parent == null || parent.name.IndexOf("back_weapon_slot", System.StringComparison.OrdinalIgnoreCase) < 0)
+            {
+                m_BackAlignmentApplied = false;
+                return;
+            }
+
+            Transform spine = FindAncestor(parent, "Spine_3");
+            if (spine == null) return;
+
+            Vector3 fromSpine = transform.position - spine.position;
+            Vector2 horizontal = new Vector2(fromSpine.x, fromSpine.z);
+            if (horizontal.sqrMagnitude < 0.0001f) return;
+
+            const float distanceFromSpine = 0.16f;
+            Vector2 direction = horizontal.normalized;
+            Vector3 target = new Vector3(
+                spine.position.x + direction.x * distanceFromSpine,
+                transform.position.y,
+                spine.position.z + direction.y * distanceFromSpine);
+            transform.position = target;
+            m_BackAlignmentApplied = true;
+        }
+
+        private static Transform FindAncestor(Transform current, string ancestorName)
+        {
+            while (current != null)
+            {
+                if (current.name == ancestorName) return current;
+                current = current.parent;
+            }
+            return null;
         }
 
         public void HandleExecutionProcessStart(AbilityExecutionContext context)
