@@ -13,6 +13,7 @@
       "AbilityParamsSource",
       "PsychicPower",
       "VeilThicknessPointsToAdd",
+      "CooldownRounds",
       "m_Icon",
       "Animation",
       "CombatStateRestriction"
@@ -80,18 +81,6 @@
         }
       },
       {
-        "$type": "9e5d6fea90c0cb9418a322c839a11cf8, WarhammerCooldown",
-        "name": "$WarhammerCooldown$Praesidium4Rounds",
-        "m_Flags": 0,
-        "PrototypeLink": {
-          "guid": "",
-          "name": ""
-        },
-        "m_Overrides": [],
-        "CooldownInRounds": 4,
-        "UntilEndOfCombat": false
-      },
-      {
         "$type": "d19abe965ccc4bd2891e68c149a9ab56, AbilityCustomAnimationByBuff",
         "name": "$AbilityCustomAnimationByBuff$PraesidiumShieldActivation",
         "m_Flags": 0,
@@ -137,7 +126,7 @@
     "PsychicPower": "Minor",
     "VeilThicknessPointsToAdd": 0,
     "ParamsSkill": "SkillAthletics",
-    "CooldownRounds": 0,
+    "CooldownRounds": 4,
     "CanTargetPoint": false,
     "CanTargetEnemies": false,
     "CanTargetFriends": false,

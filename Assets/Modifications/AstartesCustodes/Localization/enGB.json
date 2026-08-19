@@ -110,7 +110,7 @@
     },
     "praesidium-v1-desc": {
       "Offset": 0,
-      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 1-9\n• Shield Bash damage: 10\n• Shield block chance: 50%\n• Auric Bastion cooldown: 8 rounds\n• Null Shockwave cooldown: 8 rounds"
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 1-15\n• Shield Bash damage: 10\n• Shield block chance: 50%\n• Auric Bastion cooldown: 8 rounds\n• Null Shockwave cooldown: 8 rounds"
     },
     "praesidium-v1-modifier-name": {
       "Offset": 0,
@@ -134,7 +134,7 @@
     },
     "praesidium-v2-desc": {
       "Offset": 0,
-      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 10-19\n• Shield Bash damage: 13\n• Shield block chance: 50%\n• Auric Bastion cooldown: 7 rounds\n• Null Shockwave cooldown: 7 rounds\n• +2 Strength\n• +2 Toughness"
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 16-25\n• Shield Bash damage: 13\n• Shield block chance: 50%\n• Auric Bastion cooldown: 7 rounds\n• Null Shockwave cooldown: 7 rounds\n• +2 Strength\n• +2 Toughness"
     },
     "praesidium-v2-modifier-name": {
       "Offset": 0,
@@ -158,7 +158,7 @@
     },
     "praesidium-v3-desc": {
       "Offset": 0,
-      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 20-29\n• Shield Bash damage: 16\n• Shield block chance: 50%\n• Auric Bastion cooldown: 6 rounds\n• Null Shockwave cooldown: 6 rounds\n• +4 Strength\n• +4 Toughness"
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 26-35\n• Shield Bash damage: 16\n• Shield block chance: 50%\n• Auric Bastion cooldown: 6 rounds\n• Null Shockwave cooldown: 6 rounds\n• +4 Strength\n• +4 Toughness"
     },
     "praesidium-v3-modifier-name": {
       "Offset": 0,
@@ -182,7 +182,7 @@
     },
     "praesidium-v4-desc": {
       "Offset": 0,
-      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 30-39\n• Shield Bash damage: 19\n• Shield block chance: 50%\n• Auric Bastion cooldown: 5 rounds\n• Null Shockwave cooldown: 5 rounds\n• +6 Strength\n• +6 Toughness"
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 36-43\n• Shield Bash damage: 19\n• Shield block chance: 50%\n• Auric Bastion cooldown: 5 rounds\n• Null Shockwave cooldown: 5 rounds\n• +6 Strength\n• +6 Toughness"
     },
     "praesidium-v4-modifier-name": {
       "Offset": 0,
@@ -206,7 +206,7 @@
     },
     "praesidium-v5-desc": {
       "Offset": 0,
-      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 40-49\n• Shield Bash damage: 22\n• Shield block chance: 50%\n• Auric Bastion cooldown: 4 rounds\n• Null Shockwave cooldown: 4 rounds\n• +8 Strength\n• +8 Toughness"
+      "Text": "A Custodes Praesidium Shield.\n\n• Levels: 44-49\n• Shield Bash damage: 22\n• Shield block chance: 50%\n• Auric Bastion cooldown: 4 rounds\n• Null Shockwave cooldown: 4 rounds\n• +8 Strength\n• +8 Toughness"
     },
     "praesidium-v5-modifier-name": {
       "Offset": 0,
@@ -254,7 +254,7 @@
     },
     "gs-v1-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 1-9\n• Bolt Burst: 3 shots\n• Magazine: 9 rounds\n\nModifiers while equipped:\n• +2 Weapon Skill\n• +2 Ballistic Skill\n• +2% parry chance\n• +2% critical hit chance\n• +5% critical damage"
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 1-15\n• Bolt Burst: 3 shots\n• Magazine: 9 rounds\n\nModifiers while equipped:\n• +2 Weapon Skill\n• +2 Ballistic Skill\n• +2% parry chance\n• +2% critical hit chance\n• +5% critical damage"
     },
     "gs-v1-modifier-name": {
       "Offset": 0,
@@ -266,15 +266,15 @@
     },
     "gs-v1-shot-desc": {
       "Offset": 0,
-      "Text": "Fire one precise bolt for 16-22 damage and 15% armour penetration. Magazine: 9 rounds."
+      "Text": "Fire one precise bolt for 11-16 damage and 20% armour penetration. Magazine: 9 rounds."
     },
     "gs-v1-burst-desc": {
       "Offset": 0,
-      "Text": "Fire 3 bolts, each dealing 10-14 damage with 10% armour penetration. Consumes 3 of 9 rounds."
+      "Text": "Fire 3 bolts, each dealing 7-10 damage with 15% armour penetration. Consumes 3 of 9 rounds."
     },
     "gs-v1-cleave-desc": {
       "Offset": 0,
-      "Text": "Sweep the Guardian Spear through a wide area for 14-20 damage and 10% armour penetration."
+      "Text": "Sweep the Guardian Spear through a wide area for 10-14 damage and 15% armour penetration."
     },
     "gs-v2-name": {
       "Offset": 0,
@@ -282,7 +282,7 @@
     },
     "gs-v2-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 10-19\n• Bolt Burst: 4 shots\n• Magazine: 12 rounds\n\nModifiers while equipped:\n• +4 Weapon Skill\n• +4 Ballistic Skill\n• +4% parry chance\n• +4% critical hit chance\n• +10% critical damage"
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 16-25\n• Bolt Burst: 4 shots\n• Magazine: 12 rounds\n\nModifiers while equipped:\n• +4 Weapon Skill\n• +4 Ballistic Skill\n• +4% parry chance\n• +4% critical hit chance\n• +10% critical damage"
     },
     "gs-v2-modifier-name": {
       "Offset": 0,
@@ -294,15 +294,15 @@
     },
     "gs-v2-shot-desc": {
       "Offset": 0,
-      "Text": "Fire one precise bolt for 20-27 damage and 20% armour penetration. Magazine: 12 rounds."
+      "Text": "Fire one precise bolt for 14-20 damage and 25% armour penetration. Magazine: 12 rounds."
     },
     "gs-v2-burst-desc": {
       "Offset": 0,
-      "Text": "Fire 4 bolts, each dealing 12-17 damage with 12% armour penetration. Consumes 4 of 12 rounds."
+      "Text": "Fire 4 bolts, each dealing 8-12 damage with 18% armour penetration. Consumes 4 of 12 rounds."
     },
     "gs-v2-cleave-desc": {
       "Offset": 0,
-      "Text": "Sweep the Guardian Spear through a wide area for 18-25 damage and 15% armour penetration."
+      "Text": "Sweep the Guardian Spear through a wide area for 13-18 damage and 20% armour penetration."
     },
     "gs-v3-name": {
       "Offset": 0,
@@ -310,7 +310,7 @@
     },
     "gs-v3-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 20-29\n• Bolt Burst: 5 shots\n• Magazine: 15 rounds\n\nModifiers while equipped:\n• +6 Weapon Skill\n• +6 Ballistic Skill\n• +6% parry chance\n• +6% critical hit chance\n• +15% critical damage"
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 26-35\n• Bolt Burst: 4 shots\n• Magazine: 12 rounds\n\nModifiers while equipped:\n• +6 Weapon Skill\n• +6 Ballistic Skill\n• +6% parry chance\n• +6% critical hit chance\n• +15% critical damage"
     },
     "gs-v3-modifier-name": {
       "Offset": 0,
@@ -322,15 +322,15 @@
     },
     "gs-v3-shot-desc": {
       "Offset": 0,
-      "Text": "Fire one precise bolt for 24-32 damage and 25% armour penetration. Magazine: 15 rounds."
+      "Text": "Fire one precise bolt for 18-25 damage and 30% armour penetration. Magazine: 12 rounds."
     },
     "gs-v3-burst-desc": {
       "Offset": 0,
-      "Text": "Fire 5 bolts, each dealing 14-19 damage with 15% armour penetration. Consumes 5 of 15 rounds."
+      "Text": "Fire 4 bolts, each dealing 10-14 damage with 20% armour penetration. Consumes 4 of 12 rounds."
     },
     "gs-v3-cleave-desc": {
       "Offset": 0,
-      "Text": "Sweep the Guardian Spear through a wide area for 22-30 damage and 20% armour penetration."
+      "Text": "Sweep the Guardian Spear through a wide area for 16-23 damage and 25% armour penetration."
     },
     "gs-v4-name": {
       "Offset": 0,
@@ -338,7 +338,7 @@
     },
     "gs-v4-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 30-39\n• Bolt Burst: 6 shots\n• Magazine: 18 rounds\n\nModifiers while equipped:\n• +8 Weapon Skill\n• +8 Ballistic Skill\n• +8% parry chance\n• +9% critical hit chance\n• +20% critical damage"
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 36-43\n• Bolt Burst: 5 shots\n• Magazine: 15 rounds\n\nModifiers while equipped:\n• +8 Weapon Skill\n• +8 Ballistic Skill\n• +8% parry chance\n• +9% critical hit chance\n• +20% critical damage"
     },
     "gs-v4-modifier-name": {
       "Offset": 0,
@@ -350,15 +350,15 @@
     },
     "gs-v4-shot-desc": {
       "Offset": 0,
-      "Text": "Fire one precise bolt for 29-39 damage and 30% armour penetration. Magazine: 18 rounds."
+      "Text": "Fire one precise bolt for 22-30 damage and 35% armour penetration. Magazine: 15 rounds."
     },
     "gs-v4-burst-desc": {
       "Offset": 0,
-      "Text": "Fire 6 bolts, each dealing 16-22 damage with 18% armour penetration. Consumes 6 of 18 rounds."
+      "Text": "Fire 5 bolts, each dealing 12-17 damage with 25% armour penetration. Consumes 5 of 15 rounds."
     },
     "gs-v4-cleave-desc": {
       "Offset": 0,
-      "Text": "Sweep the Guardian Spear through a wide area for 27-36 damage and 25% armour penetration."
+      "Text": "Sweep the Guardian Spear through a wide area for 19-27 damage and 30% armour penetration."
     },
     "gs-v5-name": {
       "Offset": 0,
@@ -366,7 +366,7 @@
     },
     "gs-v5-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 40-49\n• Bolt Burst: 8 shots\n• Magazine: 24 rounds\n\nModifiers while equipped:\n• +10 Weapon Skill\n• +10 Ballistic Skill\n• +10% parry chance\n• +12% critical hit chance\n• +25% critical damage"
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 44-49\n• Bolt Burst: 7 shots\n• Magazine: 21 rounds\n\nModifiers while equipped:\n• +10 Weapon Skill\n• +10 Ballistic Skill\n• +10% parry chance\n• +12% critical hit chance\n• +25% critical damage"
     },
     "gs-v5-modifier-name": {
       "Offset": 0,
@@ -378,15 +378,15 @@
     },
     "gs-v5-shot-desc": {
       "Offset": 0,
-      "Text": "Fire one precise bolt for 34-46 damage and 35% armour penetration. Magazine: 24 rounds."
+      "Text": "Fire one precise bolt for 29-40 damage and 40% armour penetration. Magazine: 21 rounds."
     },
     "gs-v5-burst-desc": {
       "Offset": 0,
-      "Text": "Fire 8 bolts, each dealing 18-25 damage with 20% armour penetration. Consumes 8 of 24 rounds."
+      "Text": "Fire 7 bolts, each dealing 16-22 damage with 30% armour penetration. Consumes 7 of 21 rounds."
     },
     "gs-v5-cleave-desc": {
       "Offset": 0,
-      "Text": "Sweep the Guardian Spear through a wide area for 31-42 damage and 30% armour penetration."
+      "Text": "Sweep the Guardian Spear through a wide area for 26-36 damage and 35% armour penetration."
     },
     "gs-v6-name": {
       "Offset": 0,
@@ -406,15 +406,15 @@
     },
     "gs-v6-shot-desc": {
       "Offset": 0,
-      "Text": "Fire one precise bolt for 39-52 damage and 40% armour penetration. Magazine: 27 rounds."
+      "Text": "Fire one precise bolt for 39-52 damage and 45% armour penetration. Magazine: 27 rounds."
     },
     "gs-v6-burst-desc": {
       "Offset": 0,
-      "Text": "Fire 9 bolts, each dealing 20-28 damage with 25% armour penetration. Consumes 9 of 27 rounds."
+      "Text": "Fire 9 bolts, each dealing 20-28 damage with 35% armour penetration. Consumes 9 of 27 rounds."
     },
     "gs-v6-cleave-desc": {
       "Offset": 0,
-      "Text": "Sweep the Guardian Spear through a wide area for 35-48 damage and 35% armour penetration."
+      "Text": "Sweep the Guardian Spear through a wide area for 35-48 damage and 40% armour penetration."
     },
     "sentinel-cleave-name": {
       "Offset": 0,
@@ -438,7 +438,7 @@
     },
     "sentinel-v1-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 1-9\n• Power Field: +12 damage for 2 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +2 Weapon Skill\n• +3% parry chance"
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 1-15\n• Power Field: +5 damage for 2 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +2 Weapon Skill\n• +3% parry chance"
     },
     "sentinel-v1-modifier-name": {
       "Offset": 0,
@@ -450,11 +450,11 @@
     },
     "sentinel-v1-power-field-desc": {
       "Offset": 0,
-      "Text": "Activates the Sentinel Sword's power field for 2 rounds. Attacks made with this weapon deal +12 additional damage. Cooldown: 7 rounds."
+      "Text": "Activates the Sentinel Sword's power field for 2 rounds. Attacks made with this weapon deal +5 additional damage. Cooldown: 7 rounds."
     },
     "sentinel-v1-power-field-buff-desc": {
       "Offset": 0,
-      "Text": "The Sentinel Sword is energised. Its attacks deal +12 additional damage."
+      "Text": "The Sentinel Sword is energised. Its attacks deal +5 additional damage."
     },
     "sentinel-v2-name": {
       "Offset": 0,
@@ -462,7 +462,7 @@
     },
     "sentinel-v2-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 10-19\n• Power Field: +14 damage for 3 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +4 Weapon Skill\n• +5% parry chance\n• +2% dodge chance"
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 16-25\n• Power Field: +7 damage for 3 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +4 Weapon Skill\n• +5% parry chance\n• +2% dodge chance"
     },
     "sentinel-v2-modifier-name": {
       "Offset": 0,
@@ -474,11 +474,11 @@
     },
     "sentinel-v2-power-field-desc": {
       "Offset": 0,
-      "Text": "Activates the Sentinel Sword's power field for 3 rounds. Attacks made with this weapon deal +14 additional damage. Cooldown: 7 rounds."
+      "Text": "Activates the Sentinel Sword's power field for 3 rounds. Attacks made with this weapon deal +7 additional damage. Cooldown: 7 rounds."
     },
     "sentinel-v2-power-field-buff-desc": {
       "Offset": 0,
-      "Text": "The Sentinel Sword is energised. Its attacks deal +14 additional damage."
+      "Text": "The Sentinel Sword is energised. Its attacks deal +7 additional damage."
     },
     "sentinel-v3-name": {
       "Offset": 0,
@@ -486,7 +486,7 @@
     },
     "sentinel-v3-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 20-29\n• Power Field: +16 damage for 4 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +6 Weapon Skill\n• +7% parry chance\n• +3% dodge chance"
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 26-35\n• Power Field: +9 damage for 4 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +6 Weapon Skill\n• +7% parry chance\n• +3% dodge chance"
     },
     "sentinel-v3-modifier-name": {
       "Offset": 0,
@@ -498,11 +498,11 @@
     },
     "sentinel-v3-power-field-desc": {
       "Offset": 0,
-      "Text": "Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +16 additional damage. Cooldown: 7 rounds."
+      "Text": "Activates the Sentinel Sword's power field for 4 rounds. Attacks made with this weapon deal +9 additional damage. Cooldown: 7 rounds."
     },
     "sentinel-v3-power-field-buff-desc": {
       "Offset": 0,
-      "Text": "The Sentinel Sword is energised. Its attacks deal +16 additional damage."
+      "Text": "The Sentinel Sword is energised. Its attacks deal +9 additional damage."
     },
     "sentinel-v4-name": {
       "Offset": 0,
@@ -510,7 +510,7 @@
     },
     "sentinel-v4-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 30-39\n• Power Field: +18 damage for 5 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +8 Weapon Skill\n• +9% parry chance\n• +5% dodge chance"
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 36-43\n• Power Field: +11 damage for 5 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +8 Weapon Skill\n• +9% parry chance\n• +5% dodge chance"
     },
     "sentinel-v4-modifier-name": {
       "Offset": 0,
@@ -522,11 +522,11 @@
     },
     "sentinel-v4-power-field-desc": {
       "Offset": 0,
-      "Text": "Activates the Sentinel Sword's power field for 5 rounds. Attacks made with this weapon deal +18 additional damage. Cooldown: 7 rounds."
+      "Text": "Activates the Sentinel Sword's power field for 5 rounds. Attacks made with this weapon deal +11 additional damage. Cooldown: 7 rounds."
     },
     "sentinel-v4-power-field-buff-desc": {
       "Offset": 0,
-      "Text": "The Sentinel Sword is energised. Its attacks deal +18 additional damage."
+      "Text": "The Sentinel Sword is energised. Its attacks deal +11 additional damage."
     },
     "sentinel-v5-name": {
       "Offset": 0,
@@ -534,7 +534,7 @@
     },
     "sentinel-v5-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 40-49\n• Power Field: +20 damage for 6 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +10 Weapon Skill\n• +12% parry chance\n• +7% dodge chance"
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 44-49\n• Power Field: +15 damage for 6 rounds\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +10 Weapon Skill\n• +12% parry chance\n• +7% dodge chance"
     },
     "sentinel-v5-modifier-name": {
       "Offset": 0,
@@ -546,11 +546,11 @@
     },
     "sentinel-v5-power-field-desc": {
       "Offset": 0,
-      "Text": "Activates the Sentinel Sword's power field for 6 rounds. Attacks made with this weapon deal +20 additional damage. Cooldown: 7 rounds."
+      "Text": "Activates the Sentinel Sword's power field for 6 rounds. Attacks made with this weapon deal +15 additional damage. Cooldown: 7 rounds."
     },
     "sentinel-v5-power-field-buff-desc": {
       "Offset": 0,
-      "Text": "The Sentinel Sword is energised. Its attacks deal +20 additional damage."
+      "Text": "The Sentinel Sword is energised. Its attacks deal +15 additional damage."
     },
     "sentinel-v6-name": {
       "Offset": 0,
@@ -558,7 +558,7 @@
     },
     "sentinel-v6-desc": {
       "Offset": 0,
-      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 50-55\n• Power Field: +22 damage until combat ends\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +12 Weapon Skill\n• +15% parry chance\n• +10% dodge chance"
+      "Text": "A master-crafted Custodes power sword.\n\n• Levels: 50-55\n• Power Field: +20 damage until combat ends\n• Power Field cooldown: 7 rounds\n• Sentinel Wave: 5-cell range, 1 AP, 2-round cooldown\n\nModifiers while equipped:\n• +12 Weapon Skill\n• +15% parry chance\n• +10% dodge chance"
     },
     "sentinel-v6-modifier-name": {
       "Offset": 0,
@@ -570,11 +570,11 @@
     },
     "sentinel-v6-power-field-desc": {
       "Offset": 0,
-      "Text": "Activates the Sentinel Sword's power field until combat ends. Attacks made with this weapon deal +22 additional damage. Cooldown: 7 rounds."
+      "Text": "Activates the Sentinel Sword's power field until combat ends. Attacks made with this weapon deal +20 additional damage. Cooldown: 7 rounds."
     },
     "sentinel-v6-power-field-buff-desc": {
       "Offset": 0,
-      "Text": "The Sentinel Sword is energised. Its attacks deal +22 additional damage."
+      "Text": "The Sentinel Sword is energised. Its attacks deal +20 additional damage."
     }
   }
 }

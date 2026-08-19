@@ -188,7 +188,7 @@
     "IsTwoHanded": true,
     "WarhammerDamage": 20,
     "WarhammerMaxDamage": 28,
-    "WarhammerPenetration": 25,
+    "WarhammerPenetration": 35,
     "DodgePenetration": 0,
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 25,

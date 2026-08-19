@@ -78,20 +78,20 @@ namespace AstartesCustodes.Editor
             "dacd5e8fb259493f316cedf8542e44af", "8b84cfa49fc46904e048762dd69febb5", "95b48767dabd6a13281c7dccd72db4df"
         };
 
-        private static readonly int[] MeleeMin = { 18, 22, 27, 32, 37, 42 };
-        private static readonly int[] MeleeMax = { 24, 30, 36, 43, 50, 57 };
-        private static readonly int[] MeleePen = { 15, 20, 25, 30, 35, 40 };
-        private static readonly int[] CleaveMin = { 14, 18, 22, 27, 31, 35 };
-        private static readonly int[] CleaveMax = { 20, 25, 30, 36, 42, 48 };
-        private static readonly int[] CleavePen = { 10, 15, 20, 25, 30, 35 };
-        private static readonly int[] ShotMin = { 16, 20, 24, 29, 34, 39 };
-        private static readonly int[] ShotMax = { 22, 27, 32, 39, 46, 52 };
-        private static readonly int[] ShotPen = { 15, 20, 25, 30, 35, 40 };
-        private static readonly int[] BurstMin = { 10, 12, 14, 16, 18, 20 };
-        private static readonly int[] BurstMax = { 14, 17, 19, 22, 25, 28 };
-        private static readonly int[] BurstPen = { 10, 12, 15, 18, 20, 25 };
-        private static readonly int[] BurstShots = { 3, 4, 5, 6, 8, 9 };
-        private static readonly int[] Ammo = { 9, 12, 15, 18, 24, 27 };
+        private static readonly int[] MeleeMin = { 12, 16, 20, 24, 32, 42 };
+        private static readonly int[] MeleeMax = { 17, 22, 28, 33, 44, 57 };
+        private static readonly int[] MeleePen = { 20, 25, 30, 35, 40, 45 };
+        private static readonly int[] CleaveMin = { 10, 13, 16, 19, 26, 35 };
+        private static readonly int[] CleaveMax = { 14, 18, 23, 27, 36, 48 };
+        private static readonly int[] CleavePen = { 15, 20, 25, 30, 35, 40 };
+        private static readonly int[] ShotMin = { 11, 14, 18, 22, 29, 39 };
+        private static readonly int[] ShotMax = { 16, 20, 25, 30, 40, 52 };
+        private static readonly int[] ShotPen = { 20, 25, 30, 35, 40, 45 };
+        private static readonly int[] BurstMin = { 7, 8, 10, 12, 16, 20 };
+        private static readonly int[] BurstMax = { 10, 12, 14, 17, 22, 28 };
+        private static readonly int[] BurstPen = { 15, 18, 20, 25, 30, 35 };
+        private static readonly int[] BurstShots = { 3, 4, 4, 5, 7, 9 };
+        private static readonly int[] Ammo = { 9, 12, 12, 15, 21, 27 };
         private static readonly int[] SkillBonus = { 2, 4, 6, 8, 10, 12 };
         private static readonly int[] ParryBonus = { 2, 4, 6, 8, 10, 10 };
         private static readonly int[] CriticalChance = { 2, 4, 6, 9, 12, 15 };
@@ -787,6 +787,40 @@ namespace AstartesCustodes.Editor
             UnityEngine.Debug.Log($"[AstartesCustodes] Endgame weapon survey exported: {results.Count} weapons to {output}");
         }
 
+        [MenuItem("Astartes Custodes/Export all weapon balance survey")]
+        public static void ExportAllWeaponBalanceSurvey()
+        {
+            string output = Path.GetFullPath("BlueprintAnalysis/all-weapon-balance-survey.json");
+            var results = new JArray();
+            foreach (BlueprintItemWeapon weapon in BlueprintsDatabase.LoadAllOfType<BlueprintItemWeapon>())
+            {
+                JObject root = Load(weapon.AssetGuid.ToString());
+                JObject data = (JObject)root["Data"];
+                int minimumDamage = data["WarhammerDamage"]?.Value<int>() ?? 0;
+                int maximumDamage = data["WarhammerMaxDamage"]?.Value<int>() ?? 0;
+                if (minimumDamage <= 0 && maximumDamage <= 0) continue;
+                results.Add(new JObject
+                {
+                    ["id"] = weapon.AssetGuid.ToString(),
+                    ["name"] = data["name"],
+                    ["displayNameKey"] = data["m_DisplayName"]?["m_Key"],
+                    ["path"] = BlueprintsDatabase.GetAssetPath(weapon) ?? "",
+                    ["damage"] = minimumDamage,
+                    ["maxDamage"] = maximumDamage,
+                    ["penetration"] = data["WarhammerPenetration"],
+                    ["range"] = data["WarhammerMaxDistance"],
+                    ["ammo"] = data["WarhammerMaxAmmo"],
+                    ["rateOfFire"] = data["RateOfFire"],
+                    ["family"] = data["Family"],
+                    ["classification"] = data["Classification"],
+                    ["rarity"] = data["m_Rarity"]
+                });
+            }
+            Directory.CreateDirectory(Path.GetDirectoryName(output));
+            File.WriteAllText(output, results.ToString(Formatting.Indented));
+            UnityEngine.Debug.Log($"[AstartesCustodes] All-weapon balance survey exported: {results.Count} weapons to {output}");
+        }
+
         [MenuItem("Astartes Custodes/Export endgame weapon facts")]
         public static void ExportEndgameWeaponFacts()
         {
@@ -1119,7 +1153,8 @@ namespace AstartesCustodes.Editor
             for (int i = 0; i < 6; i++)
             {
                 int tier = i + 1;
-                string levelRange = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
+                string[] levelRanges = { "1-15", "16-25", "26-35", "36-43", "44-49", "50-55" };
+                string levelRange = levelRanges[i];
                 strings[$"gs-v{tier}-name"] = Entry(guardianSpearNames[i]);
                 strings[$"gs-v{tier}-desc"] = Entry(
                     $"A master-crafted Custodes hybrid weapon.\n\n" +

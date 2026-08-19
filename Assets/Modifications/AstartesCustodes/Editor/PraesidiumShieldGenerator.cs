@@ -585,7 +585,7 @@ namespace AstartesCustodes.Editor
             shieldAnimation["name"] = "$AbilityCustomAnimationByBuff$PraesidiumShieldActivation";
             shieldAnimation["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" };
             shieldAnimation["m_Overrides"] = new JArray();
-            ability["Data"]["Components"] = new JArray(runAction, CreateCooldown(cooldownRounds), shieldAnimation);
+            ability["Data"]["Components"] = new JArray(runAction, shieldAnimation);
             ability["Data"]["Type"] = "Spell";
             ability["Data"]["Range"] = "Personal";
             ability["Data"]["ActionPointCost"] = 1;
@@ -594,12 +594,14 @@ namespace AstartesCustodes.Editor
             // Keep the valid value inherited from the vanilla Force Field ability.
             ability["Data"]["PsychicPower"] = "Minor";
             ability["Data"]["VeilThicknessPointsToAdd"] = 0;
+            ability["Data"]["CooldownRounds"] = cooldownRounds;
             ability["Data"]["m_Icon"] = UnityReference(iconGuid, 21300000);
             ability["Data"]["Animation"] = "Kick";
             ability["Data"]["CombatStateRestriction"] = "InCombatOnly";
             ability["Data"]["m_Overrides"] = new JArray(
                 "Components", "m_DisplayName", "m_Description", "Type", "Range", "ActionPointCost",
-                "AbilityParamsSource", "PsychicPower", "VeilThicknessPointsToAdd", "m_Icon", "Animation", "CombatStateRestriction");
+                "AbilityParamsSource", "PsychicPower", "VeilThicknessPointsToAdd", "CooldownRounds",
+                "m_Icon", "Animation", "CombatStateRestriction");
         }
 
         private static JObject PsychicPowerGetter(string power, string name) => new JObject
@@ -619,17 +621,6 @@ namespace AstartesCustodes.Editor
             ["ValueType"] = "Simple", ["Value"] = value, ["ValueRank"] = "Default",
             ["ValueShared"] = "Damage", ["Property"] = "None", ["m_CustomProperty"] = null,
             ["PropertyName"] = "Value1"
-        };
-
-        private static JObject CreateCooldown(int rounds) => new JObject
-        {
-            ["$type"] = "9e5d6fea90c0cb9418a322c839a11cf8, WarhammerCooldown",
-            ["name"] = "$WarhammerCooldown$Praesidium" + rounds + "Rounds",
-            ["m_Flags"] = 0,
-            ["PrototypeLink"] = new JObject { ["guid"] = "", ["name"] = "" },
-            ["m_Overrides"] = new JArray(),
-            ["CooldownInRounds"] = rounds,
-            ["UntilEndOfCombat"] = false
         };
 
         private static void SetText(JObject root, string nameKey, string descKey)
@@ -696,7 +687,8 @@ namespace AstartesCustodes.Editor
             for (int i = 0; i < ShieldGuids.Length; i++)
             {
                 int tier = i + 1;
-                string levels = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
+                string[] levelRanges = { "1-15", "16-25", "26-35", "36-43", "44-49", "50-55" };
+                string levels = levelRanges[i];
                 string attributes = AttributeBonus[i] == 0
                     ? ""
                     : $"\n• +{AttributeBonus[i]} Strength\n• +{AttributeBonus[i]} Toughness";

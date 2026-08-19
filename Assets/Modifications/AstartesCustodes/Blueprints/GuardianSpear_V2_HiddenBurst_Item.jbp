@@ -186,9 +186,9 @@
       "Shared": null
     },
     "IsTwoHanded": true,
-    "WarhammerDamage": 12,
-    "WarhammerMaxDamage": 17,
-    "WarhammerPenetration": 12,
+    "WarhammerDamage": 8,
+    "WarhammerMaxDamage": 12,
+    "WarhammerPenetration": 18,
     "DodgePenetration": 0,
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 25,

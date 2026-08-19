@@ -90,14 +90,14 @@ namespace AstartesCustodes.Editor
         private const string WsModifierReference = "08e144a9788040ea81a99421b5576bc3";
         private const string ParryModifierReference = "53c19a9468d24539863989b3be9ed1f5";
         private const string DodgeModifierReference = "96e84143a45d4150b0233b5b58087fd1";
-        private static readonly int[] MinDamage = { 10, 14, 17, 21, 25, 29 };
-        private static readonly int[] MaxDamage = { 16, 20, 25, 30, 36, 41 };
-        private static readonly int[] Penetration = { 20, 20, 25, 25, 30, 35 };
+        private static readonly int[] MinDamage = { 9, 12, 15, 18, 25, 32 };
+        private static readonly int[] MaxDamage = { 13, 17, 21, 26, 36, 45 };
+        private static readonly int[] Penetration = { 20, 25, 30, 35, 40, 45 };
         private static readonly int[] WeaponSkill = { 2, 4, 6, 8, 10, 12 };
         private static readonly int[] Parry = { 3, 5, 7, 9, 12, 15 };
         private static readonly int[] Dodge = { 0, 2, 3, 5, 7, 10 };
         private static readonly int[] PowerFieldDuration = { 2, 3, 4, 5, 6, 0 };
-        private static readonly int[] PowerFieldDamage = { 12, 14, 16, 18, 20, 22 };
+        private static readonly int[] PowerFieldDamage = { 5, 7, 9, 11, 15, 20 };
 
         [MenuItem("Astartes Custodes/Generate Sentinel Sword")]
         public static void Generate()
@@ -529,6 +529,7 @@ namespace AstartesCustodes.Editor
             AddOverride(ability, "m_DisplayName");
             AddOverride(ability, "m_Description");
             AddOverride(ability, "m_Icon");
+            AddOverride(ability, "CooldownRounds");
             File.WriteAllText(Path.Combine(Blueprints, tier == 1 ? "SentinelSword_PowerField_Ability.jbp" : $"SentinelSword_V{tier}_PowerField_Ability.jbp"), ability.ToString(Formatting.Indented));
         }
 
@@ -691,7 +692,8 @@ namespace AstartesCustodes.Editor
             for (int i = 0; i < 6; i++)
             {
                 int tier = i + 1;
-                string levels = tier == 1 ? "1-9" : tier == 6 ? "50-55" : $"{i * 10}-{i * 10 + 9}";
+                string[] levelRanges = { "1-15", "16-25", "26-35", "36-43", "44-49", "50-55" };
+                string levels = levelRanges[i];
                 string duration = tier == 6 ? "until combat ends" : $"for {PowerFieldDuration[i]} rounds";
                 string dodge = Dodge[i] > 0 ? $"\n• +{Dodge[i]}% dodge chance" : "";
                 strings[$"sentinel-v{tier}-name"] = Entry(sentinelSwordNames[i]);

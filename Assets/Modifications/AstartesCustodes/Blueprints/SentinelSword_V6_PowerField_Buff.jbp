@@ -104,7 +104,7 @@
         },
         "UnmodifiableFlatDamageModifier": {
           "ValueType": "Simple",
-          "Value": 22,
+          "Value": 20,
           "ValueRank": "Default",
           "ValueShared": "Damage",
           "Property": "None",
@@ -223,7 +223,7 @@
         },
         "UnmodifiableFlatDamageModifier": {
           "ValueType": "Simple",
-          "Value": 22,
+          "Value": 20,
           "ValueRank": "Default",
           "ValueShared": "Damage",
           "Property": "None",
@@ -342,7 +342,7 @@
         },
         "UnmodifiableFlatDamageModifier": {
           "ValueType": "Simple",
-          "Value": 22,
+          "Value": 20,
           "ValueRank": "Default",
           "ValueShared": "Damage",
           "Property": "None",

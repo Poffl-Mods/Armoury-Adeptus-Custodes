@@ -215,10 +215,10 @@ namespace AstartesCustodes.Runtime
         private static int TierForLevel(int level)
         {
             if (level >= 50) return 5;
-            if (level >= 40) return 4;
-            if (level >= 30) return 3;
-            if (level >= 20) return 2;
-            if (level >= 10) return 1;
+            if (level >= 44) return 4;
+            if (level >= 36) return 3;
+            if (level >= 26) return 2;
+            if (level >= 16) return 1;
             return 0;
         }
     }

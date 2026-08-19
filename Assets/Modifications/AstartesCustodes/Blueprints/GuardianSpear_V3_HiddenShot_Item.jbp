@@ -186,14 +186,14 @@
       "Shared": null
     },
     "IsTwoHanded": true,
-    "WarhammerDamage": 24,
-    "WarhammerMaxDamage": 32,
-    "WarhammerPenetration": 25,
+    "WarhammerDamage": 18,
+    "WarhammerMaxDamage": 25,
+    "WarhammerPenetration": 30,
     "DodgePenetration": 0,
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 25,
     "WarhammerMaxDistance": 15,
-    "WarhammerMaxAmmo": 15,
+    "WarhammerMaxAmmo": 12,
     "RateOfFire": 1,
     "m_Enchantments": [],
     "m_DamageType": {

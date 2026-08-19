@@ -2,12 +2,12 @@
 
 A Custodes armoury mod for *Warhammer 40,000: Rogue Trader*.
 
-Version 1.3.0 includes two complete weapons: the **Guardian Spear**, a two-handed
+Version 1.3.1 includes two complete weapons: the **Guardian Spear**, a two-handed
 hybrid melee and bolter weapon, and the **Sentinel Sword**, a defensive one-handed
 power sword. Both weapons have custom models and inventory icons, six progressively
 stronger variants, and automatically upgrade with their wielder from level 1 to 55.
-It also includes the first visual prototype of the **Praesidium Shield**, currently
-using the vanilla Advanced Shield gameplay profile.
+It also includes six progressing variants of the **Praesidium Shield** with custom
+abilities and visuals.
 
 No Deathwatch, MicroPatches, Harmony, or other mod dependency is required.
 
@@ -18,24 +18,25 @@ enable **Armoury: Adeptus Custodes**.
 
 ## Current version
 
-`1.3.0`
+`1.3.1`
 
-Version 1.3.0 adds six progressing variants of the Praesidium Shield: Auric Bastion protects
-nearby allies with individual force shields, while Null Shockwave suppresses Minor and
-Major Psychic Powers for every unit in its large null zone.
+Version 1.3.1 fixes the documented cooldowns of the Sentinel Sword's Activate Power
+Field and the Praesidium Shield abilities. Version 1.3.0 added six progressing variants of the
+Praesidium Shield: Auric Bastion protects nearby allies with individual force shields,
+while Null Shockwave suppresses Minor and Major Psychic Powers in its large null zone.
 
 ## Automatic weapon progression
 
 Only the first variant of a weapon needs to be obtained. Outside combat, it is
-automatically replaced when its wielder reaches levels 10, 20, 30, 40, and 50.
+automatically replaced when its wielder reaches levels 16, 26, 36, 44, and 50.
 
 | Levels | Guardian Spear | Sentinel Sword |
 | --- | --- | --- |
-| 1-9 | Custodian's Vigil | Custodian's Edge |
-| 10-19 | Auric Watch | Auric Talon |
-| 20-29 | Praetorian's Oath | Praetorian's Answer |
-| 30-39 | Wrath of the Ten Thousand | Blade of the Ten Thousand |
-| 40-49 | Voice of the Golden Throne | Judgement of Terra |
+| 1-15 | Custodian's Vigil | Custodian's Edge |
+| 16-25 | Auric Watch | Auric Talon |
+| 26-35 | Praetorian's Oath | Praetorian's Answer |
+| 36-43 | Wrath of the Ten Thousand | Blade of the Ten Thousand |
+| 44-49 | Voice of the Golden Throne | Judgement of Terra |
 | 50-55 | The Emperor's Vengeance | The Emperor's Final Decree |
 
 Upgrades never occur during combat. If a level is changed through ToyBox, the
@@ -73,7 +74,7 @@ The final variant's Power Field remains active until combat ends once activated.
 
 ## Obtaining the weapons
 
-Version 1.3.0 does not yet distribute the weapons through a quest, vendor, or
+Version 1.3.1 does not yet distribute the weapons through a quest, vendor, or
 starting equipment. ToyBox is currently required. Search for the first variant and
 add it to the inventory:
 
