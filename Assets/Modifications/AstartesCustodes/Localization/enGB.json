@@ -575,6 +575,34 @@
     "sentinel-v6-power-field-buff-desc": {
       "Offset": 0,
       "Text": "The Sentinel Sword is energised. Its attacks deal +20 additional damage."
+    },
+    "castellan-axe-v1-name": {
+      "Offset": 0,
+      "Text": "Castellan Axe — V1"
+    },
+    "castellan-axe-v1-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon built for overwhelming a single foe. Castellan Onslaught strikes twice, while its compact sweep trades reach and damage for crowd control."
+    },
+    "castellan-axe-flavor": {
+      "Offset": 0,
+      "Text": "A master-crafted polearm combining a power axe with an integrated bolt weapon."
+    },
+    "castellan-onslaught-name": {
+      "Offset": 0,
+      "Text": "Castellan Onslaught"
+    },
+    "castellan-onslaught-v1-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target twice. Each hit deals 9–13 damage with 20% armour penetration and is resolved separately."
+    },
+    "castellan-sweep-name": {
+      "Offset": 0,
+      "Text": "Castellan Sweep"
+    },
+    "castellan-sweep-v1-desc": {
+      "Offset": 0,
+      "Text": "Make a short sweeping attack, dealing 8–12 damage with 15% armour penetration to enemies in a small area."
     }
   }
 }

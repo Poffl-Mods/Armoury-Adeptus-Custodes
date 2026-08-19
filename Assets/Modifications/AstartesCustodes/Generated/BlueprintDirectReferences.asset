@@ -16,6 +16,12 @@ MonoBehaviour:
   - AssetId: cff9640065190d448a0c475d427994e6
     FileId: 21300000
     Asset: {fileID: 21300000, guid: cff9640065190d448a0c475d427994e6, type: 3}
+  - AssetId: 282a453b3a2317248b07f10c34d66c38
+    FileId: 5810720934465250454
+    Asset: {fileID: 5810720934465250454, guid: 282a453b3a2317248b07f10c34d66c38, type: 3}
+  - AssetId: 10949dbb553a0a748abf194518279f77
+    FileId: 11400000
+    Asset: {fileID: 11400000, guid: 10949dbb553a0a748abf194518279f77, type: 2}
   - AssetId: 1efcf90da19091e498cce6ba0e9fd5bc
     FileId: 5499664329099543335
     Asset: {fileID: 5499664329099543335, guid: 1efcf90da19091e498cce6ba0e9fd5bc, type: 3}

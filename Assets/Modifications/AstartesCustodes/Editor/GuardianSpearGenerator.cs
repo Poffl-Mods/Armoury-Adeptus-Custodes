@@ -112,6 +112,7 @@ namespace AstartesCustodes.Editor
         private const string VindictorMeleeSingle = "84c32baad3f14585a32f5747d721dfc3";
         private const string VindictorMeleeAoe = "9098215cb3aa482d9c44b9c03a17b8cb";
         private const string EvisceratorCh5 = "4d87435ddfa042269c1fe35df0430f8b";
+        private const string OmnissiahAxe = "87104954d3a6498ca6c4e2985b345b76";
         private const string WsModifierReference = "08e144a9788040ea81a99421b5576bc3";
         private const string BsModifierReference = "57c442a8026d4216b28a0501cb139d38";
         private const string ParryModifierReference = "53c19a9468d24539863989b3be9ed1f5";
@@ -126,7 +127,7 @@ namespace AstartesCustodes.Editor
             ImperialStaff, AstartesBoltPistol, StandardBoltShot, StandardBoltBurst, StaffStrike, TwoHandedSwordStrike,
             TwoHandedSwordCleave, GreatSword, Vindictor,
             VindictorHiddenMelee, VindictorMeleeSingle, VindictorMeleeAoe,
-            BolterFx, BolterProjectile, BolterMuzzleLocator
+            BolterFx, BolterProjectile, BolterMuzzleLocator, OmnissiahAxe
         };
 
         [MenuItem("Astartes Custodes/Inspect weapon prefab APIs")]
@@ -731,8 +732,12 @@ namespace AstartesCustodes.Editor
             Generate();
             SentinelSwordGenerator.Generate();
             PraesidiumShieldGenerator.Generate();
+            CastellanAxeGenerator.Generate();
             var mod = AssetDatabase.LoadAssetAtPath<Modification>(Root + "/AstartesCustodes.asset");
             if (mod == null) throw new InvalidOperationException("AstartesCustodes Modification asset was not found.");
+            mod.Manifest.Version = "1.3.19";
+            EditorUtility.SetDirty(mod);
+            AssetDatabase.SaveAssets();
             var result = Builder.Build(mod);
             if ((int)result != 0) throw new InvalidOperationException("Build failed: " + result);
         }
@@ -813,6 +818,10 @@ namespace AstartesCustodes.Editor
                     ["rateOfFire"] = data["RateOfFire"],
                     ["family"] = data["Family"],
                     ["classification"] = data["Classification"],
+                    ["animationStyle"] = data["m_VisualParameters"]?["m_WeaponAnimationStyle"],
+                    ["specialAnimation"] = data["m_VisualParameters"]?["m_SpecialAnimation"],
+                    ["holdingType"] = data["m_HoldingType"],
+                    ["isTwoHanded"] = data["IsTwoHanded"],
                     ["rarity"] = data["m_Rarity"]
                 });
             }
@@ -869,7 +878,7 @@ namespace AstartesCustodes.Editor
             UnityEngine.Debug.Log($"[AstartesCustodes] Exported {count} equipment modifier references to {output}");
         }
 
-        private static JObject Load(string id)
+        internal static JObject Load(string id)
         {
             BlueprintJsonWrapper wrapper = BlueprintsDatabase.LoadWrapperById(id);
             if (wrapper == null) throw new InvalidDataException("Blueprint not found: " + id);
@@ -1033,7 +1042,7 @@ namespace AstartesCustodes.Editor
             return mesh;
         }
 
-        private static JObject PrepareClone(JObject root, string id, string prototype)
+        internal static JObject PrepareClone(JObject root, string id, string prototype)
         {
             root["AssetId"] = id;
             root["Data"]["PrototypeLink"] = prototype;
@@ -1062,7 +1071,7 @@ namespace AstartesCustodes.Editor
                 AddOverride(weapon, "WeaponAbilities." + slotName + "." + field);
         }
 
-        private static void SetAbilitySlot(JObject weapon, string slotName, string type, string ability, string fx, int ap, string mode = "Default")
+        internal static void SetAbilitySlot(JObject weapon, string slotName, string type, string ability, string fx, int ap, string mode = "Default")
         {
             JObject slot = (JObject)weapon["Data"]["AbilityContainer"][slotName];
             slot["Type"] = type;
@@ -1084,7 +1093,7 @@ namespace AstartesCustodes.Editor
             AddOverride(root, "m_FlavorText");
         }
 
-        private static JObject Localized(string key) => new JObject
+        internal static JObject Localized(string key) => new JObject
         {
             ["m_Key"] = key, ["m_OwnerString"] = "", ["m_OwnerPropertyPath"] = "",
             ["m_JsonPath"] = "", ["Shared"] = null
@@ -1099,19 +1108,19 @@ namespace AstartesCustodes.Editor
             AddOverride(root, property);
         }
 
-        private static void Override(JObject root, string property, JToken value)
+        internal static void Override(JObject root, string property, JToken value)
         {
             root["Data"][property] = value;
             AddOverride(root, property);
         }
 
-        private static void AddOverride(JObject root, string property)
+        internal static void AddOverride(JObject root, string property)
         {
             JArray overrides = (JArray)root["Data"]["m_Overrides"];
             if (!overrides.Values<string>().Contains(property)) overrides.Add(property);
         }
 
-        private static void Save(string name, JObject root)
+        internal static void Save(string name, JObject root)
         {
             // Blueprint Author is Owlcat's internal Authors enum, not a free-form mod credit.
             // Preserve the valid value inherited from the vanilla prototype.

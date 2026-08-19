@@ -15,6 +15,7 @@ namespace AstartesCustodes.Runtime
     {
         private static readonly HashSet<string> GuardianSpearGuids = new HashSet<string>
         {
+            "107fbf6e543d41c9ab5783dd7f761be6",
             "69a10b7bc7a94c5cb59cd91a6d88d160", "57fe8f5911961a2f7520902d00a08ade",
             "daa6cb6d22409135822d23800e71f1ea", "db7158b0a3ab06fef59f60cb255d3b20",
             "6e3e198f6446b1a9de3fea683517ff69", "bdb166b828685110dff677d0791a0bda"
@@ -108,6 +109,14 @@ namespace AstartesCustodes.Runtime
                 spine.position.x + direction.x * distanceFromSpine,
                 transform.position.y,
                 spine.position.z + direction.y * distanceFromSpine);
+            if (name.IndexOf("CastellanAxe", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                // Move across the back, not away from it. This horizontal tangent is perpendicular
+                // to the already-known spine-to-weapon radial direction and is independent of the
+                // rig's unusually oriented Spine_3 local axes.
+                Vector3 leftAcrossBack = new Vector3(direction.y, 0f, -direction.x);
+                target += leftAcrossBack * 0.25f;
+            }
             transform.position = target;
             m_BackAlignmentApplied = true;
         }
