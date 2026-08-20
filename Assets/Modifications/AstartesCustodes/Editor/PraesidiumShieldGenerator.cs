@@ -326,6 +326,13 @@ namespace AstartesCustodes.Editor
                 GenerateModifierFeature(i);
 
                 JObject shield = PrepareClone(Load(AdvancedShieldPrototype), ShieldGuids[i], AdvancedShieldPrototype);
+                // The vanilla prototype is limited to wielders with specific class/faction facts
+                // (for example Tech-Priest or Adeptus Astartes). Praesidium shields are intended
+                // to be universally equippable, so retain all item behaviour except that gate.
+                shield["Data"]["Components"] = new JArray(
+                    shield["Data"]["Components"].Children<JObject>()
+                        .Where(component => component["$type"]?.ToString()
+                            .Contains("EquipmentRestrictionHasFacts") != true));
                 shield["Data"]["m_DisplayName"] = Localized($"praesidium-v{tier}-name");
                 shield["Data"]["m_Description"] = Localized($"praesidium-v{tier}-desc");
                 shield["Data"]["m_FlavorText"] = Localized("praesidium-shield-flavor");

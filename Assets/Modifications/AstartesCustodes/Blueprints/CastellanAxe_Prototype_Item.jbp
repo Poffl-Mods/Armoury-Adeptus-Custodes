@@ -48,7 +48,9 @@
       "WeaponAbilities.Ability5.m_FXSettings",
       "WeaponAbilities.Ability5.AP",
       "m_AttackOfOpportunityAbility",
-      "m_VisualParameters.m_WeaponAnimationStyle"
+      "m_VisualParameters.m_WeaponAnimationStyle",
+      "WeaponAbilities.Ability5.OnHitOverrideType",
+      "WeaponAbilities.Ability5.m_OnHitActions"
     ],
     "Components": [
       {
@@ -161,47 +163,47 @@
       "Ability1": {
         "Type": "SingleShot",
         "Mode": "Default",
-        "m_Ability": "!bp_9c5b8ea2bcef4dc0ad202ec700dd3efd",
-        "m_FXSettings": "!bp_046cf83ca27244998b0603750d4a833e",
+        "m_Ability": "!bp_e48c72cc16194cc986f3041cd3bc01aa",
+        "m_FXSettings": "!bp_5a72a93ee3bd4a049aa4ddef1e4c7f84",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
-        "AP": 2
+        "AP": 1
       },
       "Ability2": {
-        "Type": "AOE",
+        "Type": "SingleShot",
         "Mode": "Default",
-        "m_Ability": "!bp_34c7aa1147264785b5aedcbf982d06d8",
-        "m_FXSettings": "!bp_046cf83ca27244998b0603750d4a833e",
+        "m_Ability": "!bp_9c5b8ea2bcef4dc0ad202ec700dd3efd",
+        "m_FXSettings": "!bp_5a72a93ee3bd4a049aa4ddef1e4c7f84",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
         "AP": 2
       },
       "Ability3": {
-        "Type": "SingleShot",
+        "Type": "AOE",
         "Mode": "Default",
-        "m_Ability": "!bp_747e419a3f9c43579f51b27f41e88b35",
-        "m_FXSettings": "!bp_afde0e8c0c9848deba8e38a1279ee7df",
+        "m_Ability": "!bp_34c7aa1147264785b5aedcbf982d06d8",
+        "m_FXSettings": "!bp_5a72a93ee3bd4a049aa4ddef1e4c7f84",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
-        "AP": 1
+        "AP": 2
       },
       "Ability4": {
-        "Type": "Burst",
+        "Type": "SingleShot",
         "Mode": "Default",
-        "m_Ability": "!bp_c4e65f9139c74d54bc08a87caf2bb381",
+        "m_Ability": "!bp_67b07b4445b348168d63903592a5ee50",
         "m_FXSettings": "!bp_afde0e8c0c9848deba8e38a1279ee7df",
         "OnHitOverrideType": "None",
         "m_OnHitActions": null,
         "AP": 2
       },
       "Ability5": {
-        "Type": "Reload",
-        "Mode": "Any",
-        "m_Ability": "!bp_98f4a31b68e446ad9c63411c7b349146",
-        "m_FXSettings": "!bp_afde0e8c0c9848deba8e38a1279ee7df",
-        "OnHitOverrideType": "None",
-        "m_OnHitActions": null,
-        "AP": 2
+        "Type": "SingleShot",
+        "Mode": "Default",
+        "m_Ability": "!bp_1b35d60012964a81a6a425f1b444f2d7",
+        "m_FXSettings": "!bp_b42607999b9740c1ac74fc7d63ae0451",
+        "OnHitOverrideType": "Add",
+        "m_OnHitActions": "!bp_8072aab2b2f04707ae2c4b782148016a",
+        "AP": 1
       }
     },
     "m_AttackOfOpportunityAbility": "!bp_e48c72cc16194cc986f3041cd3bc01aa",
@@ -235,14 +237,14 @@
       "Shared": null
     },
     "IsTwoHanded": true,
-    "WarhammerDamage": 12,
-    "WarhammerMaxDamage": 17,
-    "WarhammerPenetration": 20,
+    "WarhammerDamage": 14,
+    "WarhammerMaxDamage": 20,
+    "WarhammerPenetration": 25,
     "DodgePenetration": 0,
     "AdditionalHitChance": 0,
     "WarhammerRecoil": 0,
     "WarhammerMaxDistance": 1,
-    "WarhammerMaxAmmo": 9,
+    "WarhammerMaxAmmo": 0,
     "RateOfFire": 0,
     "m_Enchantments": [],
     "m_DamageType": {

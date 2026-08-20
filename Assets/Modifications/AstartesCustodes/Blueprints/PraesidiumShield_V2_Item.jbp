@@ -25,25 +25,6 @@
     ],
     "Components": [
       {
-        "$type": "d7b23547716f4a949471625ff6c66fb2, EquipmentRestrictionHasFacts",
-        "name": "$EquipmentRestrictionHasFacts$72d5e037-0af1-488b-a698-5d47ce25469c",
-        "m_Flags": 0,
-        "PrototypeLink": {
-          "guid": "667427778eb743f2883b0e8915541ab6",
-          "name": "$EquipmentRestrictionHasFacts$72d5e037-0af1-488b-a698-5d47ce25469c"
-        },
-        "m_Overrides": [],
-        "m_Facts": [
-          "!bp_590cb5c394ee4b5eb213121c96063dec",
-          "!bp_c7a53b43ac5f4f11a1aef612dd3f4f71",
-          "!bp_affa5fdded7e404b910b990f5d344a8c",
-          "!bp_777d9f9c570443b59120e78f2d9dd515",
-          "!bp_b901e045ca514d53bae43f4a9ecdf0b4"
-        ],
-        "m_Inverted": true,
-        "All": false
-      },
-      {
         "$type": "3c5267edd045432ab5bd6dbe606d4da3, AdditionalDescriptionComponent",
         "name": "$AdditionalDescriptionComponent$266b6128-4e40-4310-9f00-35272dbd17f0",
         "m_Flags": 0,

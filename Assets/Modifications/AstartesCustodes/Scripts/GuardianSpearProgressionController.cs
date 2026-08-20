@@ -43,6 +43,13 @@ namespace AstartesCustodes.Runtime
             "c540d8eb059a42c8aacdd2a3eb540c8e", "36b54ba6bf994d2e9863c6a42b53cf1d"
         };
 
+        private static readonly string[] CastellanAxeGuids =
+        {
+            "107fbf6e543d41c9ab5783dd7f761be6", "0ea483280c3c4f68b2894debf9f5930c",
+            "53fd9030471a47ec832b7f3a9bf5d889", "b81b2c7c002e44dc8a6a711c82fdb2d7",
+            "3b5e0fc217f441ed815b70dcdffdc72a", "c2e60e63e79749a9a71fcbff8db63d59"
+        };
+
         private static readonly MethodInfo SubscribeGlobalMethod = typeof(EventBus).GetMethod(
             "SubscribeGlobal", BindingFlags.Static | BindingFlags.NonPublic);
         private static readonly MethodInfo UnsubscribeGlobalMethod = typeof(EventBus).GetMethod(
@@ -184,7 +191,8 @@ namespace AstartesCustodes.Runtime
             if (item?.Blueprint == null) return;
             if (TryUpgradeItemInSeries(item, targetTier, GuardianSpearGuids, "Guardian Spear")) return;
             if (TryUpgradeItemInSeries(item, targetTier, SentinelSwordGuids, "Sentinel Sword")) return;
-            TryUpgradeItemInSeries(item, targetTier, PraesidiumShieldGuids, "Praesidium Shield");
+            if (TryUpgradeItemInSeries(item, targetTier, PraesidiumShieldGuids, "Praesidium Shield")) return;
+            TryUpgradeItemInSeries(item, targetTier, CastellanAxeGuids, "Castellan Axe");
         }
 
         private bool TryUpgradeItemInSeries(ItemEntity item, int targetTier, string[] weaponGuids, string weaponName)

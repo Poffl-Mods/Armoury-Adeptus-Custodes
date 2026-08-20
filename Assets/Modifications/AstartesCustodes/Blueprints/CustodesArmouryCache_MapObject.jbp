@@ -1,0 +1,21 @@
+{
+  "AssetId": "88f437341af34d15ad9d9e24c41dd34d",
+  "Data": {
+    "$type": "b7d695389bff6604ca37f190a61f05b5, BlueprintDynamicMapObject",
+    "PrototypeLink": "",
+    "m_Overrides": [],
+    "Components": [],
+    "Author": "Poffl",
+    "Comment": "Persistent Custodes armoury cache in the Warrant Chamber.",
+    "m_DisplayName": null,
+    "m_Description": null,
+    "m_Icon": null,
+    "Prefab": {
+      "guid": "11de43142843d484cb3df0e06780ce58",
+      "fileid": 5473238063791144097
+    }
+  },
+  "Meta": {
+    "ShadowDeleted": false
+  }
+}

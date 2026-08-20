@@ -576,14 +576,6 @@
       "Offset": 0,
       "Text": "The Sentinel Sword is energised. Its attacks deal +20 additional damage."
     },
-    "castellan-axe-v1-name": {
-      "Offset": 0,
-      "Text": "Castellan Axe — V1"
-    },
-    "castellan-axe-v1-desc": {
-      "Offset": 0,
-      "Text": "A master-crafted Custodes hybrid weapon built for overwhelming a single foe. Castellan Onslaught strikes twice, while its compact sweep trades reach and damage for crowd control."
-    },
     "castellan-axe-flavor": {
       "Offset": 0,
       "Text": "A master-crafted polearm combining a power axe with an integrated bolt weapon."
@@ -592,17 +584,161 @@
       "Offset": 0,
       "Text": "Castellan Onslaught"
     },
-    "castellan-onslaught-v1-desc": {
-      "Offset": 0,
-      "Text": "Strike the same target twice. Each hit deals 9–13 damage with 20% armour penetration and is resolved separately."
-    },
     "castellan-sweep-name": {
       "Offset": 0,
       "Text": "Castellan Sweep"
     },
+    "castellan-executioner-bolt-name": {
+      "Offset": 0,
+      "Text": "Executioner Bolt"
+    },
+    "castellan-haft-strike-name": {
+      "Offset": 0,
+      "Text": "Haft Strike"
+    },
+    "castellan-axe-v1-name": {
+      "Offset": 0,
+      "Text": "Castellan's Vigil"
+    },
+    "castellan-axe-v1-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 1-15\n• Strike: 14–20 damage, 25% armour penetration\n• Castellan Onslaught: 2 separately resolved 9–13 hits\n• Castellan Sweep: 11–15 damage in a compact 3-cell arc\n• Executioner Bolt: precise long-range shot, no ammunition, 2-round cooldown\n• Haft Strike: low-damage 1 AP attack that pushes the target 1 cell and can stun for 1 round"
+    },
+    "castellan-onslaught-v1-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target 2 times. Each hit deals 9–13 damage with 20% armour penetration and is resolved separately."
+    },
     "castellan-sweep-v1-desc": {
       "Offset": 0,
-      "Text": "Make a short sweeping attack, dealing 8–12 damage with 15% armour penetration to enemies in a small area."
+      "Text": "Make a compact 3-cell sweeping attack, dealing 11–15 damage with 15% armour penetration."
+    },
+    "castellan-executioner-bolt-v1-desc": {
+      "Offset": 0,
+      "Text": "Fire one carefully aimed bolt at 150% of the weapon's normal effective range with +10% hit chance. This attack uses no ammunition. Cooldown: 2 rounds."
+    },
+    "castellan-haft-strike-v1-desc": {
+      "Offset": 0,
+      "Text": "Strike with the weapon's haft for 7–10 damage and push the target 1 cell. On a failed Toughness resistance test, the target is stunned for 1 round. Cost: 1 AP."
+    },
+    "castellan-axe-v2-name": {
+      "Offset": 0,
+      "Text": "Auric Executioner"
+    },
+    "castellan-axe-v2-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 16-25\n• Strike: 19–27 damage, 30% armour penetration\n• Castellan Onslaught: 2 separately resolved 13–18 hits\n• Castellan Sweep: 14–20 damage in a compact 3-cell arc\n• Executioner Bolt: precise long-range shot, no ammunition, 2-round cooldown\n• Haft Strike: low-damage 1 AP attack that pushes the target 1 cell and can stun for 1 round"
+    },
+    "castellan-onslaught-v2-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target 2 times. Each hit deals 13–18 damage with 25% armour penetration and is resolved separately."
+    },
+    "castellan-sweep-v2-desc": {
+      "Offset": 0,
+      "Text": "Make a compact 3-cell sweeping attack, dealing 14–20 damage with 20% armour penetration."
+    },
+    "castellan-executioner-bolt-v2-desc": {
+      "Offset": 0,
+      "Text": "Fire one carefully aimed bolt at 150% of the weapon's normal effective range with +10% hit chance. This attack uses no ammunition. Cooldown: 2 rounds."
+    },
+    "castellan-haft-strike-v2-desc": {
+      "Offset": 0,
+      "Text": "Strike with the weapon's haft for 9–13 damage and push the target 1 cell. On a failed Toughness resistance test, the target is stunned for 1 round. Cost: 1 AP."
+    },
+    "castellan-axe-v3-name": {
+      "Offset": 0,
+      "Text": "Praetorian's Wrath"
+    },
+    "castellan-axe-v3-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 26-35\n• Strike: 24–34 damage, 35% armour penetration\n• Castellan Onslaught: 2 separately resolved 16–22 hits\n• Castellan Sweep: 18–26 damage in a compact 3-cell arc\n• Executioner Bolt: precise long-range shot, no ammunition, 2-round cooldown\n• Haft Strike: low-damage 1 AP attack that pushes the target 1 cell and can stun for 1 round"
+    },
+    "castellan-onslaught-v3-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target 2 times. Each hit deals 16–22 damage with 30% armour penetration and is resolved separately."
+    },
+    "castellan-sweep-v3-desc": {
+      "Offset": 0,
+      "Text": "Make a compact 3-cell sweeping attack, dealing 18–26 damage with 25% armour penetration."
+    },
+    "castellan-executioner-bolt-v3-desc": {
+      "Offset": 0,
+      "Text": "Fire one carefully aimed bolt at 150% of the weapon's normal effective range with +10% hit chance. This attack uses no ammunition. Cooldown: 2 rounds."
+    },
+    "castellan-haft-strike-v3-desc": {
+      "Offset": 0,
+      "Text": "Strike with the weapon's haft for 12–17 damage and push the target 1 cell. On a failed Toughness resistance test, the target is stunned for 1 round. Cost: 1 AP."
+    },
+    "castellan-axe-v4-name": {
+      "Offset": 0,
+      "Text": "Axe of the Ten Thousand"
+    },
+    "castellan-axe-v4-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 36-43\n• Strike: 29–40 damage, 40% armour penetration\n• Castellan Onslaught: 3 separately resolved 14–20 hits\n• Castellan Sweep: 22–30 damage in a compact 3-cell arc\n• Executioner Bolt: precise long-range shot, no ammunition, 2-round cooldown\n• Haft Strike: low-damage 1 AP attack that pushes the target 1 cell and can stun for 1 round"
+    },
+    "castellan-onslaught-v4-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target 3 times. Each hit deals 14–20 damage with 35% armour penetration and is resolved separately."
+    },
+    "castellan-sweep-v4-desc": {
+      "Offset": 0,
+      "Text": "Make a compact 3-cell sweeping attack, dealing 22–30 damage with 30% armour penetration."
+    },
+    "castellan-executioner-bolt-v4-desc": {
+      "Offset": 0,
+      "Text": "Fire one carefully aimed bolt at 150% of the weapon's normal effective range with +10% hit chance. This attack uses no ammunition. Cooldown: 2 rounds."
+    },
+    "castellan-haft-strike-v4-desc": {
+      "Offset": 0,
+      "Text": "Strike with the weapon's haft for 14–20 damage and push the target 1 cell. On a failed Toughness resistance test, the target is stunned for 1 round. Cost: 1 AP."
+    },
+    "castellan-axe-v5-name": {
+      "Offset": 0,
+      "Text": "Sentence of the Golden Throne"
+    },
+    "castellan-axe-v5-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 44-49\n• Strike: 39–53 damage, 45% armour penetration\n• Castellan Onslaught: 3 separately resolved 18–25 hits\n• Castellan Sweep: 29–40 damage in a compact 3-cell arc\n• Executioner Bolt: precise long-range shot, no ammunition, 2-round cooldown\n• Haft Strike: low-damage 1 AP attack that pushes the target 1 cell and can stun for 1 round"
+    },
+    "castellan-onslaught-v5-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target 3 times. Each hit deals 18–25 damage with 40% armour penetration and is resolved separately."
+    },
+    "castellan-sweep-v5-desc": {
+      "Offset": 0,
+      "Text": "Make a compact 3-cell sweeping attack, dealing 29–40 damage with 35% armour penetration."
+    },
+    "castellan-executioner-bolt-v5-desc": {
+      "Offset": 0,
+      "Text": "Fire one carefully aimed bolt at 150% of the weapon's normal effective range with +10% hit chance. This attack uses no ammunition. Cooldown: 2 rounds."
+    },
+    "castellan-haft-strike-v5-desc": {
+      "Offset": 0,
+      "Text": "Strike with the weapon's haft for 19–26 damage and push the target 1 cell. On a failed Toughness resistance test, the target is stunned for 1 round. Cost: 1 AP."
+    },
+    "castellan-axe-v6-name": {
+      "Offset": 0,
+      "Text": "The Emperor's Headsman"
+    },
+    "castellan-axe-v6-desc": {
+      "Offset": 0,
+      "Text": "A master-crafted Custodes hybrid weapon.\n\n• Levels: 50-55\n• Strike: 51–69 damage, 50% armour penetration\n• Castellan Onslaught: 3 separately resolved 24–32 hits\n• Castellan Sweep: 38–52 damage in a compact 3-cell arc\n• Executioner Bolt: precise long-range shot, no ammunition, 2-round cooldown\n• Haft Strike: low-damage 1 AP attack that pushes the target 1 cell and can stun for 1 round"
+    },
+    "castellan-onslaught-v6-desc": {
+      "Offset": 0,
+      "Text": "Strike the same target 3 times. Each hit deals 24–32 damage with 45% armour penetration and is resolved separately."
+    },
+    "castellan-sweep-v6-desc": {
+      "Offset": 0,
+      "Text": "Make a compact 3-cell sweeping attack, dealing 38–52 damage with 40% armour penetration."
+    },
+    "castellan-executioner-bolt-v6-desc": {
+      "Offset": 0,
+      "Text": "Fire one carefully aimed bolt at 150% of the weapon's normal effective range with +10% hit chance. This attack uses no ammunition. Cooldown: 2 rounds."
+    },
+    "castellan-haft-strike-v6-desc": {
+      "Offset": 0,
+      "Text": "Strike with the weapon's haft for 25–34 damage and push the target 1 cell. On a failed Toughness resistance test, the target is stunned for 1 round. Cost: 1 AP."
     }
   }
 }

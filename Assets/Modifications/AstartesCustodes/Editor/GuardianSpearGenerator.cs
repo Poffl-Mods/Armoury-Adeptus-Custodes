@@ -733,9 +733,10 @@ namespace AstartesCustodes.Editor
             SentinelSwordGenerator.Generate();
             PraesidiumShieldGenerator.Generate();
             CastellanAxeGenerator.Generate();
+            NativeArmouryCacheGenerator.Generate();
             var mod = AssetDatabase.LoadAssetAtPath<Modification>(Root + "/AstartesCustodes.asset");
             if (mod == null) throw new InvalidOperationException("AstartesCustodes Modification asset was not found.");
-            mod.Manifest.Version = "1.3.19";
+            mod.Manifest.Version = "1.4.0";
             EditorUtility.SetDirty(mod);
             AssetDatabase.SaveAssets();
             var result = Builder.Build(mod);

@@ -22,6 +22,9 @@ MonoBehaviour:
   - AssetId: 10949dbb553a0a748abf194518279f77
     FileId: 11400000
     Asset: {fileID: 11400000, guid: 10949dbb553a0a748abf194518279f77, type: 2}
+  - AssetId: 11de43142843d484cb3df0e06780ce58
+    FileId: 5473238063791144097
+    Asset: {fileID: 5473238063791144097, guid: 11de43142843d484cb3df0e06780ce58, type: 3}
   - AssetId: 1efcf90da19091e498cce6ba0e9fd5bc
     FileId: 5499664329099543335
     Asset: {fileID: 5499664329099543335, guid: 1efcf90da19091e498cce6ba0e9fd5bc, type: 3}

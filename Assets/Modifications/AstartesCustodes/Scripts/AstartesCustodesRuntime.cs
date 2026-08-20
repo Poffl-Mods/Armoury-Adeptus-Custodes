@@ -12,10 +12,15 @@ namespace AstartesCustodes.Runtime
         {
             PraesidiumShieldSetPlacementPatch.SetEnabled(true);
             GuardianSpearProgressionController.EnsureController();
+            CustodesArmouryCacheController.EnsureController();
             modification.OnSetEnabled += enabled =>
             {
                 PraesidiumShieldSetPlacementPatch.SetEnabled(enabled);
-                if (enabled) GuardianSpearProgressionController.EnsureController();
+                if (enabled)
+                {
+                    GuardianSpearProgressionController.EnsureController();
+                    CustodesArmouryCacheController.EnsureController();
+                }
             };
             Debug.Log("[AstartesCustodes] Runtime initialized.");
         }

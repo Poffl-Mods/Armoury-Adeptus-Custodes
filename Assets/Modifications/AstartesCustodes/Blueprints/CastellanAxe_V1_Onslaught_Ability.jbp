@@ -6,7 +6,8 @@
     "m_Overrides": [
       "$WarhammerOverrideAbilityWeapon$castellan-axe-v1-onslaught",
       "m_DisplayName",
-      "m_Description"
+      "m_Description",
+      "m_Icon"
     ],
     "Components": [
       {
@@ -162,7 +163,10 @@
       "m_JsonPath": "",
       "Shared": null
     },
-    "m_Icon": null,
+    "m_Icon": {
+      "guid": "a6cba97367839af4e8869281de029095",
+      "fileid": 21300000
+    },
     "m_AllowNonContextActions": false,
     "Type": "Weapon",
     "Range": "Weapon",

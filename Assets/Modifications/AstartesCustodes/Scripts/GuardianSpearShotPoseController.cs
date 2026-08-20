@@ -16,6 +16,9 @@ namespace AstartesCustodes.Runtime
         private static readonly HashSet<string> GuardianSpearGuids = new HashSet<string>
         {
             "107fbf6e543d41c9ab5783dd7f761be6",
+            "0ea483280c3c4f68b2894debf9f5930c", "53fd9030471a47ec832b7f3a9bf5d889",
+            "b81b2c7c002e44dc8a6a711c82fdb2d7", "3b5e0fc217f441ed815b70dcdffdc72a",
+            "c2e60e63e79749a9a71fcbff8db63d59",
             "69a10b7bc7a94c5cb59cd91a6d88d160", "57fe8f5911961a2f7520902d00a08ade",
             "daa6cb6d22409135822d23800e71f1ea", "db7158b0a3ab06fef59f60cb255d3b20",
             "6e3e198f6446b1a9de3fea683517ff69", "bdb166b828685110dff677d0791a0bda"
@@ -34,6 +37,12 @@ namespace AstartesCustodes.Runtime
             ["bd48e166afa8ec7d8747d67ce9f4ba90"] = 6,
             ["c4636e1c3018bbaf41f8b82d32b37593"] = 8,
             ["b277a41d4a5beb42441122718a5816bc"] = 9
+        };
+        private static readonly HashSet<string> AmmoFreeBolterAbilities = new HashSet<string>
+        {
+            "67b07b4445b348168d63903592a5ee50", "b78d52e76e84478f8868bef1e882cf6f",
+            "3ae119d574d54650a27e75904c81e1de", "841570aa8b6249bba3dbd46175d4946b",
+            "1462ce0843384098a4fb2c3f5a4246c9", "5635cd61d63541258a977ffeb7134026"
         };
         private static readonly HashSet<AbilityExecutionContext> AmmoSpentContexts = new HashSet<AbilityExecutionContext>();
         private static readonly Quaternion IdleRotation = Quaternion.Euler(0f, 0f, 45f);
@@ -154,7 +163,7 @@ namespace AstartesCustodes.Runtime
         {
             if (context?.AbilityBlueprint == null) return false;
             string guid = context.AbilityBlueprint.AssetGuid.ToString();
-            return AmmoCosts.ContainsKey(guid);
+            return AmmoCosts.ContainsKey(guid) || AmmoFreeBolterAbilities.Contains(guid);
         }
 
         private static void SpendAmmoOnce(AbilityExecutionContext context)
