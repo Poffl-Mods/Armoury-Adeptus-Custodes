@@ -736,7 +736,7 @@ namespace AstartesCustodes.Editor
             NativeArmouryCacheGenerator.Generate();
             var mod = AssetDatabase.LoadAssetAtPath<Modification>(Root + "/AstartesCustodes.asset");
             if (mod == null) throw new InvalidOperationException("AstartesCustodes Modification asset was not found.");
-            mod.Manifest.Version = "1.4.0";
+            mod.Manifest.Version = "1.4.1";
             EditorUtility.SetDirty(mod);
             AssetDatabase.SaveAssets();
             var result = Builder.Build(mod);

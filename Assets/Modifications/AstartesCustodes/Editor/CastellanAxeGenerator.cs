@@ -102,6 +102,7 @@ namespace AstartesCustodes.Editor
         private const string MaterialPath = Art + "/CastellanAxe.mat";
         private const string PackedMaskPath = Art + "/CastellanAxe_MetallicSmoothness.asset";
         private const string PackedNormalPath = Art + "/CastellanAxe_Normal.asset";
+        private const string InventoryIconPath = Art + "/CastellanAxe_InventoryIcon.png";
         private const string BolterMuzzleLocator = "502467bbbcc0471285a4ab6936a285d8";
 
         [MenuItem("Astartes Custodes/Generate Castellan Axe")]
@@ -310,6 +311,9 @@ namespace AstartesCustodes.Editor
             UnityEngine.Object prefab = AssetDatabase.LoadMainAssetAtPath(PrefabPath);
             if (prefab == null || !AssetDatabase.TryGetGUIDAndLocalFileIdentifier(prefab, out string prefabGuid, out long prefabFileId))
                 throw new InvalidDataException("Castellan Axe prefab could not be resolved.");
+            UnityEngine.Object inventoryIcon = PrepareInventoryIcon();
+            if (!AssetDatabase.TryGetGUIDAndLocalFileIdentifier(inventoryIcon, out string iconGuid, out long iconFileId))
+                throw new InvalidDataException("Castellan Axe inventory icon could not be resolved.");
             for (int i = 0; i < WeaponGuids.Length; i++)
             {
                 int tier = i + 1;
@@ -326,6 +330,8 @@ namespace AstartesCustodes.Editor
                 GuardianSpearGenerator.AddOverride(weapon, "m_VisualParameters.m_WeaponAnimationStyle");
                 weapon["Data"]["m_VisualParameters"]["m_WeaponModel"] = new JObject { ["guid"] = prefabGuid, ["fileid"] = prefabFileId };
                 GuardianSpearGenerator.AddOverride(weapon, "m_VisualParameters.m_WeaponModel");
+                weapon["Data"]["m_Icon"] = new JObject { ["guid"] = iconGuid, ["fileid"] = iconFileId };
+                GuardianSpearGenerator.AddOverride(weapon, "m_Icon");
                 GuardianSpearGenerator.Override(weapon, "WarhammerDamage", StrikeMin[i]);
                 GuardianSpearGenerator.Override(weapon, "WarhammerMaxDamage", StrikeMax[i]);
                 GuardianSpearGenerator.Override(weapon, "WarhammerPenetration", StrikePen[i]);
@@ -345,6 +351,21 @@ namespace AstartesCustodes.Editor
                 string output = tier == 1 ? OutputBlueprint : Blueprints + $"/CastellanAxe_V{tier}_Item.jbp";
                 File.WriteAllText(output, weapon.ToString(Formatting.Indented));
             }
+        }
+
+        private static UnityEngine.Object PrepareInventoryIcon()
+        {
+            AssetDatabase.ImportAsset(InventoryIconPath, ImportAssetOptions.ForceSynchronousImport);
+            TextureImporter importer = AssetImporter.GetAtPath(InventoryIconPath) as TextureImporter;
+            if (importer == null) throw new InvalidDataException("Castellan Axe inventory icon importer was not found.");
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.alphaIsTransparency = true;
+            importer.mipmapEnabled = false;
+            importer.textureCompression = TextureImporterCompression.CompressedHQ;
+            importer.SaveAndReimport();
+            return AssetDatabase.LoadAllAssetsAtPath(InventoryIconPath).FirstOrDefault(asset => asset is Sprite)
+                ?? AssetDatabase.LoadMainAssetAtPath(InventoryIconPath);
         }
 
         private static void GenerateCombatBlueprints()
